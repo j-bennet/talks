@@ -3,7 +3,8 @@ from pyspark.context import SparkContext, SparkConf
 from pyspark.sql import SQLContext
 
 
-FILENAME = "timestamps.parquet"
+INPUT_PATH = "./events/"
+OUTPUT_PATH = "./aggs/"
 
 
 def initialize():

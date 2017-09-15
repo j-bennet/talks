@@ -1,0 +1,17 @@
+{
+  "_id": "http://a.com/articles/1|a.com|2017-09-15T01:01",
+  "_index": "events",
+  "customer": "a.com",
+  "url": "http://a.com/articles/1",
+  "freq": "1hour",
+  "ts": "2017-09-15T01:01:00",
+  "metrics": {
+    "page_views": 3,
+    "visitors": 3
+  },
+  "referrers": {
+    "http://google.com/": 1,
+    "http://bing.com/": 1,
+    "http://facebook.com/": 1
+  }
+}

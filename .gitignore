@@ -104,3 +104,6 @@ ENV/
 .idea/
 
 *.parquet
+
+spark-warehouse/
+metastore_db/
