@@ -104,6 +104,9 @@ ENV/
 .idea/
 
 *.parquet
+*.crc
 
 spark-warehouse/
 metastore_db/
+aggs/
+_SUCCESS

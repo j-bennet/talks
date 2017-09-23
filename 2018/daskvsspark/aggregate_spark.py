@@ -1,5 +1,5 @@
 # -*- coding: utf-8
-# aggregate.py
+# aggregate_spark.py
 import os
 import shutil
 from collections import Counter
@@ -36,8 +36,8 @@ def load_sql_user_functions(sqlContext):
     sqlContext.udf.register('format_id',
                             format_id,
                             StringType())
-    sqlContext.udf.register('format_referrers',
-                            format_referrers,
+    sqlContext.udf.register('format_metrics',
+                            format_metrics,
                             MapType(StringType(), IntegerType()))
     sqlContext.udf.register('format_referrers',
                             format_referrers,

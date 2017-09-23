@@ -25,7 +25,7 @@ def generate_data(date):
             '{:04}'.format(date.year),
             '{:02}'.format(date.month),
             '{:02}'.format(date.day),
-            '{:02}'.format(date.hour)
+            '{:02}'.format(hour)
         )
         yield (
             'a.com',
@@ -36,7 +36,7 @@ def generate_data(date):
             '{:04}'.format(date.year),
             '{:02}'.format(date.month),
             '{:02}'.format(date.day),
-            '{:02}'.format(date.hour)
+            '{:02}'.format(hour)
         )
         yield (
             'a.com',
@@ -47,7 +47,7 @@ def generate_data(date):
             '{:04}'.format(date.year),
             '{:02}'.format(date.month),
             '{:02}'.format(date.day),
-            '{:02}'.format(date.hour)
+            '{:02}'.format(hour)
         )
 
 
@@ -65,5 +65,5 @@ if __name__ == '__main__':
 
     # write parquet
     (df.repartition(4, PARTITION_FIELDS)
-     .write
-     .parquet(INPUT_PATH, partitionBy=PARTITION_FIELDS))
+       .write
+       .parquet(INPUT_PATH, partitionBy=PARTITION_FIELDS))

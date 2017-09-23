@@ -1,2 +1,0 @@
-pytz==2017.2
-simplejson==3.11.1
