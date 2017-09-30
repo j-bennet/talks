@@ -56,6 +56,11 @@ def group_data(df):
         'referrers': [d.referrer.tolist()]
     }), meta=agg_meta)
 
+    # I want index to be a column in dataframe, so it is passed
+    # to the next .apply call.
+    ag['index'] = ag.index
+
+    ag = ag.reset_index(drop=True)
     return ag
 
 
@@ -82,30 +87,35 @@ def transform_one(series):
     return pd.DataFrame({'data': [serialized]})
 
 
-def transform_data(df):
+def transform_data(ag):
     """Accepts a Dask DataFrame and returns a Dask Bag, where each record is
     a string, and the contents of the string is a JSON representation of the
     document to be written.
 
-    :param df: DataFrame
+    :param ag: DataFrame
     :return: Bag
     """
-    # I want index to be a part of dataframe, so it is passed
-    # to the next .apply call.
-    df['index'] = df.index
-    return df.apply(transform_one, axis=1, meta={'data': str}).to_bag()
+    parts = dd.to_delayed(ag)
+    tasks = [delayed(transform_data)(p) for p in parts]
+    agg_meta = utils.make_meta({'data': str})
+    values = dd.from_delayed(tasks, meta=agg_meta)
+    return values.to_bag()
+    # return df.apply(transform_one, axis=1, meta={'data': str}).to_bag()
 
 
-def save_json(df, path):
+def save_json(bg, path):
     """Write records as json."""
     root_dir = os.path.dirname(path)
+
     # cleanup before writing
     if os.path.exists(root_dir):
         shutil.rmtree(root_dir)
+
     # create root directory
     if not os.path.exists(root_dir):
         os.makedirs(root_dir)
-    df.repartition(npartitions=1).to_textfiles(path)
+
+    bg.repartition(npartitions=1).to_textfiles(path)
 
 
 if __name__ == '__main__':
