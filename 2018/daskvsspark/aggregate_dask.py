@@ -61,7 +61,7 @@ def group_data(df):
 
 def transform_one(series):
     """Takes a Series object representing a grouped dataframe row,
-    and returns a dict that can be serialized to JSON.
+    and returns a string (serialized JSON).
 
     :return: dict
     """
