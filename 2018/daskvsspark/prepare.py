@@ -64,6 +64,6 @@ if __name__ == '__main__':
         shutil.rmtree(INPUT_PATH)
 
     # write parquet
-    (df.repartition(4, PARTITION_FIELDS)
+    (df.repartition(1)
        .write
        .parquet(INPUT_PATH, partitionBy=PARTITION_FIELDS))

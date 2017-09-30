@@ -1,104 +1,115 @@
 # -*- coding: utf-8
 # aggregate_dask.py
 import glob
-import copy
-import pandas as pd
-import dask.dataframe as dd
+import os
+import shutil
 
-FILE_MASK = './events/*/*/*/*/*/*.*.parquet'
-INPUT_FIELDS = ['url', 'referrer', 'session_id', 'ts', 'customer']
+import dask.dataframe as dd
+import fastparquet as fp
+import pandas as pd
+import simplejson as json
+from dask import delayed
+from dask.dataframe import utils
+
+from common import *
+
+INPUT_MASK = './events/*/*/*/*/*/part*.parquet'
+OUTPUT_MASK = './aggs_dask/*.json'
 
 pd.set_option('display.expand_frame_repr', False)
 
 
-if __name__ == '__main__':
-    file_names = glob.glob(FILE_MASK)
-
+def read_data():
+    """Reads the original Parquet data.
+    :returns: DataFrame
     """
-    ipdb> df.columns
-    Index([u'url', u'referrer', u'session_id', u'ts', u'customer'], dtype='object')
-    
-    ipdb> df.head(npartitions=24)
-                           url              referrer session_id                  ts customer
-    0  http://a.com/articles/1    http://google.com/        xxx 2017-09-15 00:00:00    a.com
-    1  http://a.com/articles/2      http://bing.com/        yyy 2017-09-15 00:00:00    a.com
-    2  http://a.com/articles/2  http://facebook.com/        yyy 2017-09-15 00:00:00    a.com
-    0  http://a.com/articles/1    http://google.com/        xxx 2017-09-15 01:00:00    a.com
-    1  http://a.com/articles/2      http://bing.com/        yyy 2017-09-15 01:00:00    a.com
-    """
-    df = dd.read_parquet(file_names, index=False)
+    file_names = glob.glob(INPUT_MASK)
+    pf = fp.ParquetFile(file_names, root='./events')
+    pf.cats = {'customer': pf.cats['customer']}
+    dfs = (delayed(pf.read_row_group_file)(rg, pf.columns, pf.cats) for rg in pf.row_groups)
+    df = dd.from_delayed(dfs)
+    return df
 
-    # round imestamps down to an hour
+
+def group_data(df):
+    """Aggregate the DataFrame and return the grouped DataFrame.
+
+    :param df: DataFrame
+    :return: DataFrame
+    """
+    agg_info = {
+        'page_views': 'i4',
+        'visitors': 'i4',
+        'referrers': 'object',
+    }
+    agg_meta = utils.make_meta(agg_info)
+
+    # round timestamps down to an hour
     df['ts'] = df['ts'].map(lambda x: x.replace(minute=0, second=0, microsecond=0))
 
-    # group on timestamp (rounded) and url
-    grouped = df.groupby(['ts', 'url'])
+    # group on customer, timestamp (rounded) and url
+    gb = df.groupby(['customer', 'url', 'ts'])
 
-    # calculate page views (count rows in each group)
-    page_views = grouped.size()
+    ag = gb.apply(lambda d: pd.DataFrame({
+        'page_views': len(d),
+        'visitors': d.session_id.count(),
+        'referrers': [d.referrer.tolist()]
+    }), meta=agg_meta)
 
-    # collect a list of referrer strings per group
-    referrers = grouped['referrer'].apply(list, meta=('referrers', 'f8'))
+    return ag
 
-    # count unique visitors (session ids)
-    visitors = grouped['session_id'].count()
 
-    # I want all of these in one dataframe now.
-    # An equivalent of:
+def transform_one(series):
+    """Takes a Series object representing a grouped dataframe row,
+    and returns a dict that can be serialized to JSON.
 
+    :return: dict
     """
-    select 
-        customer,
-        url,
-        ts,
-        count(*) as page_views,
-        count(distinct(session_id)) as visitors,
-        collect_list(referrer) as referrers
-    from df
-    group by
-        customer,
-        url,
-        ts
+    data = series.to_dict()
+    (customer, url, ts, _) = data.pop('index')
+    page_views = data.pop('page_views')
+    referrers = data.pop('referrers')
+    visitors = data.pop('visitors')
+    data.update({
+        '_id': format_id(customer, url, ts),
+        'customer': customer,
+        'url': url,
+        'ts': ts.strftime('%Y-%m-%dT%H:%M:%S'),
+        'metrics': format_metrics(visitors, page_views),
+        'referrers': format_referrers(referrers)
+    })
+    serialized = json.dumps(data)
+    return pd.DataFrame({'data': [serialized]})
+
+
+def transform_data(df):
+    """Accepts a Dask DataFrame and returns a Dask Bag, where each record is
+    a string, and the contents of the string is a JSON representation of the
+    document to be written.
+
+    :param df: DataFrame
+    :return: Bag
     """
-    def add_dicts(d1, d2):
-        ks = set(d1.keys() + d2.keys())
-        return {
-            k: d1.get(k, 0) + d2.get(k, 0)
-            for k in ks
-        }
+    # I want index to be a part of dataframe, so it is passed
+    # to the next .apply call.
+    df['index'] = df.index
+    return df.apply(transform_one, axis=1, meta={'data': str}).to_bag()
 
-    def add_dict_value(d, k):
-        d = copy.copy(d)
-        d[k] = d.get(k, 0) + 1
-        return d
 
-    def row_key(row):
-        url, _, _, ts, customer = row
-        return customer, url, ts
+def save_json(df, path):
+    """Write records as json."""
+    root_dir = os.path.dirname(path)
+    # cleanup before writing
+    if os.path.exists(root_dir):
+        shutil.rmtree(root_dir)
+    # create root directory
+    if not os.path.exists(root_dir):
+        os.makedirs(root_dir)
+    df.repartition(npartitions=1).to_textfiles(path)
 
-    def binop(agg, row):
-        url, ref, session_id, ts, customer = row
-        _, _, _, pvs, vis, refs = agg
-        refs = add_dict_value(refs, ref)
-        agg_vis = set(vis)
-        agg_vis.add(session_id)
-        return customer, url, ts, pvs + 1, agg_vis, refs
 
-    def combine(agg1, agg2):
-        _, _, _, pvs1, vis1, refs1 = agg1
-        customer, url, ts, pvs2, vis2, refs2 = agg2
-        refs = add_dicts(refs1, refs2)
-        return customer, url, ts, pvs1 + pvs2, vis1.union(vis2), refs
-
-    initial = (None, None, None, 0, set(), {})
-
-    bg = df[INPUT_FIELDS].to_bag()
-    gg = bg.foldby(row_key,
-                   binop=binop,
-                   initial=initial,
-                   combine=combine,
-                   combine_initial=initial)
-
-    res = dict(gg)
-
-    import ipdb; ipdb.set_trace()
+if __name__ == '__main__':
+    df = read_data()
+    aggregated = group_data(df)
+    prepared = transform_data(aggregated)
+    save_json(prepared, OUTPUT_MASK)

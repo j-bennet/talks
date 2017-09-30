@@ -108,5 +108,5 @@ ENV/
 
 spark-warehouse/
 metastore_db/
-aggs/
+aggs*/
 _SUCCESS

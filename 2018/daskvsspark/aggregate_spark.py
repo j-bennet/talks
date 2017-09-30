@@ -2,33 +2,14 @@
 # aggregate_spark.py
 import os
 import shutil
-from collections import Counter
 
 from pyspark.sql.types import StringType, IntegerType, MapType
 
 from context import initialize, INPUT_PATH, OUTPUT_PATH
+from common import *
 
 if os.environ.get('TZ', '') != 'UTC':
     raise Exception('Please set TZ=UTC to run this.')
-
-
-def format_id(customer, url, ts):
-    """Create a unique id for the aggregated record."""
-    return "{}|{}|{:%Y-%m-%dT%H:%M:%S}".format(url, customer, ts)
-
-
-def format_metrics(visitors, page_views):
-    """Create a dict of metrics."""
-    return {
-        "page_views": page_views,
-        "visitors": visitors
-    }
-
-
-def format_referrers(referrers):
-    """Create a dict of referrer counts."""
-    counter = Counter(referrers)
-    return dict(counter)
 
 
 def load_sql_user_functions(sqlContext):

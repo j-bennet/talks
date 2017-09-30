@@ -4,7 +4,7 @@ from pyspark.sql import SQLContext
 
 
 INPUT_PATH = "./events/"
-OUTPUT_PATH = "./aggs/"
+OUTPUT_PATH = "./aggs_spark/"
 
 
 def initialize():
