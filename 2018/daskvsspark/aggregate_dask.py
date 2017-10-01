@@ -71,6 +71,8 @@ def transform_one(series):
     :return: dict
     """
     data = series.to_dict()
+    if not data:
+        return pd.DataFrame({'data': []})
     (customer, url, ts, _) = data.pop('index')
     page_views = data.pop('page_views')
     referrers = data.pop('referrers')
