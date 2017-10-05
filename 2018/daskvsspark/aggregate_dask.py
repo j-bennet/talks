@@ -1,6 +1,7 @@
 # -*- coding: utf-8
 # aggregate_dask.py
 import glob
+import itertools as it
 import os
 import shutil
 
@@ -9,7 +10,6 @@ import fastparquet as fp
 import pandas as pd
 import simplejson as json
 from dask import delayed
-from dask.dataframe import utils
 
 from common import *
 
@@ -37,46 +37,49 @@ def group_data(df):
     :param df: DataFrame
     :return: DataFrame
     """
-    agg_info = {
-        'page_views': 'i4',
-        'visitors': 'i4',
-        'referrers': 'object',
-    }
-    agg_meta = utils.make_meta(agg_info)
-
     # round timestamps down to an hour
     df['ts'] = df['ts'].map(lambda x: x.replace(minute=0, second=0, microsecond=0))
 
     # group on customer, timestamp (rounded) and url
     gb = df.groupby(['customer', 'url', 'ts'])
 
-    ag = gb.apply(lambda d: pd.DataFrame({
-        'page_views': len(d),
-        'visitors': d.session_id.count(),
-        'referrers': [d.referrer.tolist()]
-    }), meta=agg_meta)
+    collect_list = dd.Aggregation(
+        'collect_list',
+        lambda s: s.apply(list),
+        lambda s: s.apply(lambda chunks: list(it.chain.from_iterable(chunks))),
+    )
 
-    # I want index to be a column in dataframe, so it is passed
-    # to the next .apply call.
-    ag['index'] = ag.index
+    get_length = dd.Aggregation(
+        'get_length',
+        lambda s: s.apply(len),
+        lambda s: s.apply(len),
+    )
 
-    ag = ag.reset_index(drop=True)
+    ag = gb.agg({
+        'session_id': {'visitors': 'count', 'page_views': get_length},
+        'referrer': {'referrers': collect_list}}
+    )
+
+    ag = ag.reset_index()
     return ag
 
 
 def transform_one(series):
-    """Takes a Series object representing a grouped dataframe row,
-    and returns a string (serialized JSON).
+    """Takes a Series object representing a grouped DataFrame row,
+    and returns a dict ready to be stored as JSON.
 
-    :return: dict
+    :return: pd.Series
     """
+    empty = pd.Series([], name='data')
     data = series.to_dict()
     if not data:
-        return pd.DataFrame({'data': []})
-    (customer, url, ts, _) = data.pop('index')
-    page_views = data.pop('page_views')
-    referrers = data.pop('referrers')
-    visitors = data.pop('visitors')
+        return empty
+    page_views = data.pop(('session_id', 'page_views'))
+    referrers = data.pop(('referrer', 'referrers'))
+    visitors = data.pop(('session_id', 'visitors'))
+    customer = data.pop(('customer', ''))
+    url = data.pop(('url', ''))
+    ts = data.pop(('ts', ''))
     data.update({
         '_id': format_id(customer, url, ts),
         'customer': customer,
@@ -85,8 +88,7 @@ def transform_one(series):
         'metrics': format_metrics(visitors, page_views),
         'referrers': format_referrers(referrers)
     })
-    serialized = json.dumps(data)
-    return pd.DataFrame({'data': [serialized]})
+    return pd.Series([data], name='data')
 
 
 def transform_data(ag):
@@ -95,17 +97,13 @@ def transform_data(ag):
     document to be written.
 
     :param ag: DataFrame
-    :return: Bag
+    :returns: DataFrame with one column "data" containing a dict.
     """
-    parts = dd.to_delayed(ag)
-    tasks = [delayed(transform_data)(p) for p in parts]
-    agg_meta = utils.make_meta({'data': str})
-    values = dd.from_delayed(tasks, meta=agg_meta)
-    return values.to_bag()
-    # return df.apply(transform_one, axis=1, meta={'data': str}).to_bag()
+    tr = ag.apply(transform_one, axis=1, meta={'data': str})
+    return tr
 
 
-def save_json(bg, path):
+def save_json(tr, path):
     """Write records as json."""
     root_dir = os.path.dirname(path)
 
@@ -117,7 +115,10 @@ def save_json(bg, path):
     if not os.path.exists(root_dir):
         os.makedirs(root_dir)
 
-    bg.repartition(npartitions=1).to_textfiles(path)
+    (tr.to_bag()
+       .map(lambda t: t[0])
+       .map(json.dumps)
+       .to_textfiles(path))
 
 
 if __name__ == '__main__':
