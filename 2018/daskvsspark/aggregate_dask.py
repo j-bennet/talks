@@ -35,7 +35,7 @@ def group_data(df):
     """Aggregate the DataFrame and return the grouped DataFrame.
 
     :param df: DataFrame
-    :return: DataFrame
+    :returns: DataFrame
     """
     # round timestamps down to an hour
     df['ts'] = df['ts'].map(lambda x: x.replace(minute=0, second=0, microsecond=0))
@@ -68,7 +68,7 @@ def transform_one(series):
     """Takes a Series object representing a grouped DataFrame row,
     and returns a dict ready to be stored as JSON.
 
-    :return: pd.Series
+    :returns: pd.Series
     """
     empty = pd.Series([], name='data')
     data = series.to_dict()
