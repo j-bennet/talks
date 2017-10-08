@@ -38,7 +38,7 @@ def group_data(df):
     :returns: DataFrame
     """
     # round timestamps down to an hour
-    df['ts'] = df['ts'].map(lambda x: x.replace(minute=0, second=0, microsecond=0))
+    df['ts'] = df['ts'].dt.floor('1H')
 
     # group on customer, timestamp (rounded) and url
     gb = df.groupby(['customer', 'url', 'ts'])
