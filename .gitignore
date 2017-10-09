@@ -110,3 +110,5 @@ spark-warehouse/
 metastore_db/
 aggs*/
 _SUCCESS
+
+.DS_Store
