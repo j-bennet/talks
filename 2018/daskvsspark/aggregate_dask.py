@@ -10,6 +10,7 @@ import fastparquet as fp
 import pandas as pd
 import simplejson as json
 from dask import delayed
+from dask.distributed import Client
 
 from common import *
 
@@ -122,6 +123,7 @@ def save_json(tr, path):
 
 
 if __name__ == '__main__':
+    client = Client()
     df = read_data()
     aggregated = group_data(df)
     prepared = transform_data(aggregated)
