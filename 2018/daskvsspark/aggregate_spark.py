@@ -2,6 +2,7 @@
 # aggregate_spark.py
 import os
 import shutil
+import datetime as dt
 
 from pyspark.sql.types import StringType, IntegerType, MapType
 
@@ -63,8 +64,11 @@ def save_json(df, path):
 
 
 if __name__ == '__main__':
+    started = dt.datetime.utcnow()
     sc, sqlContext = initialize()
     load_sql_user_functions(sqlContext)
     df = sqlContext.read.parquet(INPUT_PATH)
     agg = aggregate(df)
     save_json(agg, OUTPUT_PATH)
+    elapsed = dt.datetime.utcnow() - started
+    print('Done in {}.'.format(elapsed))

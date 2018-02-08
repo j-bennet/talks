@@ -1,5 +1,6 @@
 # -*- coding: utf-8
 # aggregate_dask.py
+import datetime as dt
 import glob
 import itertools as it
 import os
@@ -123,8 +124,11 @@ def save_json(tr, path):
 
 
 if __name__ == '__main__':
+    started = dt.datetime.utcnow()
     client = Client()
     df = read_data()
     aggregated = group_data(df)
     prepared = transform_data(aggregated)
     save_json(prepared, OUTPUT_MASK)
+    elapsed = dt.datetime.utcnow() - started
+    print('Done in {}.'.format(elapsed))
