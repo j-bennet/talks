@@ -5,6 +5,7 @@ import glob
 import itertools as it
 import os
 import shutil
+from collections import Counter
 
 import dask.dataframe as dd
 import fastparquet as fp
@@ -63,6 +64,10 @@ def group_data(df):
     )
 
     ag = ag.reset_index()
+
+    # get rid of multilevel columns
+    ag.columns = ['customer', 'url', 'ts', 'referrers', 'visitors', 'page_views']
+
     return ag
 
 
@@ -72,23 +77,16 @@ def transform_one(series):
 
     :returns: pd.Series
     """
-    empty = pd.Series([], name='data')
     data = series.to_dict()
     if not data:
-        return empty
-    page_views = data.pop(('session_id', 'page_views'))
-    referrers = data.pop(('referrer', 'referrers'))
-    visitors = data.pop(('session_id', 'visitors'))
-    customer = data.pop(('customer', ''))
-    url = data.pop(('url', ''))
-    ts = data.pop(('ts', ''))
+        return pd.Series([], name='data')
+    page_views = data.pop('page_views')
+    visitors = data.pop('visitors')
     data.update({
-        '_id': format_id(customer, url, ts),
-        'customer': customer,
-        'url': url,
-        'ts': ts.strftime('%Y-%m-%dT%H:%M:%S'),
+        '_id': format_id(data['customer'], data['url'], data['ts']),
+        'ts': data['ts'].strftime('%Y-%m-%dT%H:%M:%S'),
         'metrics': format_metrics(visitors, page_views),
-        'referrers': format_referrers(referrers)
+        'referrers': format_referrers(data['referrers'])
     })
     return pd.Series([data], name='data')
 
