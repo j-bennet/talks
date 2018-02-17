@@ -5,7 +5,6 @@ import glob
 import itertools as it
 import os
 import shutil
-from collections import Counter
 
 import dask.dataframe as dd
 import fastparquet as fp
@@ -52,14 +51,14 @@ def group_data(df):
         lambda s: s.apply(lambda chunks: list(it.chain.from_iterable(chunks))),
     )
 
-    get_length = dd.Aggregation(
-        'get_length',
+    get_count = dd.Aggregation(
+        'get_count',
         lambda s: s.apply(len),
         lambda s: s.apply(len),
     )
 
     ag = gb.agg({
-        'session_id': {'visitors': 'count', 'page_views': get_length},
+        'session_id': {'visitors': 'count', 'page_views': get_count},
         'referrer': {'referrers': collect_list}}
     )
 
