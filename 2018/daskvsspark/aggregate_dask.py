@@ -8,7 +8,6 @@ import shutil
 
 import dask.dataframe as dd
 import fastparquet as fp
-import pandas as pd
 import simplejson as json
 from dask import delayed
 from dask.distributed import Client
@@ -17,8 +16,6 @@ from common import *
 
 INPUT_MASK = './events/*/*/*/*/*/part*.parquet'
 OUTPUT_MASK = './aggs_dask/*.json'
-
-pd.set_option('display.expand_frame_repr', False)
 
 
 def read_data():
@@ -121,6 +118,7 @@ def save_json(tr, path):
 
 
 if __name__ == '__main__':
+    set_display_options()
     started = dt.datetime.utcnow()
     client = Client()
     df = read_data()

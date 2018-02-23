@@ -1,5 +1,11 @@
 # -*- coding: utf-8
+import pandas as pd
 from collections import Counter
+
+
+def set_display_options():
+    pd.set_option('display.max_colwidth', 1000)
+    pd.set_option('display.expand_frame_repr', False)
 
 
 def format_id(customer, url, ts):
