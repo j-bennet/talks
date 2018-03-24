@@ -1,5 +1,6 @@
 # -*- coding: utf-8
 # aggregate_spark.py
+import argparse
 import os
 import shutil
 import datetime as dt
@@ -64,11 +65,20 @@ def save_json(df, path):
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--count", type=int, default=100)
+    parser.add_argument("--wait", action='store_true', default=False)
+    args = parser.parse_args()
+    read_path = INPUT_PATH.format(event_count=args.count)
+    write_path = OUTPUT_PATH.format(event_count=args.count)
+
     started = dt.datetime.utcnow()
     sc, sqlContext = initialize()
     load_sql_user_functions(sqlContext)
-    df = sqlContext.read.parquet(INPUT_PATH)
+    df = sqlContext.read.parquet(read_path)
     agg = aggregate(df)
-    save_json(agg, OUTPUT_PATH)
+    save_json(agg, write_path)
     elapsed = dt.datetime.utcnow() - started
     print('Done in {}.'.format(elapsed))
+    if args.wait:
+        raw_input('Press any key')

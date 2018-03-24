@@ -1,5 +1,6 @@
 # -*- coding: utf-8
 # aggregate_dask.py
+import argparse
 import datetime as dt
 import glob
 import itertools as it
@@ -14,16 +15,17 @@ from dask.distributed import Client
 
 from common import *
 
-INPUT_MASK = './events/*/*/*/*/*/part*.parquet'
-OUTPUT_MASK = './aggs_dask/*.json'
+INPUT_MASK = './events/{event_count}/*/*/*/*/*/part*.parquet'
+INPUT_ROOT = './events/{event_count}'
+OUTPUT_MASK = './aggs_dask/{event_count}/*.json'
 
 
-def read_data():
+def read_data(read_path, read_root):
     """Reads the original Parquet data.
     :returns: DataFrame
     """
-    file_names = glob.glob(INPUT_MASK)
-    pf = fp.ParquetFile(file_names, root='./events')
+    file_names = glob.glob(read_path)
+    pf = fp.ParquetFile(file_names, root=read_root)
     pf.cats = {'customer': pf.cats['customer']}
     dfs = (delayed(pf.read_row_group_file)(rg, pf.columns, pf.cats) for rg in pf.row_groups)
     df = dd.from_delayed(dfs)
@@ -118,12 +120,23 @@ def save_json(tr, path):
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--count", type=int, default=100)
+    parser.add_argument("--wait", action='store_true', default=False)
+    args = parser.parse_args()
+    read_path = INPUT_MASK.format(event_count=args.count)
+    read_root = INPUT_ROOT.format(event_count=args.count)
+    write_path = OUTPUT_MASK.format(event_count=args.count)
+
     set_display_options()
     started = dt.datetime.utcnow()
     client = Client()
-    df = read_data()
+    print(client.scheduler_info())
+    df = read_data(read_path, read_root)
     aggregated = group_data(df)
     prepared = transform_data(aggregated)
-    save_json(prepared, OUTPUT_MASK)
+    save_json(prepared, write_path)
     elapsed = dt.datetime.utcnow() - started
     print('Done in {}.'.format(elapsed))
+    if args.wait:
+        raw_input('Press any key')

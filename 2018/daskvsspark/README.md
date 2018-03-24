@@ -15,10 +15,20 @@ environment variables:
   export PYTHONPATH="$SPARK_HOME/python/lib/pyspark.zip:$SPARK_HOME/python/lib/py4j-0.10.4-src.zip:$PYTHONPATH"
 ```
 
-you can run any Spark script as simply as:
+you can run a Spark script as simply as:
 
 ```
-python xxx.py
+python main.py
+```
+
+The above is good enough for testing. In real life, you'd use ``spark-submit``:
+
+```
+PYSPARK_DRIVER_PYTHON=`which python` PYSPARK_PYTHON=`which python` \
+    spark-submit \
+    --master "local[4]" \
+    --deploy-mode client \
+    main.py
 ```
 
 Generate input data
@@ -28,8 +38,17 @@ A script is included to mock some input data. It writes Parquet to `./events.py`
 To run it with Spark:
 
 ```
-python prepare.py
+prepare.sh
 ```
+
+By default, it'll generate 100 input records. You can provide a different number:
+
+```
+prepare.sh 10000
+```
+
+but make sure that all the spark-submit settings in ``prepare.sh`` (``driver-memory``,
+``executor-memory``, ``num-executors``) will work for you.
 
 Aggregate with Spark
 ---------------------
@@ -37,7 +56,7 @@ Aggregate with Spark
 Run this:
 
 ```
-TZ=UTC python aggregate_spark.py
+aggregate_spark.sh
 ```
 
 This will read the data from `./events` and write the aggregates as JSON
