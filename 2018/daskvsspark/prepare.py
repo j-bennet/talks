@@ -40,14 +40,10 @@ def generate_row():
 def get_partitions(count):
     if count <= 1000:
         return 1
-    elif count <= 10000:
-        return 10
     elif count <= 1000000:
-        return 25
-    elif count <= 10000000:
-        return 50
+        return 4
     else:
-        return 100
+        return count / 1000000
 
 
 def generate_rows(sc, count):
