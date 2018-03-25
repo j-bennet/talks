@@ -40,10 +40,10 @@ def generate_row():
 def get_partitions(count):
     if count <= 1000:
         return 1
-    elif count <= 1000000:
-        return 4
+    elif count <= 5000000:
+        return 2
     else:
-        return count / 1000000
+        return count / 5000000
 
 
 def generate_rows(sc, count):
@@ -51,7 +51,7 @@ def generate_rows(sc, count):
     random.seed(count)
     partitions = get_partitions(count)
     partition_size = count / partitions
-    print('Generating {} partition(s) with {} records each...'.format(partitions, partition_size))
+    print('Generating {} partition(s) with {:,} records each...'.format(partitions, partition_size))
     data = (sc.parallelize([], partitions)
               .mapPartitions(lambda i: (generate_row() for _ in xrange(partition_size))))
     return data
@@ -70,7 +70,7 @@ if __name__ == '__main__':
     data = generate_rows(sc, args.count)
     df = sqlContext.createDataFrame(data, MY_SCHEMA)
 
-    print('Generated {} records in {}.'.format(args.count, dt.datetime.now() - started))
+    print('Generated {:,} records in {}.'.format(args.count, dt.datetime.now() - started))
 
     write_path = INPUT_PATH.format(event_count=args.count)
     # cleanup before writing
@@ -79,7 +79,7 @@ if __name__ == '__main__':
 
     # write parquet
     started = dt.datetime.now()
-    print('Writing {} records with {} partitions...'.format(args.count, df.rdd.getNumPartitions()))
+    print('Writing {:,} records with {} partitions...'.format(args.count, df.rdd.getNumPartitions()))
     (df.write
        .parquet(write_path, partitionBy=PARTITION_FIELDS, compression='gzip'))
-    print('Wrote {} records in {}.'.format(args.count, dt.datetime.now() - started))
+    print('Wrote {:,} records in {}.'.format(args.count, dt.datetime.now() - started))
