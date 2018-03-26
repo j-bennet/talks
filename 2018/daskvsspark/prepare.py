@@ -3,8 +3,8 @@
 import argparse
 import datetime as dt
 import os
-import shutil
 import random
+import sys
 
 import pytz
 
@@ -37,49 +37,54 @@ def generate_row():
     )
 
 
-def get_partitions(count):
-    if count <= 1000:
-        return 1
-    elif count <= 5000000:
-        return 2
-    else:
-        return count / 5000000
+def nfiles(records, records_per_file):
+    parts_per_hour = max(1, records / records_per_file / 24)
+    total_files = parts_per_hour * 24
+    return parts_per_hour, total_files
 
 
-def generate_rows(sc, count):
+def generate_rows(sc, records, records_per_file):
     """Generate data."""
-    random.seed(count)
-    partitions = get_partitions(count)
-    partition_size = count / partitions
-    print('Generating {} partition(s) with {:,} records each...'.format(partitions, partition_size))
-    data = (sc.parallelize([], partitions)
-              .mapPartitions(lambda i: (generate_row() for _ in xrange(partition_size))))
+    random.seed(records)
+    parts_per_hour, total_files = nfiles(records, records_per_file)
+    part_size = records / parts_per_hour
+    actual_records_per_file = records / total_files
+    print('Generating {} files(s) with {:,} ({:,} actual) records each...'.format(
+        total_files,
+        records_per_file,
+        actual_records_per_file))
+    data = (sc.parallelize([], parts_per_hour)
+              .mapPartitions(lambda i: (generate_row() for _ in xrange(part_size))))
     return data
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--count", type=int, default=100)
+    parser.add_argument("--chunk-size", type=int, default=100000)
     args = parser.parse_args()
+
+    total_files = nfiles(args.count, args.chunk_size)[1]
+    write_path = INPUT_PATH.format(event_count=args.count, nfiles=total_files)
+
+    # cleanup before writing
+    if os.path.exists(write_path):
+        print('Path exists: {}. Exiting.'.format(write_path))
+        sys.exit(0)
 
     sc, sqlContext = initialize()
 
     # mock some data
     started = dt.datetime.now()
     print('Generating data...')
-    data = generate_rows(sc, args.count)
+    data = generate_rows(sc, args.count, args.chunk_size)
     df = sqlContext.createDataFrame(data, MY_SCHEMA)
 
     print('Generated {:,} records in {}.'.format(args.count, dt.datetime.now() - started))
 
-    write_path = INPUT_PATH.format(event_count=args.count)
-    # cleanup before writing
-    if os.path.exists(write_path):
-        shutil.rmtree(write_path)
-
     # write parquet
     started = dt.datetime.now()
-    print('Writing {:,} records with {} partitions...'.format(args.count, df.rdd.getNumPartitions()))
+    print('Writing {:,} records...'.format(args.count))
     (df.write
        .parquet(write_path, partitionBy=PARTITION_FIELDS, compression='gzip'))
     print('Wrote {:,} records in {}.'.format(args.count, dt.datetime.now() - started))

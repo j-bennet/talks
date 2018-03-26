@@ -3,8 +3,8 @@ from pyspark.context import SparkContext, SparkConf
 from pyspark.sql import SQLContext
 
 # template path. Event_count will be replaced by a number.
-INPUT_PATH = "./events/{event_count}/"
-OUTPUT_PATH = "./aggs_spark/{event_count}/"
+INPUT_PATH = "./events/{nfiles}.{event_count}/"
+OUTPUT_PATH = "./aggs_spark/{nfiles}.{event_count}/"
 
 
 def initialize():
