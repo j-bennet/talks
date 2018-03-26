@@ -10,12 +10,13 @@ import pytz
 
 from context import initialize, INPUT_PATH
 from schema import MY_SCHEMA, PARTITION_FIELDS
+from pyspark.sql.types import *
 
 
 DATE = dt.datetime(2017, 9, 17)
 
 
-def generate_row():
+def generate_row(partition_number):
     """Create page view event."""
     # tuple fields:
     # customer, url, referrer, session_id, ts, year, month, day, hour
@@ -33,7 +34,8 @@ def generate_row():
         '{:04}'.format(DATE.year),
         '{:02}'.format(DATE.month),
         '{:02}'.format(DATE.day),
-        '{:02}'.format(hour)
+        '{:02}'.format(hour),
+        partition_number
     )
 
 
@@ -49,12 +51,13 @@ def generate_rows(sc, records, records_per_file):
     parts_per_hour, total_files = nfiles(records, records_per_file)
     part_size = records / parts_per_hour
     actual_records_per_file = records / total_files
-    print('Generating {} files(s) with {:,} ({:,} actual) records each...'.format(
+    print('Generating {} files(s) ({:,} per hour) with {:,} ({:,} actual) records each...'.format(
         total_files,
+        parts_per_hour,
         records_per_file,
         actual_records_per_file))
     data = (sc.parallelize([], parts_per_hour)
-              .mapPartitions(lambda i: (generate_row() for _ in xrange(part_size))))
+              .mapPartitionsWithIndex(lambda i, rs: (generate_row(i) for _ in xrange(part_size))))
     return data
 
 
@@ -64,7 +67,7 @@ if __name__ == '__main__':
     parser.add_argument("--chunk-size", type=int, default=100000)
     args = parser.parse_args()
 
-    total_files = nfiles(args.count, args.chunk_size)[1]
+    parts_per_hour, total_files = nfiles(args.count, args.chunk_size)
     write_path = INPUT_PATH.format(event_count=args.count, nfiles=total_files)
 
     # cleanup before writing
@@ -78,13 +81,18 @@ if __name__ == '__main__':
     started = dt.datetime.now()
     print('Generating data...')
     data = generate_rows(sc, args.count, args.chunk_size)
-    df = sqlContext.createDataFrame(data, MY_SCHEMA)
+    tmp_schema = MY_SCHEMA.add(StructField('pn', IntegerType(), nullable=False))
+    tmp_fields = PARTITION_FIELDS + ['pn']
+    df = sqlContext.createDataFrame(data, tmp_schema)
 
-    print('Generated {:,} records in {}.'.format(args.count, dt.datetime.now() - started))
+    print('Generated {:,} records with {:,} files per hour in {}.'.format(
+        args.count, parts_per_hour, dt.datetime.now() - started))
 
     # write parquet
     started = dt.datetime.now()
     print('Writing {:,} records...'.format(args.count))
-    (df.write
+    (df.repartition(*tmp_fields)
+       .drop('pn')
+       .write
        .parquet(write_path, partitionBy=PARTITION_FIELDS, compression='gzip'))
     print('Wrote {:,} records in {}.'.format(args.count, dt.datetime.now() - started))
