@@ -10,12 +10,14 @@ import shutil
 import dask.dataframe as dd
 import fastparquet as fp
 import simplejson as json
+
+import dask
 from dask import delayed
 from dask.distributed import Client
 
 from common import *
 
-INPUT_MASK = './events/{event_count}/*/*/*/*/*/part*.parquet'
+INPUT_MASK = './events/{event_count}/year=*/month=*/day=*/hour=*/*/part*.parquet'
 INPUT_ROOT = './events/{event_count}'
 OUTPUT_MASK = './aggs_dask/{event_count}/*.json'
 
@@ -26,7 +28,7 @@ def read_data(read_path, read_root):
     """
     file_names = glob.glob(read_path)
     pf = fp.ParquetFile(file_names, root=read_root)
-    pf.cats = {'customer': pf.cats['customer']}
+    pf.cats = {'customer': ['a.com']}
     dfs = (delayed(pf.read_row_group_file)(rg, pf.columns, pf.cats) for rg in pf.row_groups)
     df = dd.from_delayed(dfs)
     return df
@@ -65,6 +67,7 @@ def group_data(df):
 
     # get rid of multilevel columns
     ag.columns = ['customer', 'url', 'ts', 'referrers', 'visitors', 'page_views']
+    ag = ag.repartition(npartitions=df.npartitions)
 
     return ag
 
@@ -98,6 +101,7 @@ def transform_data(ag):
     :returns: DataFrame with one column "data" containing a dict.
     """
     tr = ag.apply(transform_one, axis=1, meta={'data': str})
+    tr = tr.repartition(npartitions=ag.npartitions)
     return tr
 
 
@@ -121,8 +125,9 @@ def save_json(tr, path):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--count", type=int, default=100)
-    parser.add_argument("--wait", action='store_true', default=False)
+    parser.add_argument('--count', type=int, default=100)
+    parser.add_argument('--wait', action='store_true', default=False)
+    parser.add_argument('--scheduler', choices=['thread', 'process', 'default'])
     args = parser.parse_args()
     read_path = INPUT_MASK.format(event_count=args.count)
     read_root = INPUT_ROOT.format(event_count=args.count)
@@ -130,13 +135,23 @@ if __name__ == '__main__':
 
     set_display_options()
     started = dt.datetime.utcnow()
-    client = Client()
-    print(client.scheduler_info())
-    df = read_data(read_path, read_root)
-    aggregated = group_data(df)
-    prepared = transform_data(aggregated)
-    save_json(prepared, write_path)
-    elapsed = dt.datetime.utcnow() - started
-    print('Done in {}.'.format(elapsed))
-    if args.wait:
-        raw_input('Press any key')
+    if args.scheduler != 'default':
+        print('Scheduler: {}.'.format(args.scheduler))
+        getters = {'process': dask.multiprocessing.get,
+                   'thread': dask.threaded.get}
+        dask.set_options(get=getters[args.scheduler])
+
+    try:
+        client = Client()
+        df = read_data(read_path, read_root)
+        aggregated = group_data(df)
+        prepared = transform_data(aggregated)
+        save_json(prepared, write_path)
+        elapsed = dt.datetime.utcnow() - started
+        print('Done in {}.'.format(elapsed))
+        if args.wait:
+            raw_input('Press any key')
+    except:
+        elapsed = dt.datetime.utcnow() - started
+        print('Failed in {}.'.format(elapsed))
+        raise
