@@ -61,7 +61,7 @@ def save_json(df, path):
     # cleanup before writing
     if os.path.exists(path):
         shutil.rmtree(path)
-    df.coalesce(1).write.json(path)
+    df.write.json(path)
 
 
 if __name__ == '__main__':
