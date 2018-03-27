@@ -67,18 +67,24 @@ def save_json(df, path):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--count", type=int, default=100)
+    parser.add_argument("--nfiles", type=int, default=24)
     parser.add_argument("--wait", action='store_true', default=False)
     args = parser.parse_args()
-    read_path = INPUT_PATH.format(event_count=args.count)
-    write_path = OUTPUT_PATH.format(event_count=args.count)
+
+    read_path = INPUT_PATH.format(event_count=args.count, nfiles=args.nfiles)
+    write_path = OUTPUT_PATH.format(event_count=args.count, nfiles=args.nfiles)
 
     started = dt.datetime.utcnow()
     sc, sqlContext = initialize()
     load_sql_user_functions(sqlContext)
+    sqlContext.setConf('spark.sql.shuffle.partitions', args.nfiles)
     df = sqlContext.read.parquet(read_path)
     agg = aggregate(df)
     save_json(agg, write_path)
     elapsed = dt.datetime.utcnow() - started
-    print('Done in {}.'.format(elapsed))
+
+    parts_per_hour = args.nfiles / 24
+    print('{:,} records, {} files ({} per hour): done in {}.'.format(
+        args.count, args.nfiles, parts_per_hour, elapsed))
     if args.wait:
         raw_input('Press any key')

@@ -6,6 +6,14 @@ then
 else
     COUNT=100
 fi
+
+if [ ! -z $2 ]
+then
+    NFILES=$2
+else
+    NFILES=24
+fi
+
 TZ=UTC PYSPARK_DRIVER_PYTHON=`which python` PYSPARK_PYTHON=`which python` \
     $SPARK_HOME/bin/spark-submit \
     --master "local[4]" \
@@ -13,4 +21,4 @@ TZ=UTC PYSPARK_DRIVER_PYTHON=`which python` PYSPARK_PYTHON=`which python` \
     --driver-memory 6g \
     --executor-memory 2g \
     --num-executors 4 \
-    aggregate_spark.py --count $COUNT
+    aggregate_spark.py --count $COUNT --nfiles $NFILES
