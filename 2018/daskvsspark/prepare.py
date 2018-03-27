@@ -16,7 +16,7 @@ from pyspark.sql.types import *
 DATE = dt.datetime(2017, 9, 17)
 
 
-def generate_row(partition_number):
+def generate_row():
     """Create page view event."""
     # tuple fields:
     # customer, url, referrer, session_id, ts, year, month, day, hour
@@ -34,8 +34,7 @@ def generate_row(partition_number):
         '{:04}'.format(DATE.year),
         '{:02}'.format(DATE.month),
         '{:02}'.format(DATE.day),
-        '{:02}'.format(hour),
-        partition_number
+        '{:02}'.format(hour)
     )
 
 
@@ -57,7 +56,7 @@ def generate_rows(sc, records, records_per_file):
         records_per_file,
         actual_records_per_file))
     data = (sc.parallelize([], parts_per_hour)
-              .mapPartitionsWithIndex(lambda i, rs: (generate_row(i) for _ in xrange(part_size))))
+              .mapPartitions(lambda rs: (generate_row() for _ in xrange(part_size))))
     return data
 
 
@@ -81,9 +80,7 @@ if __name__ == '__main__':
     started = dt.datetime.now()
     print('Generating data...')
     data = generate_rows(sc, args.count, args.chunk_size)
-    tmp_schema = MY_SCHEMA.add(StructField('pn', IntegerType(), nullable=False))
-    tmp_fields = PARTITION_FIELDS + ['pn']
-    df = sqlContext.createDataFrame(data, tmp_schema)
+    df = sqlContext.createDataFrame(data, MY_SCHEMA)
 
     print('Generated {:,} records with {:,} files per hour in {}.'.format(
         args.count, parts_per_hour, dt.datetime.now() - started))
@@ -91,8 +88,6 @@ if __name__ == '__main__':
     # write parquet
     started = dt.datetime.now()
     print('Writing {:,} records...'.format(args.count))
-    (df.repartition(*tmp_fields)
-       .drop('pn')
-       .write
+    (df.write
        .parquet(write_path, partitionBy=PARTITION_FIELDS, compression='gzip'))
     print('Wrote {:,} records in {}.'.format(args.count, dt.datetime.now() - started))
