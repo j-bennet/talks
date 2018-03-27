@@ -2,35 +2,27 @@
 # aggregate_dask.py
 import argparse
 import datetime as dt
-import glob
 import itertools as it
 import os
 import shutil
 
 import dask.dataframe as dd
-import fastparquet as fp
 import simplejson as json
 
 import dask
-from dask import delayed
 from dask.distributed import Client
 
 from common import *
 
 INPUT_MASK = './events/{event_count}-{nfiles}/year=*/month=*/day=*/hour=*/*/part*.parquet'
-INPUT_ROOT = './events/{event_count}-{nfiles}'
 OUTPUT_MASK = './aggs_dask/{event_count}-{nfiles}/*.json'
 
 
-def read_data(read_path, read_root):
+def read_data(read_path):
     """Reads the original Parquet data.
     :returns: DataFrame
     """
-    file_names = glob.glob(read_path)
-    pf = fp.ParquetFile(file_names, root=read_root)
-    pf.cats = {'customer': ['a.com']}
-    dfs = (delayed(pf.read_row_group_file)(rg, pf.columns, pf.cats) for rg in pf.row_groups)
-    df = dd.from_delayed(dfs)
+    df = dd.read_parquet(read_path).drop('hour', axis=1)
     return df
 
 
@@ -132,7 +124,6 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     read_path = INPUT_MASK.format(event_count=args.count, nfiles=args.nfiles)
-    read_root = INPUT_ROOT.format(event_count=args.count, nfiles=args.nfiles)
     write_path = OUTPUT_MASK.format(event_count=args.count, nfiles=args.nfiles)
 
     set_display_options()
@@ -145,7 +136,7 @@ if __name__ == '__main__':
 
     try:
         client = Client()
-        df = read_data(read_path, read_root)
+        df = read_data(read_path)
         aggregated = group_data(df)
         prepared = transform_data(aggregated)
         save_json(prepared, write_path)
