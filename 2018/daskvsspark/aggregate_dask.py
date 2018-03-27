@@ -6,7 +6,6 @@ import itertools as it
 import os
 import shutil
 
-import numpy as np
 import dask.dataframe as dd
 import simplejson as json
 
@@ -52,9 +51,8 @@ def group_data(df):
     )
 
     ag = gb.agg({
-        'session_id': {'visitors': count_unique,
-                       'page_views': 'count'},
-        'referrer': {'referrers': collect_list}}
+        'session_id': [count_unique, 'count'],
+        'referrer': collect_list}
     )
 
     ag = ag.reset_index()
