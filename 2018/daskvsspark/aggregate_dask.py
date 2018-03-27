@@ -17,9 +17,9 @@ from dask.distributed import Client
 
 from common import *
 
-INPUT_MASK = './events/{event_count}/year=*/month=*/day=*/hour=*/*/part*.parquet'
-INPUT_ROOT = './events/{event_count}'
-OUTPUT_MASK = './aggs_dask/{event_count}/*.json'
+INPUT_MASK = './events/{event_count}-{nfiles}/year=*/month=*/day=*/hour=*/*/part*.parquet'
+INPUT_ROOT = './events/{event_count}-{nfiles}'
+OUTPUT_MASK = './aggs_dask/{event_count}-{nfiles}/*.json'
 
 
 def read_data(read_path, read_root):
@@ -126,12 +126,14 @@ def save_json(tr, path):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--count', type=int, default=100)
+    parser.add_argument('--nfiles', type=int, default=24)
     parser.add_argument('--wait', action='store_true', default=False)
     parser.add_argument('--scheduler', choices=['thread', 'process', 'default'])
     args = parser.parse_args()
-    read_path = INPUT_MASK.format(event_count=args.count)
-    read_root = INPUT_ROOT.format(event_count=args.count)
-    write_path = OUTPUT_MASK.format(event_count=args.count)
+
+    read_path = INPUT_MASK.format(event_count=args.count, nfiles=args.nfiles)
+    read_root = INPUT_ROOT.format(event_count=args.count, nfiles=args.nfiles)
+    write_path = OUTPUT_MASK.format(event_count=args.count, nfiles=args.nfiles)
 
     set_display_options()
     started = dt.datetime.utcnow()
@@ -148,7 +150,9 @@ if __name__ == '__main__':
         prepared = transform_data(aggregated)
         save_json(prepared, write_path)
         elapsed = dt.datetime.utcnow() - started
-        print('Done in {}.'.format(elapsed))
+        parts_per_hour = args.nfiles / 24
+        print('{:,} records, {} files ({} per hour): done in {}.'.format(
+            args.count, args.nfiles, parts_per_hour, elapsed))
         if args.wait:
             raw_input('Press any key')
     except:

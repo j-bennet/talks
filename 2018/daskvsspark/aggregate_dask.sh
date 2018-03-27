@@ -9,9 +9,16 @@ fi
 
 if [ ! -z $2 ]
 then
-    SCHEDULER=$2
+    NFILES=$2
+else
+    NFILES=24
+fi
+
+if [ ! -z $3 ]
+then
+    SCHEDULER=$3
 else
     SCHEDULER="default"
 fi
 
-python aggregate_dask.py --count $COUNT --scheduler $SCHEDULER
+python aggregate_dask.py --count $COUNT --nfiles $NFILES --scheduler $SCHEDULER
