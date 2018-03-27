@@ -7,13 +7,15 @@ INPUT_PATH = "./events/{event_count}-{nfiles}/"
 OUTPUT_PATH = "./aggs_spark/{event_count}-{nfiles}/"
 
 
-def initialize():
+def initialize(settings=None):
     """Returns SparkContext and SQLContext."""
     conf = SparkConf()
     extra_settings = {
         'spark.serializer': 'org.apache.spark.serializer.KryoSerializer',
         'spark.executor.extraJavaOptions': '-XX:+UseG1GC'
     }
+    if settings:
+        extra_settings.update(settings)
     conf.setAll(extra_settings.items())
     environment = {'PYTHON_EGG_CACHE': '/tmp/python-eggs'}
     sc = SparkContext(conf=conf, environment=environment)

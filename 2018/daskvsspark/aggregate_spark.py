@@ -73,11 +73,15 @@ if __name__ == '__main__':
 
     read_path = INPUT_PATH.format(event_count=args.count, nfiles=args.nfiles)
     write_path = OUTPUT_PATH.format(event_count=args.count, nfiles=args.nfiles)
+    target_partitions = args.nfiles if args.count <= 10000000 else args.nfiles * 2
 
     started = dt.datetime.utcnow()
-    sc, sqlContext = initialize()
+
+    # TODO: this can only work for local mode
+    sc, sqlContext = initialize({'spark.default.parallelism': target_partitions})
+    sqlContext.setConf('spark.sql.shuffle.partitions', target_partitions)
     load_sql_user_functions(sqlContext)
-    sqlContext.setConf('spark.sql.shuffle.partitions', args.nfiles)
+
     df = sqlContext.read.parquet(read_path)
     agg = aggregate(df)
     save_json(agg, write_path)
