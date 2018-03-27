@@ -13,7 +13,7 @@ def format_id(customer, url, ts):
     return "{}|{}|{:%Y-%m-%dT%H:%M:%S}".format(url, customer, ts)
 
 
-def format_metrics(visitors, page_views):
+def format_metrics(page_views, visitors):
     """Create a dict of metrics."""
     return {
         "page_views": page_views,

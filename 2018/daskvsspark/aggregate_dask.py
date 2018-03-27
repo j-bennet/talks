@@ -6,6 +6,7 @@ import itertools as it
 import os
 import shutil
 
+import numpy as np
 import dask.dataframe as dd
 import simplejson as json
 
@@ -44,14 +45,15 @@ def group_data(df):
         lambda s: s.apply(lambda chunks: list(it.chain.from_iterable(chunks))),
     )
 
-    get_count = dd.Aggregation(
-        'get_count',
-        lambda s: s.apply(len),
-        lambda s: s.apply(len),
+    count_unique = dd.Aggregation(
+        'count_unique',
+        lambda s: s.nunique(),
+        lambda s: s.nunique()
     )
 
     ag = gb.agg({
-        'session_id': {'visitors': 'count', 'page_views': get_count},
+        'session_id': {'visitors': count_unique,
+                       'page_views': 'count'},
         'referrer': {'referrers': collect_list}}
     )
 
@@ -78,7 +80,7 @@ def transform_one(series):
     data.update({
         '_id': format_id(data['customer'], data['url'], data['ts']),
         'ts': data['ts'].strftime('%Y-%m-%dT%H:%M:%S'),
-        'metrics': format_metrics(visitors, page_views),
+        'metrics': format_metrics(page_views, visitors),
         'referrers': format_referrers(data['referrers'])
     })
     return pd.Series([data], name='data')
