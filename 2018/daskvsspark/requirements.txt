@@ -2,6 +2,6 @@ pytz==2017.2
 simplejson==3.11.1
 
 # for dask
--e git://github.com/dask/dask.git#egg=dask
+dask[complete]
 fastparquet>=0.1.2
 python-snappy>=0.5.2
