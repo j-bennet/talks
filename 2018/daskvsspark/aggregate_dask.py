@@ -152,7 +152,10 @@ if __name__ == '__main__':
         dask.set_options(get=getters[args.scheduler])
 
     try:
-        client = Client(processes=False)
+        # workaround for "Worker failed to start":
+        # scheduler and worker have to be started in console.
+        # see https://github.com/dask/distributed/issues/1825
+        client = Client('localhost:8786')
         df = read_data(read_path)
         aggregated = group_data(df)
         prepared = transform_data(aggregated)
