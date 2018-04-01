@@ -2,7 +2,6 @@
 # aggregate_dask.py
 import argparse
 import datetime as dt
-import itertools as it
 import os
 import shutil
 
@@ -26,6 +25,23 @@ def read_data(read_path):
     return df
 
 
+def counter_chunk(ser):
+    sdf = ser.value_counts().to_frame('counts').reset_index()
+    sdf = sdf.set_index(sdf.referrer)
+    res = sdf.counts.to_dict().items()
+    return res
+
+
+def counter_agg(chunks):
+    total = Counter()
+    for chunk in chunks:
+        if not isinstance(chunk[0], tuple):
+            chunk = [chunk]
+        current = Counter(dict(chunk))
+        total = total + current
+    return total.items()
+
+
 def group_data(df):
     """Aggregate the DataFrame and return the grouped DataFrame.
 
@@ -38,10 +54,10 @@ def group_data(df):
     # group on customer, timestamp (rounded) and url
     gb = df.groupby(['customer', 'url', 'ts'])
 
-    collect_list = dd.Aggregation(
-        'collect_list',
-        lambda s: s.apply(list),
-        lambda s: s.apply(lambda chunks: list(it.chain.from_iterable(chunks))),
+    counter = dd.Aggregation(
+        'counter',
+        lambda s: counter_chunk(s),
+        lambda s: s.apply(counter_agg),
     )
 
     count_unique = dd.Aggregation(
@@ -52,7 +68,7 @@ def group_data(df):
 
     ag = gb.agg({
         'session_id': [count_unique, 'count'],
-        'referrer': collect_list}
+        'referrer': counter}
     )
 
     ag = ag.reset_index()
@@ -79,7 +95,7 @@ def transform_one(series):
         '_id': format_id(data['customer'], data['url'], data['ts']),
         'ts': data['ts'].strftime('%Y-%m-%dT%H:%M:%S'),
         'metrics': format_metrics(page_views, visitors),
-        'referrers': format_referrers(data['referrers'])
+        'referrers': dict(data['referrers'])
     })
     return pd.Series([data], name='data')
 
@@ -120,7 +136,7 @@ if __name__ == '__main__':
     parser.add_argument('--count', type=int, default=100)
     parser.add_argument('--nfiles', type=int, default=24)
     parser.add_argument('--wait', action='store_true', default=False)
-    parser.add_argument('--scheduler', choices=['thread', 'process', 'default'])
+    parser.add_argument('--scheduler', choices=['thread', 'process', 'default', 'single'])
     args = parser.parse_args()
 
     read_path = INPUT_MASK.format(event_count=args.count, nfiles=args.nfiles)
@@ -131,11 +147,12 @@ if __name__ == '__main__':
     if args.scheduler != 'default':
         print('Scheduler: {}.'.format(args.scheduler))
         getters = {'process': dask.multiprocessing.get,
-                   'thread': dask.threaded.get}
+                   'thread': dask.threaded.get,
+                   'single': dask.get}
         dask.set_options(get=getters[args.scheduler])
 
     try:
-        client = Client()
+        client = Client(processes=False)
         df = read_data(read_path)
         aggregated = group_data(df)
         prepared = transform_data(aggregated)
