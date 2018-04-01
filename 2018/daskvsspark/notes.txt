@@ -20,7 +20,7 @@ Files per hour: 41 / 171K
 -------------------------
 
 Spark
-Records      Partitions Timings
+Records      Partitions Timings Timings v2
 100:         24         0:00:11
 10,000:      24         0:00:12
 1,000,000:   24         0:00:14
@@ -28,12 +28,12 @@ Records      Partitions Timings
 100,000,000: 984        0:04:11
 
 Dask (default)
-Records      Partitions Timings
+Records      Partitions Timings Timings v2
 100:         24         0:00:05
 10,000:      24         0:00:06
 1,000,000:   24         0:00:11
-10,000,000:  96         0:01:32
-100,000,000: 984        ?
+10,000,000:  96         0:01:32 0:00:22
+100,000,000: 984              ? 0:01:48
 
 -------------------------
 Records per file: 250,000
@@ -41,14 +41,14 @@ Files per hour: 16 / 435K
 -------------------------
 
 Spark
-Records      Partitions Timings
+Records      Partitions Timings Timings v2
 10,000,000:  24         0:00:37
 100,000,000: 384        0:00:37
 
 Dask (default)
-Records      Partitions Timings
-10,000,000:  24         0:01:22
-100,000,000: 384        0:17:56
+Records      Partitions Timings Timings v2
+10,000,000:  24         0:01:22 0:00:20
+100,000,000: 384        0:17:56 0:02:11
 
 -------------------------
 Records per file: 500,000
@@ -56,12 +56,12 @@ Files per hour: 8 / 866K
 -------------------------
 
 Spark
-Records      Partitions Timings
+Records      Partitions Timings Timings v2
 100,000,000: 192        0:03:49
 
 Dask (default)
-Records      Partitions Timings
-100,000,000: 192        0:19:04
+Records      Partitions Timings Timings v2
+100,000,000: 192        0:19:04 0:01:45
 
 ---------------------------
 Records per file: 1,000,000
@@ -69,12 +69,12 @@ Files per hour: 4 / 1.7M
 ---------------------------
 
 Spark
-Records      Partitions Timings
+Records      Partitions Timings Timings v2
 100,000,000: 96         0:03:46
 
 Dask (default)
-Records      Partitions Timings
-100,000,000: 96         0:14:45
+Records      Partitions Timings Timings v2
+100,000,000: 96         0:14:45 0:01:34
 
 ---------------------------
 Records per file: 2,000,000
@@ -82,12 +82,12 @@ Files per hour: 2 / 3.4M
 ---------------------------
 
 Spark
-Records      Partitions Timings
+Records      Partitions Timings Timings v2
 100,000,000: 48         0:04:23
 
 Dask (default)
-Records      Partitions Timings
-100,000,000: 48         0:14:39
+Records      Partitions Timings Timings v2
+100,000,000: 48         0:14:39 0:01:30
 
 ---------------------------
 Records per file: 4,000,000
@@ -95,9 +95,9 @@ Files per hour: 1 / 6.8M
 ---------------------------
 
 Spark
-Records      Partitions Timings
-100,000,000: 24 (48)    0:05:10, 0:05:31
+Records      Partitions Timings Timings v2
+100,000,000: 24 (48)    0:05:10
 
 Dask (default)
-Records      Partitions Timings         
-100,000,000: 24         0:15:39
+Records      Partitions Timings Timings v2
+100,000,000: 24         0:15:39 0:01:37
