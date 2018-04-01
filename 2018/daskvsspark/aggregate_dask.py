@@ -26,18 +26,18 @@ def read_data(read_path):
 
 
 def counter_chunk(ser):
-    sdf = ser.value_counts().to_frame('counts').reset_index()
-    sdf = sdf.set_index(sdf.referrer)
-    res = sdf.counts.to_dict().items()
-    return res
+    """Return all values in series."""
+    return ser.values
 
 
 def counter_agg(chunks):
+    """Make a counter of values and return it as dict items."""
     total = Counter()
     for chunk in chunks:
-        if not isinstance(chunk[0], tuple):
-            chunk = [chunk]
-        current = Counter(dict(chunk))
+        if isinstance(chunk[0], tuple):
+            current = Counter(dict(chunk))
+        else:
+            current = Counter(chunk)
         total = total + current
     return total.items()
 
@@ -56,7 +56,7 @@ def group_data(df):
 
     counter = dd.Aggregation(
         'counter',
-        lambda s: counter_chunk(s),
+        lambda s: s.apply(counter_chunk),
         lambda s: s.apply(counter_agg),
     )
 

@@ -43,7 +43,7 @@ Files per hour: 16 / 435K
 Spark
 Records      Partitions Timings
 10,000,000:  24         0:00:37
-100,000,000: 384
+100,000,000: 384        0:00:37
 
 Dask (default)
 Records      Partitions Timings
