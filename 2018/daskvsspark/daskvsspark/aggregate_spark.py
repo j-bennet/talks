@@ -7,8 +7,8 @@ import datetime as dt
 
 from pyspark.sql.types import StringType, IntegerType, MapType
 
-from context import initialize, INPUT_PATH, OUTPUT_PATH
-from common import *
+from daskvsspark.context import initialize, INPUT_PATH, OUTPUT_PATH
+from daskvsspark.common import *
 
 if os.environ.get('TZ', '') != 'UTC':
     raise Exception('Please set TZ=UTC to run this.')
@@ -69,11 +69,11 @@ if __name__ == '__main__':
     parser.add_argument("--count", type=int, default=100)
     parser.add_argument("--nfiles", type=int, default=24)
     parser.add_argument("--wait", action='store_true', default=False)
-    args = parser.parse_args()
+    myargs = parser.parse_args()
 
-    read_path = INPUT_PATH.format(event_count=args.count, nfiles=args.nfiles)
-    write_path = OUTPUT_PATH.format(event_count=args.count, nfiles=args.nfiles)
-    target_partitions = args.nfiles if args.count <= 10000000 else args.nfiles * 2
+    read_path = INPUT_PATH.format(event_count=myargs.count, nfiles=myargs.nfiles)
+    write_path = OUTPUT_PATH.format(event_count=myargs.count, nfiles=myargs.nfiles)
+    target_partitions = myargs.nfiles if myargs.count <= 10000000 else myargs.nfiles * 2
 
     started = dt.datetime.utcnow()
 
@@ -87,8 +87,8 @@ if __name__ == '__main__':
     save_json(agg, write_path)
     elapsed = dt.datetime.utcnow() - started
 
-    parts_per_hour = args.nfiles / 24
+    parts_per_hour = myargs.nfiles / 24
     print('{:,} records, {} files ({} per hour): done in {}.'.format(
-        args.count, args.nfiles, parts_per_hour, elapsed))
-    if args.wait:
-        raw_input('Press any key')
+        myargs.count, myargs.nfiles, parts_per_hour, elapsed))
+    if myargs.wait:
+        input('Press any key')

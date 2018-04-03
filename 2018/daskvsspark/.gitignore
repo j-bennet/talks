@@ -1,0 +1,6 @@
+images/
+aggs_*/
+events/
+dask-worker-space/
+spark-warehouse/
+

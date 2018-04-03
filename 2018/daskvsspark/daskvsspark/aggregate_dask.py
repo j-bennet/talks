@@ -11,7 +11,7 @@ import simplejson as json
 import dask
 from dask.distributed import Client
 
-from common import *
+from daskvsspark.common import *
 
 INPUT_MASK = './events/{event_count}-{nfiles}/year=*/month=*/day=*/hour=*/*/part*.parquet'
 OUTPUT_MASK = './aggs_dask/{event_count}-{nfiles}/*.json'
@@ -39,7 +39,23 @@ def counter_agg(chunks):
         else:
             current = Counter(chunk)
         total = total + current
-    return total.items()
+    return list(total.items())
+
+
+def nunique_chunk(ser):
+    """Get all unique values in series."""
+    return ser.unique()
+
+
+def nunique_agg(chunks):
+    """Return number of unique values in all chunks."""
+    total = pd.Series()
+    for chunk in chunks:
+        current = pd.Series(chunk)
+        total = total.append(current)
+        total = total.drop_duplicates()
+    res = total.nunique()
+    return res
 
 
 def group_data(df):
@@ -62,8 +78,8 @@ def group_data(df):
 
     count_unique = dd.Aggregation(
         'count_unique',
-        lambda s: s.nunique(),
-        lambda s: s.nunique()
+        lambda s: s.apply(nunique_chunk),
+        lambda s: s.apply(nunique_agg)
     )
 
     ag = gb.agg({
@@ -74,19 +90,19 @@ def group_data(df):
     ag = ag.reset_index()
 
     # get rid of multilevel columns
-    ag.columns = ['customer', 'url', 'ts', 'referrers', 'visitors', 'page_views']
+    ag.columns = ['customer', 'url', 'ts', 'visitors', 'page_views', 'referrers']
     ag = ag.repartition(npartitions=df.npartitions)
 
     return ag
 
 
-def transform_one(series):
+def transform_one(ser):
     """Takes a Series object representing a grouped DataFrame row,
     and returns a dict ready to be stored as JSON.
 
     :returns: pd.Series
     """
-    data = series.to_dict()
+    data = ser.to_dict()
     if not data:
         return pd.Series([], name='data')
     page_views = data.pop('page_views')
@@ -137,35 +153,38 @@ if __name__ == '__main__':
     parser.add_argument('--nfiles', type=int, default=24)
     parser.add_argument('--wait', action='store_true', default=False)
     parser.add_argument('--scheduler', choices=['thread', 'process', 'default', 'single'])
-    args = parser.parse_args()
+    parser.add_argument('--verbose', action='store_true', default=False)
+    parser.add_argument('--address', help='Scheduler address')
+    myargs = parser.parse_args()
 
-    read_path = INPUT_MASK.format(event_count=args.count, nfiles=args.nfiles)
-    write_path = OUTPUT_MASK.format(event_count=args.count, nfiles=args.nfiles)
+    read_path = INPUT_MASK.format(event_count=myargs.count, nfiles=myargs.nfiles)
+    write_path = OUTPUT_MASK.format(event_count=myargs.count, nfiles=myargs.nfiles)
 
     set_display_options()
     started = dt.datetime.utcnow()
-    if args.scheduler != 'default':
-        print('Scheduler: {}.'.format(args.scheduler))
+    if myargs.scheduler != 'default':
+        print('Scheduler: {}.'.format(myargs.scheduler))
         getters = {'process': dask.multiprocessing.get,
                    'thread': dask.threaded.get,
                    'single': dask.get}
-        dask.set_options(get=getters[args.scheduler])
+        dask.set_options(get=getters[myargs.scheduler])
 
     try:
-        # workaround for "Worker failed to start":
+        # explicit address is a workaround for "Worker failed to start":
         # scheduler and worker have to be started in console.
         # see https://github.com/dask/distributed/issues/1825
-        client = Client('localhost:8786')
+        client = (Client(address=myargs.address, silence_logs=False) if myargs.verbose
+                  else Client(address=myargs.address))
         df = read_data(read_path)
         aggregated = group_data(df)
         prepared = transform_data(aggregated)
         save_json(prepared, write_path)
         elapsed = dt.datetime.utcnow() - started
-        parts_per_hour = args.nfiles / 24
+        parts_per_hour = myargs.nfiles / 24
         print('{:,} records, {} files ({} per hour): done in {}.'.format(
-            args.count, args.nfiles, parts_per_hour, elapsed))
-        if args.wait:
-            raw_input('Press any key')
+            myargs.count, myargs.nfiles, parts_per_hour, elapsed))
+        if myargs.wait:
+            input('Press any key')
     except:
         elapsed = dt.datetime.utcnow() - started
         print('Failed in {}.'.format(elapsed))

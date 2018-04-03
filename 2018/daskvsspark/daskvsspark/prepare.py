@@ -8,9 +8,8 @@ import sys
 
 import pytz
 
-from context import initialize, INPUT_PATH
-from schema import MY_SCHEMA, PARTITION_FIELDS
-from pyspark.sql.types import *
+from daskvsspark.context import initialize, INPUT_PATH
+from daskvsspark.schema import MY_SCHEMA, PARTITION_FIELDS
 
 
 DATE = dt.datetime(2017, 9, 17)
@@ -56,7 +55,7 @@ def generate_rows(sc, records, records_per_file):
         records_per_file,
         actual_records_per_file))
     data = (sc.parallelize([], parts_per_hour)
-              .mapPartitions(lambda rs: (generate_row() for _ in xrange(part_size))))
+              .mapPartitions(lambda rs: (generate_row() for _ in range(part_size))))
     return data
 
 
@@ -64,10 +63,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--count", type=int, default=100)
     parser.add_argument("--chunk-size", type=int, default=100000)
-    args = parser.parse_args()
+    myargs = parser.parse_args()
 
-    parts_per_hour, total_files = nfiles(args.count, args.chunk_size)
-    write_path = INPUT_PATH.format(event_count=args.count, nfiles=total_files)
+    parts_per_hour, total_files = nfiles(myargs.count, myargs.chunk_size)
+    write_path = INPUT_PATH.format(event_count=myargs.count, nfiles=total_files)
 
     # cleanup before writing
     if os.path.exists(write_path):
@@ -79,15 +78,15 @@ if __name__ == '__main__':
     # mock some data
     started = dt.datetime.now()
     print('Generating data...')
-    data = generate_rows(sc, args.count, args.chunk_size)
+    data = generate_rows(sc, myargs.count, myargs.chunk_size)
     df = sqlContext.createDataFrame(data, MY_SCHEMA)
 
     print('Generated {:,} records with {:,} files per hour in {}.'.format(
-        args.count, parts_per_hour, dt.datetime.now() - started))
+        myargs.count, parts_per_hour, dt.datetime.now() - started))
 
     # write parquet
     started = dt.datetime.now()
-    print('Writing {:,} records...'.format(args.count))
+    print('Writing {:,} records...'.format(myargs.count))
     (df.write
        .parquet(write_path, partitionBy=PARTITION_FIELDS, compression='gzip'))
-    print('Wrote {:,} records in {}.'.format(args.count, dt.datetime.now() - started))
+    print('Wrote {:,} records in {}.'.format(myargs.count, dt.datetime.now() - started))
