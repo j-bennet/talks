@@ -3,4 +3,7 @@ aggs_*/
 events/
 dask-worker-space/
 spark-warehouse/
-
+out/
+project/
+target/
+tmp*
