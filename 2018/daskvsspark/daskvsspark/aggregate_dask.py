@@ -152,7 +152,8 @@ if __name__ == '__main__':
     parser.add_argument('--count', type=int, default=100)
     parser.add_argument('--nfiles', type=int, default=24)
     parser.add_argument('--wait', action='store_true', default=False)
-    parser.add_argument('--scheduler', choices=['thread', 'process', 'default', 'single'])
+    parser.add_argument('--scheduler', choices=['thread', 'process', 'default', 'single'],
+                        default='default')
     parser.add_argument('--verbose', action='store_true', default=False)
     parser.add_argument('--address', help='Scheduler address')
     myargs = parser.parse_args()
