@@ -1,6 +1,5 @@
 # -*- coding: utf-8
 import pandas as pd
-from collections import Counter
 
 
 def set_display_options():
@@ -19,9 +18,3 @@ def format_metrics(page_views, visitors):
         "page_views": page_views,
         "visitors": visitors
     }
-
-
-def format_referrers(referrers):
-    """Create a dict of referrer counts."""
-    counter = Counter(referrers)
-    return dict(counter)

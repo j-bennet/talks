@@ -20,4 +20,5 @@ TZ=UTC PYSPARK_DRIVER_PYTHON=`which python` PYSPARK_PYTHON=`which python` \
     --driver-memory 8g \
     --executor-memory 2g \
     --num-executors 4 \
+    --driver-java-options "-Droot.logger=ERROR,console" \
     prepare.py --count $COUNT --chunk-size $CHUNKSIZE

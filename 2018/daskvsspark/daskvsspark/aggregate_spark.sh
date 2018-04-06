@@ -21,4 +21,6 @@ TZ=UTC PYSPARK_DRIVER_PYTHON=`which python` PYSPARK_PYTHON=`which python` \
     --driver-memory 6g \
     --executor-memory 2g \
     --num-executors 4 \
+    --driver-class-path ../scala/target/scala-2.11/daskvsspark-udafs_2.11-0.0.1.jar \
+    --driver-java-options "-Droot.logger=ERROR,console" \
     aggregate_spark.py --count $COUNT --nfiles $NFILES

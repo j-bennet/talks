@@ -14,7 +14,7 @@ if os.environ.get('TZ', '') != 'UTC':
     raise Exception('Please set TZ=UTC to run this.')
 
 
-def load_sql_user_functions(sqlContext):
+def load_sql_user_functions(sc, sqlContext):
     """Load our custom UDAFs into a sql context."""
     sqlContext.udf.register('format_id',
                             format_id,
@@ -22,9 +22,10 @@ def load_sql_user_functions(sqlContext):
     sqlContext.udf.register('format_metrics',
                             format_metrics,
                             MapType(StringType(), IntegerType()))
-    sqlContext.udf.register('format_referrers',
-                            format_referrers,
-                            MapType(StringType(), IntegerType()))
+
+    # custom aggregation function. Needs a jar provided in runner script.
+    agg_counter = sc._jvm.com.jbennet.daskvsspark.udafs.AggregateCounter()
+    sqlContext.sparkSession._jsparkSession.udf().register('count_values', agg_counter)
 
 
 def aggregate(df):
@@ -37,7 +38,7 @@ def aggregate(df):
       url,
       ts,
       format_metrics(page_views, visitors) as metrics,
-      format_referrers(referrers) as referrers
+      referrers
     from (
         select 
             customer,
@@ -45,7 +46,7 @@ def aggregate(df):
             window(ts, '1 hour').start as ts,
             count(*) as page_views,
             count(distinct(session_id)) as visitors,
-            collect_list(referrer) as referrers
+            count_values(referrer) as referrers
         from df
         group by
             customer,
@@ -80,7 +81,7 @@ if __name__ == '__main__':
     # TODO: this can only work for local mode
     sc, sqlContext = initialize({'spark.default.parallelism': target_partitions})
     sqlContext.setConf('spark.sql.shuffle.partitions', target_partitions)
-    load_sql_user_functions(sqlContext)
+    load_sql_user_functions(sc, sqlContext)
 
     df = sqlContext.read.parquet(read_path)
     agg = aggregate(df)
