@@ -33,90 +33,20 @@ Dask with default scheduler and python3
 100,000,000 records, 96 files (4.0 per hour): done in 0:00:38.806466.
 100,000,000 records, 984 files (41.0 per hour): done in 0:01:10.351981.
 
--------------------------
-Records per file: 100,000
-Files per hour: 41 / 171K
--------------------------
+---------------------------------
+Spark with python3 and custom agg
+---------------------------------
 
-Spark
-Records      Partitions Timings Timings v2
-100:         24         0:00:11
-10,000:      24         0:00:12
-1,000,000:   24         0:00:14
-10,000,000:  96         0:00:37
-100,000,000: 984        0:04:11
-
-Dask (default)
-Records      Partitions Timings Timings v2
-100:         24         0:00:05
-10,000:      24         0:00:06
-1,000,000:   24         0:00:11
-10,000,000:  96         0:01:32 0:00:22
-100,000,000: 984              ? 0:01:48
-
--------------------------
-Records per file: 250,000
-Files per hour: 16 / 435K
--------------------------
-
-Spark
-Records      Partitions Timings Timings v2
-10,000,000:  24         0:00:37
-100,000,000: 384        0:00:37
-
-Dask (default)
-Records      Partitions Timings Timings v2
-10,000,000:  24         0:01:22 0:00:20
-100,000,000: 384        0:17:56 0:02:11
-
--------------------------
-Records per file: 500,000
-Files per hour: 8 / 866K
--------------------------
-
-Spark
-Records      Partitions Timings Timings v2
-100,000,000: 192        0:03:49
-
-Dask (default)
-Records      Partitions Timings Timings v2
-100,000,000: 192        0:19:04 0:01:45
-
----------------------------
-Records per file: 1,000,000
-Files per hour: 4 / 1.7M
----------------------------
-
-Spark
-Records      Partitions Timings Timings v2
-100,000,000: 96         0:03:46
-
-Dask (default)
-Records      Partitions Timings Timings v2
-100,000,000: 96         0:14:45 0:01:34
-
----------------------------
-Records per file: 2,000,000
-Files per hour: 2 / 3.4M
----------------------------
-
-Spark
-Records      Partitions Timings Timings v2
-100,000,000: 48         0:04:23
-
-Dask (default)
-Records      Partitions Timings Timings v2
-100,000,000: 48         0:14:39 0:01:30
-
----------------------------
-Records per file: 4,000,000
-Files per hour: 1 / 6.8M
----------------------------
-
-Spark
-Records      Partitions Timings Timings v2
-100,000,000: 24 (48)    0:05:10
-
-Dask (default)
-Records      Partitions Timings Timings v2
-100,000,000: 24         0:15:39 0:01:37
+(talks3) --- daskvsspark/daskvsspark ‹master*M› » ./tmp_run_all_spark.sh                                                                                126 ↵
+10 records, 24 files (1.0 per hour): done in 0:00:10.601392.
+100 records, 24 files (1.0 per hour): done in 0:00:11.315226.
+10,000 records, 24 files (1.0 per hour): done in 0:00:11.744349.
+1,000,000 records, 24 files (1.0 per hour): done in 0:00:15.394712.
+10,000,000 records, 24 files (1.0 per hour): done in 0:00:29.044079.
+10,000,000 records, 96 files (4.0 per hour): done in 0:00:34.295349.
+100,000,000 records, 192 files (8.0 per hour): done in 0:02:52.175157.
+100,000,000 records, 24 files (1.0 per hour): done in 0:02:57.805231.
+100,000,000 records, 384 files (16.0 per hour): done in 0:03:14.743094.
+100,000,000 records, 48 files (2.0 per hour): done in 0:02:50.821578.
+100,000,000 records, 96 files (4.0 per hour): done in 0:03:09.673154.
+100,000,000 records, 984 files (41.0 per hour): done in 0:03:41.323534.
