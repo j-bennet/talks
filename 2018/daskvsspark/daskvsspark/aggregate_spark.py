@@ -78,7 +78,6 @@ if __name__ == '__main__':
 
     started = dt.datetime.utcnow()
 
-    # TODO: this can only work for local mode
     sc, sqlContext = initialize({'spark.default.parallelism': target_partitions})
     sqlContext.setConf('spark.sql.shuffle.partitions', target_partitions)
     load_sql_user_functions(sc, sqlContext)
