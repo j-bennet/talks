@@ -40,7 +40,7 @@ def generate_row(total_articles, session_ids):
 
 
 def nfiles(records, records_per_file):
-    parts_per_hour = max(1, records / records_per_file / 24)
+    parts_per_hour = max(1, int(records / records_per_file / 24))
     total_files = parts_per_hour * 24
     return parts_per_hour, total_files
 
@@ -49,8 +49,8 @@ def generate_rows(sc, records, records_per_file):
     """Generate data."""
     random.seed(records)
     parts_per_hour, total_files = nfiles(records, records_per_file)
-    part_size = records / parts_per_hour
-    actual_records_per_file = records / total_files
+    part_size = int(records / parts_per_hour)
+    actual_records_per_file = int(records / total_files)
     print('Generating {} files(s) ({:,} per hour) with {:,} ({:,} actual) records each...'.format(
         total_files,
         parts_per_hour,
