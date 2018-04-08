@@ -15,6 +15,19 @@ Size of data:
 100000000-984: 169M
 
 
+-------------
+Partitioning:
+-------------
+
+100k, 984 files, 41 per hr
+250k, 384 files, 16 per hr
+500k, 192 files, 8 per hr
+1m, 96 files, 4 per hr
+2m, 48 files, 2 per hr *
+4m, 24 files, 1 per hr
+
+*: best for Spark and Dask
+
 ---------------------------------------
 Dask with default scheduler and python3
 ---------------------------------------
@@ -29,7 +42,7 @@ Dask with default scheduler and python3
 100,000,000 records, 192 files (8.0 per hour): done in 0:00:41.575053.
 100,000,000 records, 24 files (1.0 per hour): done in 0:01:03.122334.
 100,000,000 records, 384 files (16.0 per hour): done in 0:00:49.119739.
-100,000,000 records, 48 files (2.0 per hour): done in 0:00:37.713205.
+100,000,000 records, 48 files (2.0 per hour): done in 0:00:37.713205. *
 100,000,000 records, 96 files (4.0 per hour): done in 0:00:38.806466.
 100,000,000 records, 984 files (41.0 per hour): done in 0:01:10.351981.
 
@@ -47,6 +60,6 @@ Spark with python3 and custom agg
 100,000,000 records, 192 files (8.0 per hour): done in 0:02:52.175157.
 100,000,000 records, 24 files (1.0 per hour): done in 0:02:57.805231.
 100,000,000 records, 384 files (16.0 per hour): done in 0:03:14.743094.
-100,000,000 records, 48 files (2.0 per hour): done in 0:02:50.821578.
+100,000,000 records, 48 files (2.0 per hour): done in 0:02:50.821578. *
 100,000,000 records, 96 files (4.0 per hour): done in 0:03:09.673154.
 100,000,000 records, 984 files (41.0 per hour): done in 0:03:41.323534.
