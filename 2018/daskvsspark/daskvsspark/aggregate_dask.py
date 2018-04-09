@@ -7,6 +7,7 @@ import shutil
 
 import dask.dataframe as dd
 import simplejson as json
+from collections import Counter
 
 import dask
 from dask.distributed import Client

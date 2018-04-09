@@ -46,6 +46,7 @@ Dask with default scheduler and python3
 100,000,000 records, 48 files (2.0 per hour): done in 0:00:37.713205. *
 100,000,000 records, 96 files (4.0 per hour): done in 0:00:38.806466.
 100,000,000 records, 984 files (41.0 per hour): done in 0:01:10.351981.
+1,000,000,000 records, 500 files (20.833333333333332 per hour): done in 0:16:11.660423.
 
 ---------------------------------
 Spark with python3 and custom agg
@@ -64,3 +65,5 @@ Spark with python3 and custom agg
 100,000,000 records, 48 files (2.0 per hour): done in 0:02:50.821578. *
 100,000,000 records, 96 files (4.0 per hour): done in 0:03:09.673154.
 100,000,000 records, 984 files (41.0 per hour): done in 0:03:41.323534.
+1,000,000,000 records, 500 files (20.833333333333332 per hour): done in 0:45:08.288687.
+
