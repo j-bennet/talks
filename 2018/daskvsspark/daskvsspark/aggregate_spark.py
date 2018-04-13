@@ -59,10 +59,7 @@ def aggregate(df):
 
 def save_json(df, path):
     """Write aggregate rows as json."""
-    # cleanup before writing
-    if os.path.exists(path):
-        shutil.rmtree(path)
-    df.write.json(path)
+    df.write.mode('overwrite').json(path)
 
 
 if __name__ == '__main__':

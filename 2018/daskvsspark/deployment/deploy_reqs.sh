@@ -8,6 +8,9 @@ S3_PATH="s3://parsely-public/jbennet/daskvsspark/reqs/"
 # copy bootstrap script to s3
 aws s3 cp ../deployment/bootstrap.sh ${S3_PATH}
 
+# copy log conf
+aws s3 cp ../deployment/log4j.properties ${S3_PATH}
+
 # copy reqs to s3
 aws s3 cp ../requirements.txt ${S3_PATH}
 

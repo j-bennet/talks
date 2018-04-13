@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-# Stop at any error, show all commands
-set -ex
-
 # Are we running on a master node?
 cat /var/lib/info/instance.json | grep '"isMaster": true'
 IS_MASTER=$?
 unset PYTHON_INSTALL_LAYOUT
+
+# Stop at any error, show all commands
+set -ex
 
 
 install_python_36() {
@@ -32,14 +32,19 @@ update_packages() {
     # Do this again just in case
     unset PYTHON_INSTALL_LAYOUT
 
-    PIP="python3 -m pip"
+    PIP="sudo /usr/local/bin/pip3"
 
     cd /home/hadoop/
 
     # this includes a jar also
     aws s3 cp --recursive s3://parsely-public/jbennet/daskvsspark/reqs/ ./reqs
+    chmod +x ./reqs/*.sh
+
+    # needed to install python-snappy
+    sudo yum install -y snappy-devel
+
     $PIP install -U pip
-    $PIP install -r ./artifacts/requirements.txt
+    $PIP install -r ./reqs/requirements.txt
 }
 
 install_python_36
