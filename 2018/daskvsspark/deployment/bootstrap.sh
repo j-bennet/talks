@@ -35,6 +35,7 @@ update_packages() {
     PIP="python3 -m pip"
 
     cd /home/hadoop/
+
     # this includes a jar also
     aws s3 cp --recursive s3://parsely-public/jbennet/daskvsspark/reqs/ ./reqs
     $PIP install -U pip

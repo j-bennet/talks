@@ -10,7 +10,7 @@ import sys
 
 import pytz
 
-from daskvsspark.context import initialize, INPUT_PATH
+from daskvsspark.context import initialize, INPUT_ROOT, PATH_TEMPLATE
 from daskvsspark.schema import MY_SCHEMA, PARTITION_FIELDS
 
 
@@ -72,7 +72,7 @@ if __name__ == '__main__':
     myargs = parser.parse_args()
 
     parts_per_hour, total_files = nfiles(myargs.count, myargs.chunk_size)
-    write_path = INPUT_PATH.format(event_count=myargs.count, nfiles=total_files)
+    write_path = PATH_TEMPLATE.format(root=INPUT_ROOT, event_count=myargs.count, nfiles=total_files)
 
     # cleanup before writing
     if os.path.exists(write_path):

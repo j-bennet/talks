@@ -1,0 +1,48 @@
+[
+  {
+    "Classification": "hdfs-site",
+    "Properties": {
+      "dfs.block.size": "134217728",
+      "dfs.replication": "2"
+    }
+  },
+  {
+    "Classification": "mapred-site",
+    "Properties": {
+      "mapreduce.job.reduces": "400",
+      "mapreduce.reduce.memory.mb": "1408",
+      "mapreduce.reduce.java.opts": "-Xmx1126m"
+    }
+  },
+  {
+    "Classification": "spark-defaults",
+    "Properties": {
+      "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+      "spark.dynamicAllocation.executorIdleTimeout": "30s",
+      "spark.executor.heartbeatInterval" : "5s",
+      "spark.default.parallelism": "500",
+      "spark.sql.shuffle.partitions": "500",
+      "spark.yarn.executor.memoryOverhead": "3g",
+      "spark.executor.memory": "4g",
+      "spark.executor.cores": "4",
+      "spark.driver.memory": "15g"
+    }
+  },
+  {
+    "Classification": "zeppelin-env",
+    "Properties": {},
+    "Configurations": [
+      {
+        "Classification": "export",
+        "Properties": {
+          "ZEPPELIN_NOTEBOOK_STORAGE" : "org.apache.zeppelin.notebook.repo.S3NotebookRepo",
+          "ZEPPELIN_NOTEBOOK_S3_BUCKET": "parsely-zeppelin-notebooks",
+          "ZEPPELIN_NOTEBOOK_S3_USER": "conrad",
+          "ZEPPELIN_MEM": "\"-Xms4096m -Xmx4096m -XX:MaxPermSize=2048m\"",
+          "ZEPPELIN_INTP_MEM": "\"-Xms4096m -Xmx4096m -XX:MaxPermSize=2048m\""
+        },
+        "Configurations": []
+      }
+    ]
+  }
+]

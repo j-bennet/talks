@@ -2,7 +2,8 @@
 
 cd ..
 
-rsync -azvr --include "README.md" \
+rsync -azvr \
+    --include "README.md" \
     --include "requirements.txt" \
     --include "setup.py" \
     --include "/daskvsspark/" \

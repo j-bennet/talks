@@ -7,7 +7,7 @@ import datetime as dt
 
 from pyspark.sql.types import StringType, IntegerType, MapType
 
-from daskvsspark.context import initialize, INPUT_PATH, OUTPUT_PATH
+from daskvsspark.context import initialize, INPUT_ROOT, OUTPUT_ROOT, PATH_TEMPLATE
 from daskvsspark.common import *
 
 if os.environ.get('TZ', '') != 'UTC':
@@ -70,16 +70,19 @@ if __name__ == '__main__':
     parser.add_argument("--count", type=int, default=100)
     parser.add_argument("--nfiles", type=int, default=24)
     parser.add_argument("--wait", action='store_true', default=False)
+    parser.add_argument('--input', default=INPUT_ROOT)
+    parser.add_argument('--output', default=OUTPUT_ROOT)
     myargs = parser.parse_args()
 
-    read_path = INPUT_PATH.format(event_count=myargs.count, nfiles=myargs.nfiles)
-    write_path = OUTPUT_PATH.format(event_count=myargs.count, nfiles=myargs.nfiles)
-    target_partitions = myargs.nfiles if myargs.count <= 10000000 else myargs.nfiles * 2
+    read_path = PATH_TEMPLATE.format(root=myargs.input, event_count=myargs.count,
+                                     nfiles=myargs.nfiles)
+    write_path = PATH_TEMPLATE.format(root=myargs.output, event_count=myargs.count,
+                                      nfiles=myargs.nfiles)
+    target_partitions = myargs.nfiles
 
     started = dt.datetime.utcnow()
 
-    sc, sqlContext = initialize({'spark.default.parallelism': target_partitions})
-    sqlContext.setConf('spark.sql.shuffle.partitions', target_partitions)
+    sc, sqlContext = initialize(target_partitions=target_partitions)
     load_sql_user_functions(sc, sqlContext)
 
     df = sqlContext.read.parquet(read_path)
