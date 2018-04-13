@@ -9,7 +9,7 @@ aws emr create-cluster \
 --release-label emr-5.11.1 \
 --log-uri 's3n://parsely-emr-logs/' \
 --name 'IT Test Cluster' \
---configurations file:///./conf.json \
---instance-groups file:///./instances.json \
+--configurations file://./conf.json \
+--instance-groups file://./instances.json \
 --scale-down-behavior TERMINATE_AT_TASK_COMPLETION \
 --region us-east-1
