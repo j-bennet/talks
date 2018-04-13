@@ -37,7 +37,7 @@
         "Properties": {
           "ZEPPELIN_NOTEBOOK_STORAGE" : "org.apache.zeppelin.notebook.repo.S3NotebookRepo",
           "ZEPPELIN_NOTEBOOK_S3_BUCKET": "parsely-zeppelin-notebooks",
-          "ZEPPELIN_NOTEBOOK_S3_USER": "conrad",
+          "ZEPPELIN_NOTEBOOK_S3_USER": "irina",
           "ZEPPELIN_MEM": "\"-Xms4096m -Xmx4096m -XX:MaxPermSize=2048m\"",
           "ZEPPELIN_INTP_MEM": "\"-Xms4096m -Xmx4096m -XX:MaxPermSize=2048m\""
         },
