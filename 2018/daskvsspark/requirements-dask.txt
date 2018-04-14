@@ -1,0 +1,6 @@
+dask[complete] # with distributed
+bokeh>=0.12.15 # for UI
+fastparquet>=0.1.2 # for parquet
+python-snappy>=0.5.2 # for snappy compression in parquet
+knit>=0.2.4
+s3fs>=0.1.4

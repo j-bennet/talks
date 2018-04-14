@@ -6,7 +6,7 @@
       "EbsBlockDeviceConfigs": [
         {
           "VolumeSpecification": {
-            "SizeInGB": 16,
+            "SizeInGB": 32,
             "VolumeType": "gp2"
           },
           "VolumesPerInstance": 1
@@ -24,7 +24,7 @@
       "EbsBlockDeviceConfigs": [
         {
           "VolumeSpecification": {
-            "SizeInGB": 16,
+            "SizeInGB": 64,
             "VolumeType": "gp2"
           },
           "VolumesPerInstance": 1

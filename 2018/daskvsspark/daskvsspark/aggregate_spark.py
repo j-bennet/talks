@@ -2,7 +2,6 @@
 # aggregate_spark.py
 import argparse
 import os
-import shutil
 import datetime as dt
 
 from pyspark.sql.types import StringType, IntegerType, MapType
@@ -87,7 +86,7 @@ if __name__ == '__main__':
     save_json(agg, write_path)
     elapsed = dt.datetime.utcnow() - started
 
-    parts_per_hour = myargs.nfiles / 24
+    parts_per_hour = int(myargs.nfiles / 24)
     print('{:,} records, {} files ({} per hour): done in {}.'.format(
         myargs.count, myargs.nfiles, parts_per_hour, elapsed))
     if myargs.wait:

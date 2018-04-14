@@ -4,18 +4,22 @@ import argparse
 import datetime as dt
 import os
 import shutil
-
-import dask.dataframe as dd
-import simplejson as json
 from collections import Counter
 
 import dask
-from dask.distributed import Client
+import dask.dataframe as dd
+import s3fs
+import simplejson as json
+from dask_yarn import DaskYARNCluster
+from dask.distributed import Client, LocalCluster
 
 from daskvsspark.common import *
 
-INPUT_MASK = './events/{event_count}-{nfiles}/year=*/month=*/day=*/hour=*/*/part*.parquet'
-OUTPUT_MASK = './aggs_dask/{event_count}-{nfiles}/*.json'
+INPUT_ROOT = './events'
+OUTPUT_ROOT = './aggs_dask'
+
+INPUT_TEMPLATE = '{root}/{event_count}-{nfiles}/*/*/*/*/*/*.parquet'
+OUTPUT_TEMPLATE = '{root}/{event_count}-{nfiles}/*.json'
 
 
 def read_data(read_path):
@@ -23,6 +27,8 @@ def read_data(read_path):
     :returns: DataFrame
     """
     df = dd.read_parquet(read_path).drop('hour', axis=1)
+    print('-' * 20)
+    print(df.head(3))
     return df
 
 
@@ -130,17 +136,29 @@ def transform_data(ag):
     return tr
 
 
+def delete_path(path):
+    """Recursively delete a path and everything under it."""
+    if path.startswith('s3://'):
+        s3 = s3fs.S3FileSystem()
+        if s3.exists(path):
+            s3.rm(path)
+    elif os.path.exists(path):
+        shutil.rmtree(path)
+
+
+def create_path(path):
+    """Create root dir."""
+    if not path.startswith('s3://') and not os.path.exists(path):
+        os.makedirs(path)
+
+
 def save_json(tr, path):
     """Write records as json."""
     root_dir = os.path.dirname(path)
 
     # cleanup before writing
-    if os.path.exists(root_dir):
-        shutil.rmtree(root_dir)
-
-    # create root directory
-    if not os.path.exists(root_dir):
-        os.makedirs(root_dir)
+    delete_path(root_dir)
+    create_path(root_dir)
 
     (tr.to_bag()
        .map(lambda t: t[0])
@@ -157,10 +175,15 @@ if __name__ == '__main__':
                         default='default')
     parser.add_argument('--verbose', action='store_true', default=False)
     parser.add_argument('--address', help='Scheduler address')
+    parser.add_argument('--input', default=INPUT_ROOT)
+    parser.add_argument('--output', default=OUTPUT_ROOT)
+    parser.add_argument('--yarn', action='store_true', default=False)
     myargs = parser.parse_args()
 
-    read_path = INPUT_MASK.format(event_count=myargs.count, nfiles=myargs.nfiles)
-    write_path = OUTPUT_MASK.format(event_count=myargs.count, nfiles=myargs.nfiles)
+    read_path = INPUT_TEMPLATE.format(root=myargs.input, event_count=myargs.count,
+                                      nfiles=myargs.nfiles)
+    write_path = OUTPUT_TEMPLATE.format(root=myargs.output, event_count=myargs.count,
+                                        nfiles=myargs.nfiles)
 
     set_display_options()
     started = dt.datetime.utcnow()
@@ -172,11 +195,23 @@ if __name__ == '__main__':
         dask.set_options(get=getters[myargs.scheduler])
 
     try:
-        # explicit address is a workaround for "Worker failed to start":
-        # scheduler and worker have to be started in console.
-        # see https://github.com/dask/distributed/issues/1825
-        client = (Client(address=myargs.address, silence_logs=False) if myargs.verbose
-                  else Client(address=myargs.address))
+        if myargs.yarn:
+            cluster = DaskYARNCluster(env='/home/hadoop/reqs/dvss.zip')
+            cluster.start(n_workers=4, memory=5632, cpus=4, checks=False)
+        elif myargs.address:
+            # explicit address is a workaround for "Worker failed to start":
+            # scheduler and worker have to be started in console.
+            # see https://github.com/dask/distributed/issues/1825
+            cluster = myargs.address
+        else:
+            cluster = LocalCluster()
+
+        if myargs.verbose:
+            client = Client(address=cluster, silence_logs=False)
+        else:
+            client = Client(address=cluster)
+
+        print('Reading {}'.format(read_path))
         df = read_data(read_path)
         aggregated = group_data(df)
         prepared = transform_data(aggregated)

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Stop at any error, show all commands
+# Stop at any error
 set -e
 
 build_egg() {
@@ -34,14 +34,15 @@ TZ=UTC PYSPARK_DRIVER_PYTHON=python3 PYSPARK_PYTHON=python3 \
     --master yarn \
     --deploy-mode client \
     --driver-memory 8g \
-    --executor-memory 4g \
+    --executor-memory 3g \
+    --num-executors 6 \
     --executor-cores 4 \
-    --conf "spark.yarn.executor.memoryOverhead=3g" \
+    --conf "spark.yarn.executor.memoryOverhead=2g" \
     --conf "spark.driver.extraJavaOptions=-Dlog4j.configuration=file:///home/hadoop/reqs/log4j.properties" \
     --py-files ${latest_egg} \
     --jars /home/hadoop/reqs/daskvsspark-udafs_2.11-0.0.1.jar \
     aggregate_spark.py \
-    --input "s3://parsely-public/jbennet/daskvsspark/events/" \
-    --output "s3://parsely-public/jbennet/daskvsspark/aggs_spark/" \
+    --input "s3://parsely-public/jbennet/daskvsspark/events" \
+    --output "s3://parsely-public/jbennet/daskvsspark/aggs_spark" \
     --count $COUNT \
     --nfiles $NFILES
