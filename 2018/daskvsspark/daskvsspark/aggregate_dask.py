@@ -10,7 +10,6 @@ import dask
 import dask.dataframe as dd
 import s3fs
 import simplejson as json
-from dask_yarn import DaskYARNCluster
 from dask.distributed import Client, LocalCluster
 
 from daskvsspark.common import *
@@ -27,8 +26,6 @@ def read_data(read_path):
     :returns: DataFrame
     """
     df = dd.read_parquet(read_path).drop('hour', axis=1)
-    print('-' * 20)
-    print(df.head(3))
     return df
 
 
@@ -177,7 +174,6 @@ if __name__ == '__main__':
     parser.add_argument('--address', help='Scheduler address')
     parser.add_argument('--input', default=INPUT_ROOT)
     parser.add_argument('--output', default=OUTPUT_ROOT)
-    parser.add_argument('--yarn', action='store_true', default=False)
     myargs = parser.parse_args()
 
     read_path = INPUT_TEMPLATE.format(root=myargs.input, event_count=myargs.count,
@@ -195,10 +191,7 @@ if __name__ == '__main__':
         dask.set_options(get=getters[myargs.scheduler])
 
     try:
-        if myargs.yarn:
-            cluster = DaskYARNCluster(env='/home/hadoop/reqs/dvss.zip')
-            cluster.start(n_workers=4, memory=5632, cpus=4, checks=False)
-        elif myargs.address:
+        if myargs.address:
             # explicit address is a workaround for "Worker failed to start":
             # scheduler and worker have to be started in console.
             # see https://github.com/dask/distributed/issues/1825
@@ -211,13 +204,12 @@ if __name__ == '__main__':
         else:
             client = Client(address=cluster)
 
-        print('Reading {}'.format(read_path))
         df = read_data(read_path)
         aggregated = group_data(df)
         prepared = transform_data(aggregated)
         save_json(prepared, write_path)
         elapsed = dt.datetime.utcnow() - started
-        parts_per_hour = myargs.nfiles / 24
+        parts_per_hour = int(myargs.nfiles / 24)
         print('{:,} records, {} files ({} per hour): done in {}.'.format(
             myargs.count, myargs.nfiles, parts_per_hour, elapsed))
         if myargs.wait:

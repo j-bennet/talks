@@ -4,6 +4,8 @@
 cat /var/lib/info/instance.json | grep '"isMaster": true'
 IS_MASTER=$?
 unset PYTHON_INSTALL_LAYOUT
+export LC_ALL=C.UTF-8
+export LANG=C.UTF-8
 
 # Stop at any error, show all commands
 set -ex

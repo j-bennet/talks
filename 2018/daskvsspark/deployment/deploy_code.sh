@@ -10,4 +10,4 @@ rsync -azvr \
     --include "/daskvsspark/*.py" \
     --include "/daskvsspark/aggregate_*_yarn.sh" \
     --exclude "*" \
-    ./ hadoop@dsk:/home/hadoop/daskvsspark/
+    ./ hadoop@dvss:/home/hadoop/daskvsspark/

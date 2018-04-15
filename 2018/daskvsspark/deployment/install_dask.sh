@@ -22,6 +22,16 @@ create_conda_env() {
     conda create -n dvss --copy -y -q python=3
     echo "Installing requirements into venv"
     conda install -n dvss --copy -y -c conda-forge --file ~/reqs/requirements.txt --file ~/reqs/requirements-dask.txt
+}
+
+package_conda_env() {
+    echo "Installing daskvsspark into venv"
+    cd /home/hadoop/daskvsspark
+    ~/conda/envs/dvss/bin/python setup.py install -q
+
+    if [[ -f ~/reqs/dvss.zip ]]; then
+        rm ~/reqs/dvss.zip
+    fi
     echo "Zipping up venv"
     cd ~/conda/envs
     zip -qr dvss.zip dvss
@@ -35,5 +45,7 @@ if [[ ! -d /home/hadoop/conda ]]; then
 fi
 
 if [[ ! -f /home/hadoop/conda/envs/dvss ]]; then
-    install_conda
+    create_conda_env
 fi
+
+package_conda_env

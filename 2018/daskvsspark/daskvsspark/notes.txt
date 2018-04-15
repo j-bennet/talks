@@ -89,3 +89,15 @@ EBS Storage:16 GiB
 1,000,000,000 records, 500 files (20.833333333333332 per hour): done in 0:11:59.845888.
 [hadoop@ip-10-21-0-173 daskvsspark]$ ./aggregate_spark_yarn.sh 1000000000 500
 1,000,000,000 records, 500 files (20.833333333333332 per hour): done in 0:12:14.694722.
+
+
+Dask:
+
+n_workers=3, memory=5*1024, cpus=5
+(dvss) [hadoop@ip-10-21-0-219 daskvsspark]$ ./aggregate_dask_yarn.sh tcp://10.21.0.219:38933 1000000000 500
+Reading s3://parsely-public/jbennet/daskvsspark/events/1000000000-500/*/*/*/*/*/*.parquet
+1,000,000,000 records, 500 files (20.833333333333332 per hour): done in 0:21:01.037516.
+
+n_workers=5, memory=4548, cpus=3
+(dvss) [hadoop@ip-10-21-0-219 daskvsspark]$ ./aggregate_dask_yarn.sh tcp://10.21.0.219:35385 1000000000 500
+1,000,000,000 records, 500 files (20 per hour): done in 0:20:45.988793.
