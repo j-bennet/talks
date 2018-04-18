@@ -4,7 +4,7 @@ S3_PATH="s3://parsely-public/jbennet/daskvsspark/reqs/"
 
 # copy bootstrap script to s3
 aws s3 cp ../deployment/bootstrap.sh ${S3_PATH}
-aws s3 cp ../deployment/install_dask.sh ${S3_PATH}
+aws s3 cp ../deployment/setup_dvss.sh ${S3_PATH}
 
 # copy log conf
 aws s3 cp ../deployment/log4j.properties ${S3_PATH}

@@ -8,7 +8,7 @@ aws emr create-cluster \
 --service-role EMR_DefaultRole \
 --release-label emr-5.11.1 \
 --log-uri 's3n://parsely-emr-logs/' \
---name 'IT Test Cluster' \
+--name 'IT Testing' \
 --configurations file://./conf.json \
 --instance-groups file://./instances.json \
 --scale-down-behavior TERMINATE_AT_TASK_COMPLETION \

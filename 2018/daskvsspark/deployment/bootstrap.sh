@@ -3,6 +3,7 @@
 # Are we running on a master node?
 cat /var/lib/info/instance.json | grep '"isMaster": true'
 IS_MASTER=$?
+
 unset PYTHON_INSTALL_LAYOUT
 export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
@@ -49,5 +50,34 @@ update_packages() {
     $PIP install -r ./reqs/requirements.txt
 }
 
+install_conda() {
+    if [[ ! -d /home/hadoop/conda ]]; then
+        echo "Downloading conda"
+        wget --quiet https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
+        chmod +x ~/miniconda.sh
+
+        echo "Installing conda"
+        ~/miniconda.sh -b -p ~/conda
+
+        export PATH="/home/hadoop/conda/bin:$PATH"
+
+        echo "Updating conda"
+        conda update --yes conda
+        conda info -a
+    fi
+}
+
+create_conda_env() {
+    if [[ ! -f /home/hadoop/conda/envs/dvss ]]; then
+        echo "Creatinv venv dvss"
+        conda create -n dvss --copy -y -q python=3
+        echo "Installing requirements into venv"
+        conda install -n dvss --copy -y -c conda-forge --file ~/reqs/requirements.txt --file ~/reqs/requirements-dask.txt
+    fi
+}
+
+
 install_python_36
 update_packages
+install_conda
+create_conda_env
