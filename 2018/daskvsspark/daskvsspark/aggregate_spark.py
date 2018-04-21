@@ -62,7 +62,7 @@ def save_json(df, path):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument("--count", type=int, default=100)
     parser.add_argument("--nfiles", type=int, default=24)
     parser.add_argument("--wait", action='store_true', default=False)

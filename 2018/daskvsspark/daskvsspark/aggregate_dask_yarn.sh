@@ -37,7 +37,7 @@ cd /home/hadoop/daskvsspark/daskvsspark
 
 latest_egg=$(ls -t /home/hadoop/reqs/daskvsspark-*.egg | head -n 1)
 
-PYTHONPATH=latest_egg /home/hadoop/conda/envs/dvss/bin/python aggregate_dask.py \
+PYTHONPATH=$latest_egg /home/hadoop/conda/envs/dvss/bin/python aggregate_dask.py \
     --input "s3://parsely-public/jbennet/daskvsspark/events" \
     --output "s3://parsely-public/jbennet/daskvsspark/aggs_dask" \
     --address $ADDRESS \

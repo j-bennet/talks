@@ -60,6 +60,7 @@ install_conda() {
         ~/miniconda.sh -b -p ~/conda
 
         export PATH="/home/hadoop/conda/bin:$PATH"
+        echo 'export PATH="/home/hadoop/conda/bin:$PATH"' >> ~/.bashrc
 
         echo "Updating conda"
         conda update --yes conda

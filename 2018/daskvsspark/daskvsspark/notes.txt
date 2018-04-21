@@ -87,7 +87,7 @@ Settings used:
 
     --driver-memory 8g
     --executor-memory 3g
-    --num-executors 5
+    --num-executors 4
     --executor-cores 4
     --conf "spark.yarn.executor.memoryOverhead=2g"
 
@@ -95,51 +95,65 @@ In Dask, this would correspond to:
 
 Master:
     $ dask-scheduler
-    $ PYTHONPATH=/home/hadoop/reqs/daskvsspark-0.1-py3.6.egg dask-worker --nprocs 4 --memory-limit 2560M tcp://10.21.0.229:8786
-
-    or
-
-    $ PYTHONPATH=/home/hadoop/reqs/daskvsspark-0.1-py3.6.egg dask-worker --nthreads 4 --memory-limit 5G tcp://10.21.0.229:8786
+    $ PYTHONPATH=/home/hadoop/reqs/daskvsspark-0.1-py3.6.egg dask-worker --nthreads 4 --memory-limit 5G tcp://10.21.0.76:8786
 
 Core (2):
-    $ PYTHONPATH=/home/hadoop/reqs/daskvsspark-0.1-py3.6.egg dask-worker --nprocs 8 --memory-limit 2560M tcp://10.21.0.229:8786
+    $ PYTHONPATH=/home/hadoop/reqs/daskvsspark-0.1-py3.6.egg dask-worker --nprocs 2 --nthreads 4 --memory-limit 5G tcp://10.21.0.76:8786
 
-    or
 
-    $ PYTHONPATH=/home/hadoop/reqs/daskvsspark-0.1-py3.6.egg dask-worker --nprocs 2 --nthreads 4 --memory-limit 5G tcp://10.21.0.229:8786
-
-That needs:
+To run `aggregate_dask.sh`:
 
     $ export PATH="/home/hadoop/conda/bin:$PATH"
     $ source activate dvss
 
+
+-------------
+YARN REST API
+-------------
+
+curl -s $HOSTNAME:8088/ws/v1/cluster | jq
+curl -s $HOSTNAME:8088/ws/v1/cluster/metrics | jq
+curl -s $HOSTNAME:8088/ws/v1/cluster/scheduler | jq
+
+    "totalMB": 23040,
+    "totalVirtualCores": 16,
+    "totalNodes": 2,
 
 -----
 Spark
 -----
 
 [hadoop@ip-10-21-0-173 daskvsspark]$ ./aggregate_spark_yarn.sh 1000000000 500
-1,000,000,000 records, 500 files (20.833333333333332 per hour): done in 0:12:15.945298.
+1,000,000,000 records, 500 files (20 per hour): done in 0:12:15.945298.
 [hadoop@ip-10-21-0-173 daskvsspark]$ ./aggregate_spark_yarn.sh 1000000000 500
-1,000,000,000 records, 500 files (20.833333333333332 per hour): done in 0:11:59.845888.
+1,000,000,000 records, 500 files (20 per hour): done in 0:11:59.845888.
 [hadoop@ip-10-21-0-173 daskvsspark]$ ./aggregate_spark_yarn.sh 1000000000 500
-1,000,000,000 records, 500 files (20.833333333333332 per hour): done in 0:12:14.694722.
+1,000,000,000 records, 500 files (20 per hour): done in 0:12:14.694722.
 
 ----------
 Dask Yarn:
 ----------
 
-n_workers=3, memory=5*1024, cpus=5
-(dvss) [hadoop@ip-10-21-0-219 daskvsspark]$ ./aggregate_dask_yarn.sh tcp://10.21.0.219:38933 1000000000 500
-1,000,000,000 records, 500 files (20.833333333333332 per hour): done in 0:21:01.037516.
+n_workers=3, memory=5*1024, cpus=5: uses 15/16 cpus, but only 15/20 mem
+[hadoop@ip-10-21-0-76 daskvsspark]$ ./aggregate_dask_yarn.sh tcp://10.21.0.76:40795 1000000000 500
+1,000,000,000 records, 500 files (20 per hour): done in 0:13:59.890983.
 
-n_workers=5, memory=4548, cpus=3
-(dvss) [hadoop@ip-10-21-0-219 daskvsspark]$ ./aggregate_dask_yarn.sh tcp://10.21.0.219:35385 1000000000 500
-1,000,000,000 records, 500 files (20 per hour): done in 0:20:45.988793.
+n_workers=4, memory=5*1024, cpus=3: only uses 12 cpus, but all the mem
+[hadoop@ip-10-21-0-76 daskvsspark]$ ./aggregate_dask_yarn.sh tcp://10.21.0.76:36955 1000000000 500
+1,000,000,000 records, 500 files (20 per hour): done in 0:11:20.381808.
+
+n_workers=5, memory=3*1024, cpus=3: uses 15/16 cpus, but only 15/20 mem
+[hadoop@ip-10-21-0-76 daskvsspark]$ ./aggregate_dask_yarn.sh tcp://10.21.0.76:38815 1000000000 500
+1,000,000,000 records, 500 files (20 per hour): done in 0:11:21.899824.
+
+* few workers: not good
+* small workers: not good
 
 -------------
 Dask console:
 -------------
+
+5 workers (2 x core + 1 x master) with 4 cores and 5G memory each:
 
 (dvss) [hadoop@ip-10-21-0-229 daskvsspark]$ ./aggregate_dask_yarn.sh tcp://10.21.0.229:8786 1000000000 500
 1,000,000,000 records, 500 files (20 per hour): done in 0:09:44.437957.
@@ -147,3 +161,12 @@ Dask console:
 1,000,000,000 records, 500 files (20 per hour): done in 0:09:45.010486.
 (dvss) [hadoop@ip-10-21-0-229 daskvsspark]$ ./aggregate_dask_yarn.sh tcp://10.21.0.229:8786 1000000000 500
 1,000,000,000 records, 500 files (20 per hour): done in 0:09:40.223227.
+
+4 workers (2 x core) with 4 cores and 5G memory each:
+
+(dvss) [hadoop@ip-10-21-0-76 daskvsspark]$ ./aggregate_dask_yarn.sh tcp://10.21.0.76:8786 1000000000 500
+1,000,000,000 records, 500 files (20 per hour): done in 0:11:29.925453.
+(dvss) [hadoop@ip-10-21-0-76 daskvsspark]$ ./aggregate_dask_yarn.sh tcp://10.21.0.76:8786 1000000000 500
+1,000,000,000 records, 500 files (20 per hour): done in 0:11:37.121077.
+(dvss) [hadoop@ip-10-21-0-76 daskvsspark]$ ./aggregate_dask_yarn.sh tcp://10.21.0.76:8786 1000000000 500
+1,000,000,000 records, 500 files (20 per hour): done in 0:11:43.173057.

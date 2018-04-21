@@ -10,6 +10,7 @@ import dask
 import dask.dataframe as dd
 import s3fs
 import simplejson as json
+import pandas as pd
 from dask.distributed import Client, LocalCluster
 
 from daskvsspark.common import *
@@ -164,7 +165,7 @@ def save_json(tr, path):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('--count', type=int, default=100)
     parser.add_argument('--nfiles', type=int, default=24)
     parser.add_argument('--wait', action='store_true', default=False)

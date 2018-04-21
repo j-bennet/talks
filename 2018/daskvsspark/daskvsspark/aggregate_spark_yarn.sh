@@ -35,7 +35,7 @@ TZ=UTC PYSPARK_DRIVER_PYTHON=python3 PYSPARK_PYTHON=python3 \
     --deploy-mode client \
     --driver-memory 8g \
     --executor-memory 3g \
-    --num-executors 6 \
+    --num-executors 4 \
     --executor-cores 4 \
     --conf "spark.yarn.executor.memoryOverhead=2g" \
     --conf "spark.driver.extraJavaOptions=-Dlog4j.configuration=file:///home/hadoop/reqs/log4j.properties" \
