@@ -32,26 +32,33 @@ def aggregate(df):
     df.createOrReplaceTempView("df")
     agg = sqlContext.sql("""
     select 
+        customer,
+        url,
+        window(ts, '1 hour').start as ts,
+        count(*) as page_views,
+        count(distinct(session_id)) as visitors,
+        count_values(referrer) as referrers
+    from df
+    group by
+        customer,
+        url,
+        window(ts, '1 hour').start
+    """)
+    return agg
+
+
+def transform(df):
+    """Format as needed."""
+    df.createOrReplaceTempView("df")
+    agg = sqlContext.sql("""
+    select 
       format_id(customer, url, ts) as _id,
       customer,
       url,
       ts,
       format_metrics(page_views, visitors) as metrics,
       referrers
-    from (
-        select 
-            customer,
-            url,
-            window(ts, '1 hour').start as ts,
-            count(*) as page_views,
-            count(distinct(session_id)) as visitors,
-            count_values(referrer) as referrers
-        from df
-        group by
-            customer,
-            url,
-            window(ts, '1 hour').start
-    )
+    from df
     """)
     return agg
 
@@ -83,6 +90,7 @@ if __name__ == '__main__':
 
     df = sqlContext.read.parquet(read_path)
     agg = aggregate(df)
+    agg = transform(agg)
     save_json(agg, write_path)
     elapsed = dt.datetime.utcnow() - started
 
