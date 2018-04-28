@@ -40,6 +40,7 @@ def generate_row(total_articles, session_ids):
 
 
 def nfiles(records, records_per_file):
+    """How many files per hour, and total files to generate."""
     parts_per_hour = max(1, int(records / records_per_file / 24))
     total_files = parts_per_hour * 24
     return parts_per_hour, total_files

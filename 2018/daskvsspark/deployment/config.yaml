@@ -1,0 +1,16 @@
+scheduler:
+  serviceType: "NodePort"
+
+worker:
+  replicas: 1
+  resources:
+    limits:
+      cpu: 2
+      memory: 4G
+    requests:
+      cpu: 2
+      memory: 4G
+
+jupyter:
+  enabled: false
+

@@ -29,43 +29,49 @@ Partitioning on 100,000,000:
 
 *: best for Spark and Dask
 
----------------------------------------
-Dask with default scheduler and python3
----------------------------------------
-
-(talks3) --- daskvsspark/daskvsspark ‹master*AM› » ./tmp_run_all_dask.sh                                                                                  1 ↵
-10 records, 24 files (1.0 per hour): done in 0:00:04.280264.
-100 records, 24 files (1.0 per hour): done in 0:00:01.490881.
-10,000 records, 24 files (1.0 per hour): done in 0:00:02.811427.
-1,000,000 records, 24 files (1.0 per hour): done in 0:00:03.013248.
-10,000,000 records, 24 files (1.0 per hour): done in 0:00:06.194535.
-10,000,000 records, 96 files (4.0 per hour): done in 0:00:08.708831.
-100,000,000 records, 192 files (8.0 per hour): done in 0:00:41.575053.
-100,000,000 records, 24 files (1.0 per hour): done in 0:01:03.122334.
-100,000,000 records, 384 files (16.0 per hour): done in 0:00:49.119739.
-100,000,000 records, 48 files (2.0 per hour): done in 0:00:37.713205. *
-100,000,000 records, 96 files (4.0 per hour): done in 0:00:38.806466.
-100,000,000 records, 984 files (41.0 per hour): done in 0:01:10.351981.
-1,000,000,000 records, 500 files (20.833333333333332 per hour): done in 0:16:11.660423.
-
 ---------------------------------
 Spark with python3 and custom agg
 ---------------------------------
 
 (talks3) --- daskvsspark/daskvsspark ‹master*M› » ./tmp_run_all_spark.sh                                                                                126 ↵
-10 records, 24 files (1.0 per hour): done in 0:00:10.601392.
-100 records, 24 files (1.0 per hour): done in 0:00:11.315226.
-10,000 records, 24 files (1.0 per hour): done in 0:00:11.744349.
-1,000,000 records, 24 files (1.0 per hour): done in 0:00:15.394712.
-10,000,000 records, 24 files (1.0 per hour): done in 0:00:29.044079.
-10,000,000 records, 96 files (4.0 per hour): done in 0:00:34.295349.
-100,000,000 records, 192 files (8.0 per hour): done in 0:02:52.175157.
-100,000,000 records, 24 files (1.0 per hour): done in 0:02:57.805231.
-100,000,000 records, 384 files (16.0 per hour): done in 0:03:14.743094.
-100,000,000 records, 48 files (2.0 per hour): done in 0:02:50.821578. *
-100,000,000 records, 96 files (4.0 per hour): done in 0:03:09.673154.
-100,000,000 records, 984 files (41.0 per hour): done in 0:03:41.323534.
-1,000,000,000 records, 500 files (20.833333333333332 per hour): done in 0:45:08.288687.
+10 records, 24 files (1 per hour): done in 0:00:10.601392.
+100 records, 24 files (1 per hour): done in 0:00:11.315226.
+10,000 records, 24 files (1 per hour): done in 0:00:11.744349.
+1,000,000 records, 24 files (1 per hour): done in 0:00:15.394712.
+10,000,000 records, 24 files (1 per hour): done in 0:00:29.044079.
+10,000,000 records, 96 files (4 per hour): done in 0:00:34.295349.
+
+100,000,000 records, 984 files (41 per hour): done in 0:03:41.323534.
+100,000,000 records, 384 files (16 per hour): done in 0:03:14.743094.
+100,000,000 records, 192 files (8 per hour): done in 0:02:52.175157.
+100,000,000 records, 96 files (4 per hour): done in 0:03:09.673154.
+100,000,000 records, 48 files (2 per hour): done in 0:02:50.821578. *
+100,000,000 records, 24 files (1 per hour): done in 0:02:57.805231.
+
+1,000,000,000 records, 500 files (20 per hour): done in 0:45:08.288687.
+1,000,000,000 records, 240 files (10 per hour): done in 0:51:39.638557.
+
+---------------------------------------
+Dask with default scheduler and python3
+---------------------------------------
+
+(talks3) --- daskvsspark/daskvsspark ‹master*AM› » ./tmp_run_all_dask.sh                                                                                  1 ↵
+10 records, 24 files (1 per hour): done in 0:00:04.280264.
+100 records, 24 files (1 per hour): done in 0:00:01.490881.
+10,000 records, 24 files (1 per hour): done in 0:00:02.811427.
+1,000,000 records, 24 files (1 per hour): done in 0:00:03.013248.
+10,000,000 records, 24 files (1 per hour): done in 0:00:06.194535.
+10,000,000 records, 96 files (4 per hour): done in 0:00:08.708831.
+
+100,000,000 records, 984 files (41 per hour): done in 0:01:10.351981.
+100,000,000 records, 384 files (16 per hour): done in 0:00:49.119739.
+100,000,000 records, 192 files (8 per hour): done in 0:00:41.575053.
+100,000,000 records, 96 files (4 per hour): done in 0:00:38.806466.
+100,000,000 records, 48 files (2 per hour): done in 0:00:37.713205. *
+100,000,000 records, 24 files (1 per hour): done in 0:01:03.122334.
+
+1,000,000,000 records, 500 files (20 per hour): done in 0:16:11.660423.
+1,000,000,000 records, 240 files (10 per hour): done in 0:16:34.453926.
 
 ---------------
 Running on YARN
@@ -75,13 +81,13 @@ Master:
 -------
 m4.xlarge
 8 vCore, 16 GiB memory, EBS only storage
-EBS Storage:16 GiB
+EBS Storage:32 GiB
 
 Core: 2
 -------
 c4.2xlarge
 8 vCore, 15 GiB memory, EBS only storage
-EBS Storage:16 GiB
+EBS Storage:64 GiB
 
 Settings used:
 
@@ -134,17 +140,13 @@ Spark
 Dask Yarn:
 ----------
 
-n_workers=3, memory=5*1024, cpus=5: uses 15/16 cpus, but only 15/20 mem
-[hadoop@ip-10-21-0-76 daskvsspark]$ ./aggregate_dask_yarn.sh tcp://10.21.0.76:40795 1000000000 500
-1,000,000,000 records, 500 files (20 per hour): done in 0:13:59.890983.
-
-n_workers=4, memory=5*1024, cpus=3: only uses 12 cpus, but all the mem
+n_workers=4, memory=5*1024,4 cpus=3: only uses 12 cpus, but all the mem
 [hadoop@ip-10-21-0-76 daskvsspark]$ ./aggregate_dask_yarn.sh tcp://10.21.0.76:36955 1000000000 500
 1,000,000,000 records, 500 files (20 per hour): done in 0:11:20.381808.
-
-n_workers=5, memory=3*1024, cpus=3: uses 15/16 cpus, but only 15/20 mem
-[hadoop@ip-10-21-0-76 daskvsspark]$ ./aggregate_dask_yarn.sh tcp://10.21.0.76:38815 1000000000 500
-1,000,000,000 records, 500 files (20 per hour): done in 0:11:21.899824.
+[hadoop@ip-10-21-0-63 daskvsspark]$ ./aggregate_dask_yarn.sh tcp://10.21.0.63:46101 1000000000 500
+1,000,000,000 records, 500 files (20 per hour): done in 0:11:15.664728.
+[hadoop@ip-10-21-0-63 daskvsspark]$ ./aggregate_dask_yarn.sh tcp://10.21.0.63:46101 1000000000 500
+1,000,000,000 records, 500 files (20 per hour): done in 0:11:12.667145.
 
 * few workers: not good
 * small workers: not good
