@@ -49,6 +49,7 @@ Spark with python3 and custom agg
 100,000,000 records, 24 files (1 per hour): done in 0:02:57.805231.
 
 1,000,000,000 records, 500 files (20 per hour): done in 0:45:08.288687.
+1,000,000,000 records, 500 files (20 per hour): done in 0:41:14.634671.
 1,000,000,000 records, 240 files (10 per hour): done in 0:51:39.638557.
 
 ---------------------------------------
@@ -148,8 +149,7 @@ n_workers=4, memory=5*1024,4 cpus=3: only uses 12 cpus, but all the mem
 [hadoop@ip-10-21-0-63 daskvsspark]$ ./aggregate_dask_yarn.sh tcp://10.21.0.63:46101 1000000000 500
 1,000,000,000 records, 500 files (20 per hour): done in 0:11:12.667145.
 
-* few workers: not good
-* small workers: not good
+(5 workers and 3 workers had worse results)
 
 -------------
 Dask console:

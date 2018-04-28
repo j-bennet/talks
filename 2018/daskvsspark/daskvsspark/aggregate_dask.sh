@@ -2,23 +2,28 @@
 
 if [ ! -z $1 ]
 then
-    COUNT=$1
-else
-    COUNT=100
+    ADDRESS=$1
 fi
 
 if [ ! -z $2 ]
 then
-    NFILES=$2
+    COUNT=$2
 else
-    NFILES=24
+    COUNT=100
 fi
 
 if [ ! -z $3 ]
 then
-    SCHEDULER=$3
+    NFILES=$3
+else
+    NFILES=24
+fi
+
+if [ ! -z $4 ]
+then
+    SCHEDULER=$4
 else
     SCHEDULER="default"
 fi
 
-python aggregate_dask.py --count $COUNT --nfiles $NFILES --scheduler $SCHEDULER
+python aggregate_dask.py --count $COUNT --nfiles $NFILES --scheduler $SCHEDULER --address $ADDRESS
