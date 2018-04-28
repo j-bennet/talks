@@ -31,19 +31,16 @@ def read_data(read_path):
 
 
 def counter_chunk(ser):
-    """Return all values in series."""
-    return ser.values
+    """Return counter of values in series."""
+    return list(Counter(ser.values).items())
 
 
 def counter_agg(chunks):
-    """Make a counter of values and return it as dict items."""
+    """Add all counters together and return dict items."""
     total = Counter()
     for chunk in chunks:
-        if isinstance(chunk[0], tuple):
-            current = Counter(dict(chunk))
-        else:
-            current = Counter(chunk)
-        total = total + current
+        current = Counter(dict(chunk))
+        total += current
     return list(total.items())
 
 
