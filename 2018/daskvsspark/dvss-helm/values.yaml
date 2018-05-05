@@ -1,0 +1,42 @@
+# nameOverride: dvss
+# fullnameOverride: dvss
+
+scheduler:
+  name: scheduler
+  image:
+    repository: "jbennet/dvss-base"
+    tag: "latest"
+    pullPolicy: IfNotPresent
+  replicas: 1
+  serviceType: "NodePort"
+  servicePort: 8786
+  resources: {}
+    # limits:
+    #   cpu: 1.8
+    #   memory: 6G
+    # requests:
+    #   cpu: 1.8
+    #   memory: 6G
+
+webUI:
+  name: webui
+  servicePort: 80
+
+worker:
+  name: worker
+  image:
+    repository: "daskdev/dask"
+    tag: "latest"
+    pullPolicy: IfNotPresent
+  replicas: 4
+  aptPackages: >-
+  default_resources:
+    cpu: 1
+    memory: "4GiB"
+  resources: {}
+    # limits:
+    #   cpu: 1
+    #   memory: 3G
+    # requests:
+    #   cpu: 1
+    #   memory: 3G

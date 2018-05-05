@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "dvss.fullname" . }}-scheduler
+  labels:
+    app: {{ template "dvss.name" . }}
+    heritage: {{ .Release.Service | quote }}
+    release: {{ .Release.Name | quote }}
+    chart: {{ template "dvss.chart" . }}
+    component: scheduler
+spec:
+  ports:
+    - name: {{ template "dvss.fullname" . }}-scheduler
+      port: {{ .Values.scheduler.servicePort }}
+      targetPort: 8786
+    - name: {{ template "dvss.fullname" . }}-webui
+      port: {{ .Values.webUI.servicePort }}
+      targetPort: 8787
+  selector:
+    app: {{ template "dvss.name" . }}
+    release: {{ .Release.Name | quote }}
+    component: scheduler
+  type: {{ .Values.scheduler.serviceType }}

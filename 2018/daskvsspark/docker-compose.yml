@@ -1,0 +1,29 @@
+version: "3.1"
+
+services:
+  scheduler:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+        AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+        AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+    image: jbennet/dvss-base
+    hostname: dvss-scheduler
+    ports:
+      - "8786:8786"
+      - "8787:8787"
+    command: ["dask-scheduler"]
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+        AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+        AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+    image: jbennet/dvss-base
+    hostname: dvss-worker
+    command: ["dask-worker scheduler:8786 --nprocs 4 --nthreads 1"]

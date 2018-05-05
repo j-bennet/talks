@@ -1,0 +1,43 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: {{ template "dvss.fullname" . }}-scheduler
+  labels:
+    app: {{ template "dvss.name" . }}
+    heritage: {{ .Release.Service | quote }}
+    release: {{ .Release.Name | quote }}
+    chart: {{ template "dvss.chart" . }}
+    component: scheduler
+spec:
+  replicas: {{ .Values.scheduler.replicas }}
+  selector:
+    matchLabels:
+      app: {{ template "dvss.name" . }}
+      release: {{ .Release.Name | quote }}
+      component: scheduler
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: {{ template "dvss.name" . }}
+        release: {{ .Release.Name | quote }}
+        component: scheduler
+    spec:
+      containers:
+        - name: {{ template "dvss.fullname" . }}-scheduler
+          image: "{{ .Values.scheduler.image.repository }}:{{ .Values.scheduler.image.tag }}"
+          imagePullPolicy: {{ .Values.scheduler.image.pullPolicy }}
+          args:
+            - dask-scheduler
+            - --port
+            - "{{ .Values.scheduler.servicePort }}"
+            - --bokeh-port
+            - "8787"
+          ports:
+            - containerPort: 8786
+            - containerPort: 8787
+          resources:
+{{ toYaml .Values.scheduler.resources | indent 12 }}
+          env:
+{{ toYaml .Values.scheduler.env | indent 12 }}

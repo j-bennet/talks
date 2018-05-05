@@ -5,11 +5,11 @@ worker:
   replicas: 1
   resources:
     limits:
-      cpu: 2
-      memory: 4G
+      cpu: 4
+      memory: 8G
     requests:
-      cpu: 2
-      memory: 4G
+      cpu: 4
+      memory: 8G
 
 jupyter:
   enabled: false

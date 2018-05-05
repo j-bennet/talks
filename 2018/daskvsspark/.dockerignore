@@ -1,0 +1,16 @@
+build
+*.egg-info
+deployment
+dist
+images
+samples
+scala
+tmp
+trials
+
+**/aggs_*
+**/events
+**/*.log.*
+metastore_db
+dask-worker-space
+spark-warehouse
