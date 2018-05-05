@@ -34,7 +34,7 @@ PYSPARK_DRIVER_PYTHON=`which python` PYSPARK_PYTHON=`which python` \
 Generate input data
 -------------------
 
-A script is included to mock some input data. It writes Parquet to `./events.py`.
+A script is included to mock some input data. It writes Parquet to `./events/` directory.
 To run it with Spark:
 
 ```
