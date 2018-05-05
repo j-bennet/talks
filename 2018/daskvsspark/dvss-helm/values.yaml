@@ -1,5 +1,5 @@
-# nameOverride: dvss
-# fullnameOverride: dvss
+nameOverride: dvss
+fullnameOverride: dvss
 
 scheduler:
   name: scheduler
@@ -10,17 +10,19 @@ scheduler:
   replicas: 1
   serviceType: "NodePort"
   servicePort: 8786
-  resources: {}
-    # limits:
-    #   cpu: 1.8
-    #   memory: 6G
-    # requests:
-    #   cpu: 1.8
-    #   memory: 6G
+  nodePort: 30786
+  resources:
+     limits:
+       cpu: 1
+       memory: 1G
+     requests:
+       cpu: 1
+       memory: 1G
 
 webUI:
   name: webui
   servicePort: 80
+  nodePort: 30787
 
 worker:
   name: worker
@@ -28,15 +30,15 @@ worker:
     repository: "daskdev/dask"
     tag: "latest"
     pullPolicy: IfNotPresent
-  replicas: 4
+  replicas: 1
   aptPackages: >-
   default_resources:
-    cpu: 1
-    memory: "4GiB"
+    cpu: 4
+    memory: 12GiB
   resources: {}
-    # limits:
-    #   cpu: 1
-    #   memory: 3G
-    # requests:
-    #   cpu: 1
-    #   memory: 3G
+#     limits:
+#       cpu: 1
+#       memory: 3G
+#     requests:
+#       cpu: 1
+#       memory: 3G

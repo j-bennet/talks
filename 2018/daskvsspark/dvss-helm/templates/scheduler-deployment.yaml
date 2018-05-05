@@ -1,18 +1,18 @@
 apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
-  name: {{ template "dvss.fullname" . }}-scheduler
+  name: {{ template "dvss-helm.fullname" . }}-scheduler
   labels:
-    app: {{ template "dvss.name" . }}
+    app: {{ template "dvss-helm.name" . }}
     heritage: {{ .Release.Service | quote }}
     release: {{ .Release.Name | quote }}
-    chart: {{ template "dvss.chart" . }}
+    chart: {{ template "dvss-helm.chart" . }}
     component: scheduler
 spec:
   replicas: {{ .Values.scheduler.replicas }}
   selector:
     matchLabels:
-      app: {{ template "dvss.name" . }}
+      app: {{ template "dvss-helm.name" . }}
       release: {{ .Release.Name | quote }}
       component: scheduler
   strategy:
@@ -20,12 +20,12 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ template "dvss.name" . }}
+        app: {{ template "dvss-helm.name" . }}
         release: {{ .Release.Name | quote }}
         component: scheduler
     spec:
       containers:
-        - name: {{ template "dvss.fullname" . }}-scheduler
+        - name: {{ template "dvss-helm.fullname" . }}-scheduler
           image: "{{ .Values.scheduler.image.repository }}:{{ .Values.scheduler.image.tag }}"
           imagePullPolicy: {{ .Values.scheduler.image.pullPolicy }}
           args:

@@ -5,12 +5,20 @@ To learn more about the release, try:
   $ helm status {{ .Release.Name }}  # information about running pods and this message
   $ helm get {{ .Release.Name }}     # get full Kubernetes specification
 
-This release includes a Dask scheduler and {{ .Values.worker.replicas }} Dask workers.
+This release includes a Dask scheduler and {{ .Values.worker.replicas }} Dask worker(s), each
+with {{ .Values.worker.default_resources.cpu }} cores and {{ .Values.worker.default_resources.memory }} of memory.
 
 Dask scheduler exposes external services to connect directly to the Dask cluster. You can get
 these addresses by running the following:
 
-  export DASK_SCHEDULER=$(kubectl get svc --namespace {{ .Release.Namespace }} {{ template "dask.fullname" . }}-scheduler -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
-  export DASK_SCHEDULER_UI_IP=$(kubectl get svc --namespace {{ .Release.Namespace }} {{ template "dask.fullname" . }}-scheduler -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+{{- if contains "LoadBalancer" .Values.scheduler.serviceType }}
+  export DASK_SCHEDULER=$(kubectl get svc --namespace {{ .Release.Namespace }} {{ template "dvss-helm.fullname" . }}-scheduler -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+  export DASK_SCHEDULER_UI_IP=$(kubectl get svc --namespace {{ .Release.Namespace }} {{ template "dvss-helm.fullname" . }}-scheduler -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
   echo http://$DASK_SCHEDULER_UI_IP:{{ .Values.webUI.servicePort }}  -- Dask dashboard
   echo http://$DASK_SCHEDULER:{{ .Values.scheduler.servicePort }}    -- Dask Client connection
+{{- else if contains "NodePort" .Values.scheduler.serviceType }}
+  export DASK_SCHEDULER_PORT=$(kubectl get svc --namespace {{ .Release.Namespace }} {{ template "dvss-helm.fullname" . }}-scheduler -o jsonpath='{.spec.ports[0].nodePort}')
+  export DASK_SCHEDULER_UI_PORT=$(kubectl get svc --namespace {{ .Release.Namespace }} {{ template "dvss-helm.fullname" . }}-scheduler -o jsonpath='{.spec.ports[1].nodePort}')
+  echo http://localhost:$DASK_SCHEDULER_UI_PORT  -- Dask dashboard
+  echo http://localhost:$DASK_SCHEDULER_PORT     -- Dask Client connection
+{{- end }}

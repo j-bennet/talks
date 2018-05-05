@@ -1,18 +1,18 @@
 apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
-  name: {{ template "dvss.fullname" . }}-worker
+  name: {{ template "dvss-helm.fullname" . }}-worker
   labels:
-    app: {{ template "dvss.name" . }}
+    app: {{ template "dvss-helm.name" . }}
     heritage: {{ .Release.Service | quote }}
     release: {{ .Release.Name | quote }}
-    chart: {{ template "dvss.chart" . }}
+    chart: {{ template "dvss-helm.chart" . }}
     component: worker
 spec:
   replicas: {{ .Values.worker.replicas }}
   selector:
     matchLabels:
-      app: {{ template "dvss.name" . }}
+      app: {{ template "dvss-helm.name" . }}
       release: {{ .Release.Name | quote }}
       component: worker
   strategy:
@@ -20,23 +20,29 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ template "dvss.name" . }}
+        app: {{ template "dvss-helm.name" . }}
         release: {{ .Release.Name | quote }}
         component: worker
     spec:
       containers:
-        - name: {{ template "dvss.fullname" . }}-worker
+        - name: {{ template "dvss-helm.fullname" . }}-worker
           image: "{{ .Values.worker.image.repository }}:{{ .Values.worker.image.tag }}"
           imagePullPolicy: {{ .Values.worker.image.pullPolicy }}
           args:
             - dask-worker
-            - {{ template "dvss.fullname" . }}-scheduler:{{ .Values.scheduler.servicePort }}
-          {{- if .Values.worker.limits }}
+            {{- if .Values.worker.resources }}
+            - {{ template "dvss-helm.fullname" . }}-scheduler:{{ .Values.scheduler.servicePort }}
             - --nthreads
-            - {{ default .Values.worker.limits.cpu .Values.workers.default_resources.cpu | quote }}
+            - {{ default .Values.worker.resources.limits.cpu .Values.worker.default_resources.cpu | quote }}
             - --memory-limit
-            - {{ default .Values.worker.limits.memory .Values.workers.default_resources.memory | quote }}
-          {{- end }}
+            - {{ default .Values.worker.resources.limits.memory .Values.worker.default_resources.memory | quote }}
+            {{- else if .Values.worker.default_resources }}
+            - {{ template "dvss-helm.fullname" . }}-scheduler:{{ .Values.scheduler.servicePort }}
+            - --nthreads
+            - {{ .Values.worker.default_resources.cpu | quote }}
+            - --memory-limit
+            - {{ .Values.worker.default_resources.memory | quote }}
+            {{- end }}
             - --no-bokeh
           ports:
             - containerPort: 8789

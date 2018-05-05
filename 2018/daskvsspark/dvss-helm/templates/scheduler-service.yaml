@@ -1,23 +1,25 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "dvss.fullname" . }}-scheduler
+  name: {{ template "dvss-helm.fullname" . }}-scheduler
   labels:
-    app: {{ template "dvss.name" . }}
+    app: {{ template "dvss-helm.name" . }}
     heritage: {{ .Release.Service | quote }}
     release: {{ .Release.Name | quote }}
-    chart: {{ template "dvss.chart" . }}
+    chart: {{ template "dvss-helm.chart" . }}
     component: scheduler
 spec:
   ports:
-    - name: {{ template "dvss.fullname" . }}-scheduler
+    - name: {{ template "dvss-helm.fullname" . }}-scheduler
       port: {{ .Values.scheduler.servicePort }}
       targetPort: 8786
-    - name: {{ template "dvss.fullname" . }}-webui
+      nodePort: {{ .Values.scheduler.nodePort }}
+    - name: {{ template "dvss-helm.fullname" . }}-webui
       port: {{ .Values.webUI.servicePort }}
       targetPort: 8787
+      nodePort: {{ .Values.webUI.nodePort }}
   selector:
-    app: {{ template "dvss.name" . }}
+    app: {{ template "dvss-helm.name" . }}
     release: {{ .Release.Name | quote }}
     component: scheduler
   type: {{ .Values.scheduler.serviceType }}
