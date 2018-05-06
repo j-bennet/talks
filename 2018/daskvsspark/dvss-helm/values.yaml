@@ -27,7 +27,7 @@ webUI:
 worker:
   name: worker
   image:
-    repository: "daskdev/dask"
+    repository: "jbennet/dvss-base"
     tag: "latest"
     pullPolicy: IfNotPresent
   replicas: 1
