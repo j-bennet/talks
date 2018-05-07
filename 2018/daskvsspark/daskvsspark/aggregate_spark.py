@@ -5,6 +5,7 @@ import os
 import datetime as dt
 
 from pyspark.sql.types import StringType, IntegerType, MapType
+from pyspark.sql.column import Column, _to_java_column, _to_seq
 
 from daskvsspark.context import initialize, INPUT_ROOT, OUTPUT_ROOT, PATH_TEMPLATE
 from daskvsspark.common import *
@@ -27,11 +28,17 @@ def load_sql_user_functions(sc, sqlContext):
     sqlContext.sparkSession._jsparkSession.udf().register('count_values', agg_counter)
 
 
+def count_values(col):
+    """Register UDAF for use in aggregations outside of Spark SQL."""
+    counter = sc._jvm.com.jbennet.daskvsspark.udafs.AggregateCounter().apply
+    return Column(counter(_to_seq(sc, [col], _to_java_column)))
+
+
 def aggregate(df):
     """Group data by customer, url, and 1 hour bucket."""
     df.createOrReplaceTempView("df")
     agg = sqlContext.sql("""
-    select 
+    select
         customer,
         url,
         window(ts, '1 hour').start as ts,
