@@ -2,3 +2,4 @@ pandas
 sodapy
 jupyterlab
 matplotlib
+seaborn
