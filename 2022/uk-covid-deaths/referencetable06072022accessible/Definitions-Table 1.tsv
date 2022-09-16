@@ -1,0 +1,21 @@
+Definitions of COVID-19 deaths used in this dataset and accompanying publication				
+We use the term “involving COVID-19” when referring only to deaths where COVID-19 is mentioned anywhere on the death certificate. Information on cause of death coding is available in the User Guide to Mortality Statistics.				
+"For this analysis we define a death as involving COVID-19 if either of the ICD10 codes U07.1 (COVID-19, virus identified) or U07.2 (COVID-19, virus not identified) is mentioned on the death certificate. In contrast to the definition used in the weekly deaths released, deaths where the ICD10 code U09.9 (Post-COVID condition, where the acute COVID had ended before the condition immediately causing death occurred) is mentioned on the death certificate and neither of the other two COVID-19 codes are mentioned are not included, as they are likely to be the result of an infection caught a long time previously, and therefore not linked to the vaccination status of the person at date of death. Deaths involving U10.9 (Multisystem inflammatory syndrome associated with COVID-19) where neither U07.1 nor U07.2 are mentioned are also excluded."				
+ICD-10 code	Description			
+U07.1 	"COVID-19, virus identified"			
+U07.2	"COVID-19, virus not identified"			
+Vaccination status and age				
+Vaccination status is defined on each day for each person and is one of:	Category Name			
+     unvaccinated	(Unvaccinated)			
+"     vaccinated with first dose only, less than 21 days after first vaccination"	"(First dose, less than 21 days ago)"			
+"     vaccinated with first dose only, at least 21 days after first vaccination"	"(First dose, at least 21 days ago)"			
+"     vaccinated with first and second doses, less than 21 days after second vaccination"	"(Second dose, less than 21 days ago)"			
+"     vaccinated with first and second doses, at least 21 days but less than 6 months after second vaccination"	"(Second dose, between 21 days and 6 months ago)"			
+"     vaccinated with first and second doses, at least 6 months after second vaccination"	"(Second dose, at least 6 months ago)"			
+"     vaccinated with at least first, second and third dose and/or booster, less than 21 days after third or booster vaccination"	"(Third dose or booster, less than 21 days ago)"			
+"     vaccinated with at least first, second and third dose and/or booster, at least 21 days after third or booster vaccination"	"(Third dose or booster, at least 21 days ago)"			
+"For the age-breakdowns, due to low numbers, the “vaccinated with first and second doses, at least 21 days but less than 6 months after second vaccination” and “vaccinated with first and second doses, at least 6 months after second vaccination” are combined into:"				
+"     vaccinated with first and second doses, at least 21 days after second vaccination"	"(Second dose, at least 21 days ago)"			
+"We also include an ""Ever vaccinated"" category, which includes anyone who has had at least 1 dose of the vaccine, regardless of further doses."				
+Age in years is defined on the first day of each month. Children aged <10 each week are not included when calculating the ASMR as they would not be included in our dataset due to the linkage to the 2011 census.				
+"The Joint Committee on Vaccination and Immunisation (JCVI) advised in February 2022 a spring booster for the most vulnerable. This spring booster may be present in the NIMS dataset if it is the person’s third dose or booster, but it is not being differentiated from a normal third dose or booster in our analysis. Further developments to the handling of spring boosters will be available in future publications."				

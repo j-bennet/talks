@@ -1,0 +1,31 @@
+"Whole period age-standardised mortality rates by vaccination status for all cause deaths, deaths involving COVID-19 and deaths not involving COVID-19, per 100,000 person-years, England, deaths occurring between 1 January 2021 and 31 May 2022"						
+This worksheet contains 1 table.						
+"Source: Source: Office for National Statistics, National Immunisation Management Service."						
+Cause of Death	Vaccination status	Count of deaths	Person-years	"Age-standardised mortality rate / 100,000 person-years"	Lower confidence limit	Upper confidence limit
+All causes	Unvaccinated	109891	16375484	2337.5	2322.6	2352.4
+All causes	"First dose, less than 21 days ago"	17699	1925587	826.8	814.6	839.1
+All causes	"First dose, at least 21 days ago"	77200	5536696	1289.2	1280.1	1298.3
+All causes	"Second dose, less than 21 days ago"	11986	1878686	512.6	503.3	521.8
+All causes	"Second dose, between 21 days and 6 months ago"	156537	13454401	868.4	864.1	872.7
+All causes	"Second dose, at least 6 months ago"	71790	2664983	2106.5	2086.6	2126.4
+All causes	"Third dose or booster, less than 21 days ago"	12868	1529103	569.4	550.1	588.7
+All causes	"Third dose or booster, at least 21 days ago"	183038	11871491	883.2	869.5	897
+All causes	Ever vaccinated	531118	38860947	957.4	954.8	960
+Deaths involving COVID-19	Unvaccinated	38285	16375484	863.2	854.1	872.4
+Deaths involving COVID-19	"First dose, less than 21 days ago"	4037	1925587	190.1	184.2	195.9
+Deaths involving COVID-19	"First dose, at least 21 days ago"	7270	5536696	122	119.2	124.8
+Deaths involving COVID-19	"Second dose, less than 21 days ago"	200	1878686	8.4	7.2	9.5
+Deaths involving COVID-19	"Second dose, between 21 days and 6 months ago"	5462	13454401	30.4	29.6	31.2
+Deaths involving COVID-19	"Second dose, at least 6 months ago"	6664	2664983	197.5	192.5	202.4
+Deaths involving COVID-19	"Third dose or booster, less than 21 days ago"	494	1529103	21.6	19.6	23.5
+Deaths involving COVID-19	"Third dose or booster, at least 21 days ago"	12048	11871491	58.5	53.4	63.5
+Deaths involving COVID-19	Ever vaccinated	36175	38860947	64.5	63.8	65.1
+Non-COVID-19 deaths	Unvaccinated	71606	16375484	1474.3	1462.5	1486
+Non-COVID-19 deaths	"First dose, less than 21 days ago"	13662	1925587	636.8	626.1	647.5
+Non-COVID-19 deaths	"First dose, at least 21 days ago"	69930	5536696	1167.2	1158.5	1175.9
+Non-COVID-19 deaths	"Second dose, less than 21 days ago"	11786	1878686	504.2	495.1	513.3
+Non-COVID-19 deaths	"Second dose, between 21 days and 6 months ago"	151075	13454401	838	833.7	842.2
+Non-COVID-19 deaths	"Second dose, at least 6 months ago"	65126	2664983	1909	1889.8	1928.2
+Non-COVID-19 deaths	"Third dose or booster, less than 21 days ago"	12374	1529103	547.9	528.6	567.1
+Non-COVID-19 deaths	"Third dose or booster, at least 21 days ago"	170990	11871491	824.8	812	837.6
+Non-COVID-19 deaths	Ever vaccinated	494943	38860947	892.9	890.4	895.4

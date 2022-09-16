@@ -1,0 +1,116 @@
+"Whole period counts of all registered deaths by vaccination status by age group; for all deaths and deaths involving COVID-19, deaths occurring between 1 January 2021 and 31 May 2022, England"				
+This worksheet contains 1 table.				
+"Source: Source: Office for National Statistics, National Immunisation Management Service."				
+Cause of Death	Age group	Vaccination status	Count of Deaths	
+All causes	10-39	Unvaccinated	5678	
+All causes	10-39	"First dose, less than 21 days ago"	243	
+All causes	10-39	"First dose, at least 21 days ago"	1316	
+All causes	10-39	"Second dose, less than 21 days ago"	159	
+All causes	10-39	"Second dose, between 21 days and 6 months ago"	1607	
+All causes	10-39	"Second dose, at least 6 months ago"	630	
+All causes	10-39	"Third dose or booster, less than 21 days ago"	78	
+All causes	10-39	"Third dose or booster, at least 21 days ago"	746	
+All causes	40-49	Unvaccinated	6908	
+All causes	40-49	"First dose, less than 21 days ago"	360	
+All causes	40-49	"First dose, at least 21 days ago"	2225	
+All causes	40-49	"Second dose, less than 21 days ago"	298	
+All causes	40-49	"Second dose, between 21 days and 6 months ago"	3281	
+All causes	40-49	"Second dose, at least 6 months ago"	1332	
+All causes	40-49	"Third dose or booster, less than 21 days ago"	161	
+All causes	40-49	"Third dose or booster, at least 21 days ago"	1900	
+All causes	50-59	Unvaccinated	14466	
+All causes	50-59	"First dose, less than 21 days ago"	882	
+All causes	50-59	"First dose, at least 21 days ago"	5699	
+All causes	50-59	"Second dose, less than 21 days ago"	709	
+All causes	50-59	"Second dose, between 21 days and 6 months ago"	9923	
+All causes	50-59	"Second dose, at least 6 months ago"	4381	
+All causes	50-59	"Third dose or booster, less than 21 days ago"	600	
+All causes	50-59	"Third dose or booster, at least 21 days ago"	7333	
+All causes	60-69	Unvaccinated	22133	
+All causes	60-69	"First dose, less than 21 days ago"	1794	
+All causes	60-69	"First dose, at least 21 days ago"	10333	
+All causes	60-69	"Second dose, less than 21 days ago"	1436	
+All causes	60-69	"Second dose, between 21 days and 6 months ago"	20247	
+All causes	60-69	"Second dose, at least 6 months ago"	8795	
+All causes	60-69	"Third dose or booster, less than 21 days ago"	1410	
+All causes	60-69	"Third dose or booster, at least 21 days ago"	18413	
+All causes	70-79	Unvaccinated	31333	
+All causes	70-79	"First dose, less than 21 days ago"	4312	
+All causes	70-79	"First dose, at least 21 days ago"	21214	
+All causes	70-79	"Second dose, less than 21 days ago"	3128	
+All causes	70-79	"Second dose, between 21 days and 6 months ago"	43738	
+All causes	70-79	"Second dose, at least 6 months ago"	18453	
+All causes	70-79	"Third dose or booster, less than 21 days ago"	3279	
+All causes	70-79	"Third dose or booster, at least 21 days ago"	47630	
+All causes	80-89	Unvaccinated	36259	
+All causes	80-89	"First dose, less than 21 days ago"	7362	
+All causes	80-89	"First dose, at least 21 days ago"	29945	
+All causes	80-89	"Second dose, less than 21 days ago"	4730	
+All causes	80-89	"Second dose, between 21 days and 6 months ago"	61294	
+All causes	80-89	"Second dose, at least 6 months ago"	30668	
+All causes	80-89	"Third dose or booster, less than 21 days ago"	5187	
+All causes	80-89	"Third dose or booster, at least 21 days ago"	78216	
+All causes	90+	Unvaccinated	21927	
+All causes	90+	"First dose, less than 21 days ago"	5286	
+All causes	90+	"First dose, at least 21 days ago"	19056	
+All causes	90+	"Second dose, less than 21 days ago"	3242	
+All causes	90+	"Second dose, between 21 days and 6 months ago"	39061	
+All causes	90+	"Second dose, at least 6 months ago"	18277	
+All causes	90+	"Third dose or booster, less than 21 days ago"	3814	
+All causes	90+	"Third dose or booster, at least 21 days ago"	52353	
+Deaths involving COVID-19	10-39	Unvaccinated	795	
+Deaths involving COVID-19	10-39	"First dose, less than 21 days ago"	14	
+Deaths involving COVID-19	10-39	"First dose, at least 21 days ago"	47	
+Deaths involving COVID-19	10-39	"Second dose, less than 21 days ago"	3	
+Deaths involving COVID-19	10-39	"Second dose, between 21 days and 6 months ago"	62	
+Deaths involving COVID-19	10-39	"Second dose, at least 6 months ago"	39	
+Deaths involving COVID-19	10-39	"Third dose or booster, less than 21 days ago"	4	
+Deaths involving COVID-19	10-39	"Third dose or booster, at least 21 days ago"	33	
+Deaths involving COVID-19	40-49	Unvaccinated	1441	
+Deaths involving COVID-19	40-49	"First dose, less than 21 days ago"	19	
+Deaths involving COVID-19	40-49	"First dose, at least 21 days ago"	86	
+Deaths involving COVID-19	40-49	"Second dose, less than 21 days ago"	4	
+Deaths involving COVID-19	40-49	"Second dose, between 21 days and 6 months ago"	134	
+Deaths involving COVID-19	40-49	"Second dose, at least 6 months ago"	126	
+Deaths involving COVID-19	40-49	"Third dose or booster, less than 21 days ago"	10	
+Deaths involving COVID-19	40-49	"Third dose or booster, at least 21 days ago"	76	
+Deaths involving COVID-19	50-59	Unvaccinated	3743	
+Deaths involving COVID-19	50-59	"First dose, less than 21 days ago"	79	
+Deaths involving COVID-19	50-59	"First dose, at least 21 days ago"	239	
+Deaths involving COVID-19	50-59	"Second dose, less than 21 days ago"	3	
+Deaths involving COVID-19	50-59	"Second dose, between 21 days and 6 months ago"	418	
+Deaths involving COVID-19	50-59	"Second dose, at least 6 months ago"	350	
+Deaths involving COVID-19	50-59	"Third dose or booster, less than 21 days ago"	17	
+Deaths involving COVID-19	50-59	"Third dose or booster, at least 21 days ago"	297	
+Deaths involving COVID-19	60-69	Unvaccinated	6937	
+Deaths involving COVID-19	60-69	"First dose, less than 21 days ago"	218	
+Deaths involving COVID-19	60-69	"First dose, at least 21 days ago"	506	
+Deaths involving COVID-19	60-69	"Second dose, less than 21 days ago"	14	
+Deaths involving COVID-19	60-69	"Second dose, between 21 days and 6 months ago"	933	
+Deaths involving COVID-19	60-69	"Second dose, at least 6 months ago"	865	
+Deaths involving COVID-19	60-69	"Third dose or booster, less than 21 days ago"	59	
+Deaths involving COVID-19	60-69	"Third dose or booster, at least 21 days ago"	862	
+Deaths involving COVID-19	70-79	Unvaccinated	11011	
+Deaths involving COVID-19	70-79	"First dose, less than 21 days ago"	787	
+Deaths involving COVID-19	70-79	"First dose, at least 21 days ago"	1410	
+Deaths involving COVID-19	70-79	"Second dose, less than 21 days ago"	31	
+Deaths involving COVID-19	70-79	"Second dose, between 21 days and 6 months ago"	1744	
+Deaths involving COVID-19	70-79	"Second dose, at least 6 months ago"	1804	
+Deaths involving COVID-19	70-79	"Third dose or booster, less than 21 days ago"	141	
+Deaths involving COVID-19	70-79	"Third dose or booster, at least 21 days ago"	2830	
+Deaths involving COVID-19	80-89	Unvaccinated	14248	
+Deaths involving COVID-19	80-89	"First dose, less than 21 days ago"	2007	
+Deaths involving COVID-19	80-89	"First dose, at least 21 days ago"	3637	
+Deaths involving COVID-19	80-89	"Second dose, less than 21 days ago"	121	
+Deaths involving COVID-19	80-89	"Second dose, between 21 days and 6 months ago"	1923	
+Deaths involving COVID-19	80-89	"Second dose, at least 6 months ago"	2878	
+Deaths involving COVID-19	80-89	"Third dose or booster, less than 21 days ago"	203	
+Deaths involving COVID-19	80-89	"Third dose or booster, at least 21 days ago"	5566	
+Deaths involving COVID-19	90+	Unvaccinated	8187	
+Deaths involving COVID-19	90+	"First dose, less than 21 days ago"	1459	
+Deaths involving COVID-19	90+	"First dose, at least 21 days ago"	2447	
+Deaths involving COVID-19	90+	"Second dose, less than 21 days ago"	58	
+Deaths involving COVID-19	90+	"Second dose, between 21 days and 6 months ago"	1058	
+Deaths involving COVID-19	90+	"Second dose, at least 6 months ago"	1534	
+Deaths involving COVID-19	90+	"Third dose or booster, less than 21 days ago"	131	
+Deaths involving COVID-19	90+	"Third dose or booster, at least 21 days ago"	3830	

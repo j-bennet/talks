@@ -1,0 +1,922 @@
+"Monthly age-standardised mortality rates by vaccination status by sex for all cause deaths, deaths involving COVID-19 and deaths not involving COVID-19, per 100,000 person-years, England, deaths occurring between 1 January 2021 and 31 May 2022"										
+This worksheet contains 1 table.										
+"Source: Source: Office for National Statistics, National Immunisation Management Service."										
+Sex	Cause of Death	Year	Month	Vaccination status	Count of deaths	Person-years	"Age-standardised mortality rate / 100,000 person-years"	Noted as Unreliable	Lower confidence limit	Upper confidence limit
+Female	All causes	2021	January	Unvaccinated	25854	1555765	2133.3		2106.7	2159.8
+Female	All causes	2021	January	"First dose, less than 21 days ago"	4245	140849	727.9		693.1	762.8
+Female	All causes	2021	January	"First dose, at least 21 days ago"	1164	23287	1309.5		1140.8	1478.2
+Female	All causes	2021	January	"Second dose, less than 21 days ago"	186	13547	200.3		127.6	272.9
+Female	All causes	2021	January	"Second dose, between 21 days and 6 months ago"	38	2351	142.4		100.4	196.1
+Female	All causes	2021	January	"Second dose, at least 6 months ago"	0	0	x		x	x
+Female	All causes	2021	January	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Female	All causes	2021	January	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	All causes	2021	January	Ever vaccinated	5633	180035	713.5		682.2	744.8
+Female	All causes	2021	February	Unvaccinated	9499	1060900	4444.3		4340.0	4548.6
+Female	All causes	2021	February	"First dose, less than 21 days ago"	3757	252576	854.6		822.7	886.5
+Female	All causes	2021	February	"First dose, at least 21 days ago"	7646	233342	852.3		824.5	880.1
+Female	All causes	2021	February	"Second dose, less than 21 days ago"	25	2269	721.5		414.5	1135.9
+Female	All causes	2021	February	"Second dose, between 21 days and 6 months ago"	392	18298	344.7		210.4	479.0
+Female	All causes	2021	February	"Second dose, at least 6 months ago"	0	0	x		x	x
+Female	All causes	2021	February	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Female	All causes	2021	February	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	All causes	2021	February	Ever vaccinated	11820	506485	768.4		751	785.7
+Female	All causes	2021	March	Unvaccinated	3691	848503	2938.1		2829.3	3046.9
+Female	All causes	2021	March	"First dose, less than 21 days ago"	865	228449	1901.6		1495.1	2308.1
+Female	All causes	2021	March	"First dose, at least 21 days ago"	11932	585571	854.9		837.2	872.5
+Female	All causes	2021	March	"Second dose, less than 21 days ago"	740	45583	450.3		400.4	500.3
+Female	All causes	2021	March	"Second dose, between 21 days and 6 months ago"	601	27268	424.9		328.7	521.2
+Female	All causes	2021	March	"Second dose, at least 6 months ago"	0	0	x		x	x
+Female	All causes	2021	March	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Female	All causes	2021	March	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	All causes	2021	March	Ever vaccinated	14138	886871	807.3		685.6	929
+Female	All causes	2021	April	Unvaccinated	1894	641652	2093.1		1990.2	2196.1
+Female	All causes	2021	April	"First dose, less than 21 days ago"	203	94768	1949.3		1613.6	2284.9
+Female	All causes	2021	April	"First dose, at least 21 days ago"	8124	599836	1487.8		1452.8	1522.9
+Female	All causes	2021	April	"Second dose, less than 21 days ago"	2866	217916	423.1		403.5	442.6
+Female	All causes	2021	April	"Second dose, between 21 days and 6 months ago"	3053	125114	622.9		587.0	658.8
+Female	All causes	2021	April	"Second dose, at least 6 months ago"	0	0	x		x	x
+Female	All causes	2021	April	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Female	All causes	2021	April	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	All causes	2021	April	Ever vaccinated	14246	1037635	756.9		743.7	770.1
+Female	All causes	2021	May	Unvaccinated	1371	569645	1590.0		1498.2	1681.8
+Female	All causes	2021	May	"First dose, less than 21 days ago"	60	70040	1614.9		1159.8	2166.5
+Female	All causes	2021	May	"First dose, at least 21 days ago"	3853	370188	4395.4		4232.6	4558.2
+Female	All causes	2021	May	"Second dose, less than 21 days ago"	1458	251194	649.8		612.1	687.5
+Female	All causes	2021	May	"Second dose, between 21 days and 6 months ago"	9682	472810	657.1		639.4	674.8
+Female	All causes	2021	May	"Second dose, at least 6 months ago"	0	0	x		x	x
+Female	All causes	2021	May	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Female	All causes	2021	May	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	All causes	2021	May	Ever vaccinated	15053	1164232	757.4		744.9	769.9
+Female	All causes	2021	June	Unvaccinated	1100	435920	1406.5		1317.3	1495.8
+Female	All causes	2021	June	"First dose, less than 21 days ago"	39	79890	1300.8		768.6	1977.0
+Female	All causes	2021	June	"First dose, at least 21 days ago"	1748	182110	5608.6		5310.3	5906.9
+Female	All causes	2021	June	"Second dose, less than 21 days ago"	404	175974	1290.8		1130.6	1451.0
+Female	All causes	2021	June	"Second dose, between 21 days and 6 months ago"	12339	802721	688.4		675.3	701.6
+Female	All causes	2021	June	"Second dose, at least 6 months ago"	0	16	x		x	x
+Female	All causes	2021	June	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Female	All causes	2021	June	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	All causes	2021	June	Ever vaccinated	14530	1240711	776.1		717.2	835.1
+Female	All causes	2021	July	Unvaccinated	1135	363785	1458.9		1368.3	1549.6
+Female	All causes	2021	July	"First dose, less than 21 days ago"	15	49885	618.6	u	242.3	1173.7
+Female	All causes	2021	July	"First dose, at least 21 days ago"	1125	175997	5399.5		5052.3	5746.6
+Female	All causes	2021	July	"Second dose, less than 21 days ago"	144	81686	1769.9		1423.3	2116.6
+Female	All causes	2021	July	"Second dose, between 21 days and 6 months ago"	14833	1044720	802.4		788.8	816.0
+Female	All causes	2021	July	"Second dose, at least 6 months ago"	502	15045	382.1		271.5	492.7
+Female	All causes	2021	July	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Female	All causes	2021	July	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	All causes	2021	July	Ever vaccinated	16619	1367333	824.1		811.4	836.8
+Female	All causes	2021	August	Unvaccinated	1180	335973	1577.3		1481.7	1672.9
+Female	All causes	2021	August	"First dose, less than 21 days ago"	20	17847	2111.5		1144.2	3464.8
+Female	All causes	2021	August	"First dose, at least 21 days ago"	712	123237	4139.0		3807.9	4470.1
+Female	All causes	2021	August	"Second dose, less than 21 days ago"	47	75779	1216.3		816.4	1713.6
+Female	All causes	2021	August	"Second dose, between 21 days and 6 months ago"	14948	1153981	846.8		770.7	923.0
+Female	All causes	2021	August	"Second dose, at least 6 months ago"	724	22789	635.2		496.5	773.9
+Female	All causes	2021	August	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Female	All causes	2021	August	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	All causes	2021	August	Ever vaccinated	16451	1393633	825		795	855
+Female	All causes	2021	September	Unvaccinated	1077	300176	1505.0		1409.8	1600.2
+Female	All causes	2021	September	"First dose, less than 21 days ago"	4	15541	x		x	x
+Female	All causes	2021	September	"First dose, at least 21 days ago"	610	69964	4163.0		3807.3	4518.7
+Female	All causes	2021	September	"Second dose, less than 21 days ago"	17	45409	721.0	u	338.8	1271.4
+Female	All causes	2021	September	"Second dose, between 21 days and 6 months ago"	13646	1164738	857.7		843.2	872.1
+Female	All causes	2021	September	"Second dose, at least 6 months ago"	2474	70439	884.2		807.3	961.1
+Female	All causes	2021	September	"Third dose or booster, less than 21 days ago"	37	6079	174.5		104.7	263.7
+Female	All causes	2021	September	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	All causes	2021	September	Ever vaccinated	16788	1372169	853.7		840.6	866.7
+Female	All causes	2021	October	Unvaccinated	1072	286489	1466.5		1373.7	1559.3
+Female	All causes	2021	October	"First dose, less than 21 days ago"	11	17728	1638.0	u	741.5	3050.9
+Female	All causes	2021	October	"First dose, at least 21 days ago"	532	67772	3831.4		3481.4	4181.4
+Female	All causes	2021	October	"Second dose, less than 21 days ago"	27	15121	2109.1		1340.0	3135.3
+Female	All causes	2021	October	"Second dose, between 21 days and 6 months ago"	6244	966768	1013.8		985.6	1042.0
+Female	All causes	2021	October	"Second dose, at least 6 months ago"	9100	200581	1460.0		1420.6	1499.4
+Female	All causes	2021	October	"Third dose or booster, less than 21 days ago"	1956	139937	352.1		330.5	373.6
+Female	All causes	2021	October	"Third dose or booster, at least 21 days ago"	550	32137	396.2		346.9	445.5
+Female	All causes	2021	October	Ever vaccinated	18420	1440043	901.1		887.9	914.2
+Female	All causes	2021	November	Unvaccinated	1034	249484	1517.5		1420.3	1614.7
+Female	All causes	2021	November	"First dose, less than 21 days ago"	18	18432	3311.2	u	1862.2	5376.0
+Female	All causes	2021	November	"First dose, at least 21 days ago"	418	76959	3363.4		3017.4	3709.4
+Female	All causes	2021	November	"Second dose, less than 21 days ago"	17	9924	1236.1	u	666.6	2056.1
+Female	All causes	2021	November	"Second dose, between 21 days and 6 months ago"	1472	599559	1675.7		1551.6	1799.9
+Female	All causes	2021	November	"Second dose, at least 6 months ago"	8812	247176	2341.2		2290.6	2391.7
+Female	All causes	2021	November	"Third dose or booster, less than 21 days ago"	2335	216497	516.6		492.8	540.3
+Female	All causes	2021	November	"Third dose or booster, at least 21 days ago"	5545	251183	617.2		595.1	639.2
+Female	All causes	2021	November	Ever vaccinated	18617	1419730	939.5		925.9	953.1
+Female	All causes	2021	December	Unvaccinated	1201	240463	1702.0		1600.7	1803.4
+Female	All causes	2021	December	"First dose, less than 21 days ago"	10	10899	1817.2	u	800.4	3456.3
+Female	All causes	2021	December	"First dose, at least 21 days ago"	395	84775	3474.1		3109.0	3839.1
+Female	All causes	2021	December	"Second dose, less than 21 days ago"	17	14841	1126.3	u	609.1	1871.1
+Female	All causes	2021	December	"Second dose, between 21 days and 6 months ago"	481	296734	1964.1		1749.5	2178.6
+Female	All causes	2021	December	"Second dose, at least 6 months ago"	5999	188096	4086.2		3977.0	4195.3
+Female	All causes	2021	December	"Third dose or booster, less than 21 days ago"	1643	294251	1034.1		750.0	1318.2
+Female	All causes	2021	December	"Third dose or booster, at least 21 days ago"	11825	593053	732.8		717.7	747.8
+Female	All causes	2021	December	Ever vaccinated	20370	1482648	990.6		976.9	1004.3
+Female	All causes	2022	January	Unvaccinated	1074	226355	1593.3		1493.7	1692.9
+Female	All causes	2022	January	"First dose, less than 21 days ago"	11	9191	2148.9	u	959.4	4023.5
+Female	All causes	2022	January	"First dose, at least 21 days ago"	334	77139	3194.8		2833.7	3555.9
+Female	All causes	2022	January	"Second dose, less than 21 days ago"	19	15862	2133.6	u	1215.2	3429.8
+Female	All causes	2022	January	"Second dose, between 21 days and 6 months ago"	253	135814	2373.1		2035.9	2710.4
+Female	All causes	2022	January	"Second dose, at least 6 months ago"	3355	122921	4316.2		3926.4	4706.0
+Female	All causes	2022	January	"Third dose or booster, less than 21 days ago"	493	122383	1417.4		1282.2	1552.7
+Female	All causes	2022	January	"Third dose or booster, at least 21 days ago"	14996	1011650	784.2		771.2	797.3
+Female	All causes	2022	January	Ever vaccinated	19461	1494960	944.1		930.7	957.4
+Female	All causes	2022	February	Unvaccinated	784	196441	1290.5		1196.3	1384.6
+Female	All causes	2022	February	"First dose, less than 21 days ago"	5	4840	x		x	x
+Female	All causes	2022	February	"First dose, at least 21 days ago"	233	61984	2519.6		2175.5	2863.8
+Female	All causes	2022	February	"Second dose, less than 21 days ago"	8	12881	x		x	x
+Female	All causes	2022	February	"Second dose, between 21 days and 6 months ago"	125	99502	1690.6		1360.7	2020.5
+Female	All causes	2022	February	"Second dose, at least 6 months ago"	1842	121325	2811.6		2677.2	2946.1
+Female	All causes	2022	February	"Third dose or booster, less than 21 days ago"	103	17120	1743.3		1380.6	2106.0
+Female	All causes	2022	February	"Third dose or booster, at least 21 days ago"	14396	1039181	809.8		796.3	823.2
+Female	All causes	2022	February	Ever vaccinated	16712	1356833	894.7		881	908.4
+Female	All causes	2022	March	Unvaccinated	746	213620	1136.3		1051.3	1221.2
+Female	All causes	2022	March	"First dose, less than 21 days ago"	2	2368	x		x	x
+Female	All causes	2022	March	"First dose, at least 21 days ago"	215	63108	1931.3		1651.1	2211.6
+Female	All causes	2022	March	"Second dose, less than 21 days ago"	2	8246	x		x	x
+Female	All causes	2022	March	"Second dose, between 21 days and 6 months ago"	124	93351	1888.3		1523.3	2253.2
+Female	All causes	2022	March	"Second dose, at least 6 months ago"	1606	154419	2330.9		2211.5	2450.3
+Female	All causes	2022	March	"Third dose or booster, less than 21 days ago"	43	10020	1451.5		1026.3	1985.6
+Female	All causes	2022	March	"Third dose or booster, at least 21 days ago"	15970	1173039	860.9		786.6	935.2
+Female	All causes	2022	March	Ever vaccinated	17962	1504551	869.1		856.3	881.9
+Female	All causes	2022	April	Unvaccinated	698	204224	1105.1		1020.2	1190.0
+Female	All causes	2022	April	"First dose, less than 21 days ago"	5	1594	x		x	x
+Female	All causes	2022	April	"First dose, at least 21 days ago"	195	55066	2053.0		1746.2	2359.7
+Female	All causes	2022	April	"Second dose, less than 21 days ago"	8	5926	x		x	x
+Female	All causes	2022	April	"Second dose, between 21 days and 6 months ago"	111	82535	2043.6		1620.1	2467.2
+Female	All causes	2022	April	"Second dose, at least 6 months ago"	1357	157096	2111.1		1992.9	2229.3
+Female	All causes	2022	April	"Third dose or booster, less than 21 days ago"	52	7432	1490.9		1058.8	2022.4
+Female	All causes	2022	April	"Third dose or booster, at least 21 days ago"	16223	1147317	843.0		829.8	856.2
+Female	All causes	2022	April	Ever vaccinated	17951	1456966	893.4		880.2	906.6
+Female	All causes	2022	May	Unvaccinated	552	209179	830.0		757.9	902.0
+Female	All causes	2022	May	"First dose, less than 21 days ago"	1	1142	x		x	x
+Female	All causes	2022	May	"First dose, at least 21 days ago"	171	52703	1733.2		1455.8	2010.6
+Female	All causes	2022	May	"Second dose, less than 21 days ago"	5	4240	x		x	x
+Female	All causes	2022	May	"Second dose, between 21 days and 6 months ago"	75	79753	1648.0		1246.2	2125.3
+Female	All causes	2022	May	"Second dose, at least 6 months ago"	942	165998	1496.9		1396.1	1597.6
+Female	All causes	2022	May	"Third dose or booster, less than 21 days ago"	57	6886	1782.9		1241.0	2443.3
+Female	All causes	2022	May	"Third dose or booster, at least 21 days ago"	13899	1195170	698.7		686.9	710.5
+Female	All causes	2022	May	Ever vaccinated	15150	1505891	731.3		719.6	743
+Female	Deaths involving COVID-19	2021	January	Unvaccinated	11632	1555765	972.6		954.6	990.6
+Female	Deaths involving COVID-19	2021	January	"First dose, less than 21 days ago"	1281	140849	228.6		208.0	249.2
+Female	Deaths involving COVID-19	2021	January	"First dose, at least 21 days ago"	481	23287	580.9		465.1	696.7
+Female	Deaths involving COVID-19	2021	January	"Second dose, less than 21 days ago"	26	13547	15.7		10.2	23.2
+Female	Deaths involving COVID-19	2021	January	"Second dose, between 21 days and 6 months ago"	4	2351	x		x	x
+Female	Deaths involving COVID-19	2021	January	"Second dose, at least 6 months ago"	0	0	x		x	x
+Female	Deaths involving COVID-19	2021	January	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Female	Deaths involving COVID-19	2021	January	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	Deaths involving COVID-19	2021	January	Ever vaccinated	1792	180035	233.4		214.6	252.1
+Female	Deaths involving COVID-19	2021	February	Unvaccinated	3433	1060900	1688.8		1624.2	1753.5
+Female	Deaths involving COVID-19	2021	February	"First dose, less than 21 days ago"	753	252576	175.6		162.0	189.2
+Female	Deaths involving COVID-19	2021	February	"First dose, at least 21 days ago"	1744	233342	185.8		173.3	198.3
+Female	Deaths involving COVID-19	2021	February	"Second dose, less than 21 days ago"	4	2269	x		x	x
+Female	Deaths involving COVID-19	2021	February	"Second dose, between 21 days and 6 months ago"	22	18298	23.1		-0.6	55.7
+Female	Deaths involving COVID-19	2021	February	"Second dose, at least 6 months ago"	0	0	x		x	x
+Female	Deaths involving COVID-19	2021	February	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Female	Deaths involving COVID-19	2021	February	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	Deaths involving COVID-19	2021	February	Ever vaccinated	2523	506485	156.8		149.7	164
+Female	Deaths involving COVID-19	2021	March	Unvaccinated	556	848503	459.8		416.6	503.0
+Female	Deaths involving COVID-19	2021	March	"First dose, less than 21 days ago"	74	228449	177.1		132.4	230.3
+Female	Deaths involving COVID-19	2021	March	"First dose, at least 21 days ago"	742	585571	51.7		47.6	55.9
+Female	Deaths involving COVID-19	2021	March	"Second dose, less than 21 days ago"	14	45583	6.6	u	2.8	12.2
+Female	Deaths involving COVID-19	2021	March	"Second dose, between 21 days and 6 months ago"	10	27268	11.3	u	-2.2	33.0
+Female	Deaths involving COVID-19	2021	March	"Second dose, at least 6 months ago"	0	0	x		x	x
+Female	Deaths involving COVID-19	2021	March	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Female	Deaths involving COVID-19	2021	March	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	Deaths involving COVID-19	2021	March	Ever vaccinated	840	886871	43.2		40.2	46.3
+Female	Deaths involving COVID-19	2021	April	Unvaccinated	118	641652	130.1		104.9	155.4
+Female	Deaths involving COVID-19	2021	April	"First dose, less than 21 days ago"	9	94768	x		x	x
+Female	Deaths involving COVID-19	2021	April	"First dose, at least 21 days ago"	185	599836	38.1		32.4	43.9
+Female	Deaths involving COVID-19	2021	April	"Second dose, less than 21 days ago"	20	217916	2.4		1.5	3.8
+Female	Deaths involving COVID-19	2021	April	"Second dose, between 21 days and 6 months ago"	25	125114	3.3		2.0	5.1
+Female	Deaths involving COVID-19	2021	April	"Second dose, at least 6 months ago"	0	0	x		x	x
+Female	Deaths involving COVID-19	2021	April	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Female	Deaths involving COVID-19	2021	April	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	Deaths involving COVID-19	2021	April	Ever vaccinated	239	1037635	12		10.5	13.6
+Female	Deaths involving COVID-19	2021	May	Unvaccinated	33	569645	31.1		20.2	45.2
+Female	Deaths involving COVID-19	2021	May	"First dose, less than 21 days ago"	0	70040	x		x	x
+Female	Deaths involving COVID-19	2021	May	"First dose, at least 21 days ago"	53	370188	57.1		40.2	77.8
+Female	Deaths involving COVID-19	2021	May	"Second dose, less than 21 days ago"	13	251194	6.1	u	2.9	10.8
+Female	Deaths involving COVID-19	2021	May	"Second dose, between 21 days and 6 months ago"	38	472810	2.7		1.7	3.9
+Female	Deaths involving COVID-19	2021	May	"Second dose, at least 6 months ago"	0	0	x		x	x
+Female	Deaths involving COVID-19	2021	May	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Female	Deaths involving COVID-19	2021	May	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	Deaths involving COVID-19	2021	May	Ever vaccinated	104	1164232	5.3		4.2	6.3
+Female	Deaths involving COVID-19	2021	June	Unvaccinated	46	435920	53.8		38.0	73.5
+Female	Deaths involving COVID-19	2021	June	"First dose, less than 21 days ago"	0	79890	x		x	x
+Female	Deaths involving COVID-19	2021	June	"First dose, at least 21 days ago"	16	182110	57.5	u	30.2	97.2
+Female	Deaths involving COVID-19	2021	June	"Second dose, less than 21 days ago"	4	175974	x		x	x
+Female	Deaths involving COVID-19	2021	June	"Second dose, between 21 days and 6 months ago"	64	802721	3.8		2.8	5.0
+Female	Deaths involving COVID-19	2021	June	"Second dose, at least 6 months ago"	0	16	x		x	x
+Female	Deaths involving COVID-19	2021	June	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Female	Deaths involving COVID-19	2021	June	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	Deaths involving COVID-19	2021	June	Ever vaccinated	84	1240711	4.4		3.5	5.4
+Female	Deaths involving COVID-19	2021	July	Unvaccinated	141	363785	176.3		145.1	207.5
+Female	Deaths involving COVID-19	2021	July	"First dose, less than 21 days ago"	3	49885	x		x	x
+Female	Deaths involving COVID-19	2021	July	"First dose, at least 21 days ago"	41	175997	199.8		137.8	278.1
+Female	Deaths involving COVID-19	2021	July	"Second dose, less than 21 days ago"	5	81686	x		x	x
+Female	Deaths involving COVID-19	2021	July	"Second dose, between 21 days and 6 months ago"	286	1044720	15.9		14.0	17.9
+Female	Deaths involving COVID-19	2021	July	"Second dose, at least 6 months ago"	16	15045	8.6	u	4.9	13.9
+Female	Deaths involving COVID-19	2021	July	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Female	Deaths involving COVID-19	2021	July	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	Deaths involving COVID-19	2021	July	Ever vaccinated	351	1367333	17.8		15.9	19.7
+Female	Deaths involving COVID-19	2021	August	Unvaccinated	252	335973	314.1		272.3	355.9
+Female	Deaths involving COVID-19	2021	August	"First dose, less than 21 days ago"	3	17847	x		x	x
+Female	Deaths involving COVID-19	2021	August	"First dose, at least 21 days ago"	33	123237	193.3		126.5	279.9
+Female	Deaths involving COVID-19	2021	August	"Second dose, less than 21 days ago"	1	75779	x		x	x
+Female	Deaths involving COVID-19	2021	August	"Second dose, between 21 days and 6 months ago"	606	1153981	33.1		30.4	35.8
+Female	Deaths involving COVID-19	2021	August	"Second dose, at least 6 months ago"	35	22789	52.6		11.0	106.1
+Female	Deaths involving COVID-19	2021	August	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Female	Deaths involving COVID-19	2021	August	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	Deaths involving COVID-19	2021	August	Ever vaccinated	678	1393633	33.9		31.3	36.5
+Female	Deaths involving COVID-19	2021	September	Unvaccinated	230	300176	301.9		260.2	343.7
+Female	Deaths involving COVID-19	2021	September	"First dose, less than 21 days ago"	1	15541	x		x	x
+Female	Deaths involving COVID-19	2021	September	"First dose, at least 21 days ago"	45	69964	325.6		231.7	442.9
+Female	Deaths involving COVID-19	2021	September	"Second dose, less than 21 days ago"	2	45409	x		x	x
+Female	Deaths involving COVID-19	2021	September	"Second dose, between 21 days and 6 months ago"	737	1164738	46.6		43.2	50.0
+Female	Deaths involving COVID-19	2021	September	"Second dose, at least 6 months ago"	122	70439	55.8		38.3	73.3
+Female	Deaths involving COVID-19	2021	September	"Third dose or booster, less than 21 days ago"	0	6079	x		x	x
+Female	Deaths involving COVID-19	2021	September	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	Deaths involving COVID-19	2021	September	Ever vaccinated	907	1372169	47.2		44.1	50.3
+Female	Deaths involving COVID-19	2021	October	Unvaccinated	205	286489	292.2		250.1	334.3
+Female	Deaths involving COVID-19	2021	October	"First dose, less than 21 days ago"	0	17728	x		x	x
+Female	Deaths involving COVID-19	2021	October	"First dose, at least 21 days ago"	35	67772	251.7		169.7	357.4
+Female	Deaths involving COVID-19	2021	October	"Second dose, less than 21 days ago"	0	15121	x		x	x
+Female	Deaths involving COVID-19	2021	October	"Second dose, between 21 days and 6 months ago"	331	966768	48.0		42.1	53.9
+Female	Deaths involving COVID-19	2021	October	"Second dose, at least 6 months ago"	589	200581	101.2		90.7	111.7
+Female	Deaths involving COVID-19	2021	October	"Third dose or booster, less than 21 days ago"	51	139937	8.5		6.0	11.6
+Female	Deaths involving COVID-19	2021	October	"Third dose or booster, at least 21 days ago"	7	32137	x		x	x
+Female	Deaths involving COVID-19	2021	October	Ever vaccinated	1013	1440043	50.3		47.2	53.5
+Female	Deaths involving COVID-19	2021	November	Unvaccinated	229	249484	325.6		280.7	370.5
+Female	Deaths involving COVID-19	2021	November	"First dose, less than 21 days ago"	4	18432	x		x	x
+Female	Deaths involving COVID-19	2021	November	"First dose, at least 21 days ago"	26	76959	199.3		126.6	296.8
+Female	Deaths involving COVID-19	2021	November	"Second dose, less than 21 days ago"	1	9924	x		x	x
+Female	Deaths involving COVID-19	2021	November	"Second dose, between 21 days and 6 months ago"	78	599559	92.8		68.0	122.0
+Female	Deaths involving COVID-19	2021	November	"Second dose, at least 6 months ago"	671	247176	178.2		164.4	192.0
+Female	Deaths involving COVID-19	2021	November	"Third dose or booster, less than 21 days ago"	61	216497	14.0		10.3	18.6
+Female	Deaths involving COVID-19	2021	November	"Third dose or booster, at least 21 days ago"	93	251183	14.0		10.1	18.6
+Female	Deaths involving COVID-19	2021	November	Ever vaccinated	934	1419730	48.3		45.2	51.4
+Female	Deaths involving COVID-19	2021	December	Unvaccinated	309	240463	429.0		378.3	479.8
+Female	Deaths involving COVID-19	2021	December	"First dose, less than 21 days ago"	0	10899	x		x	x
+Female	Deaths involving COVID-19	2021	December	"First dose, at least 21 days ago"	40	84775	363.5		253.7	502.4
+Female	Deaths involving COVID-19	2021	December	"Second dose, less than 21 days ago"	0	14841	x		x	x
+Female	Deaths involving COVID-19	2021	December	"Second dose, between 21 days and 6 months ago"	31	296734	145.2		90.7	216.4
+Female	Deaths involving COVID-19	2021	December	"Second dose, at least 6 months ago"	479	188096	333.5		302.0	364.9
+Female	Deaths involving COVID-19	2021	December	"Third dose or booster, less than 21 days ago"	53	294251	29.9		22.0	39.7
+Female	Deaths involving COVID-19	2021	December	"Third dose or booster, at least 21 days ago"	278	593053	18.7		16.1	21.3
+Female	Deaths involving COVID-19	2021	December	Ever vaccinated	881	1482648	44.1		41.1	47
+Female	Deaths involving COVID-19	2022	January	Unvaccinated	304	226355	458.0		404.4	511.7
+Female	Deaths involving COVID-19	2022	January	"First dose, less than 21 days ago"	4	9191	x		x	x
+Female	Deaths involving COVID-19	2022	January	"First dose, at least 21 days ago"	52	77139	503.6		370.1	667.9
+Female	Deaths involving COVID-19	2022	January	"Second dose, less than 21 days ago"	3	15862	x		x	x
+Female	Deaths involving COVID-19	2022	January	"Second dose, between 21 days and 6 months ago"	38	135814	433.8		298.8	605.8
+Female	Deaths involving COVID-19	2022	January	"Second dose, at least 6 months ago"	520	122921	646.9		588.8	705.0
+Female	Deaths involving COVID-19	2022	January	"Third dose or booster, less than 21 days ago"	38	122383	110.1		75.1	154.8
+Female	Deaths involving COVID-19	2022	January	"Third dose or booster, at least 21 days ago"	1139	1011650	58.4		55.0	61.9
+Female	Deaths involving COVID-19	2022	January	Ever vaccinated	1794	1494960	86.4		82.4	90.5
+Female	Deaths involving COVID-19	2022	February	Unvaccinated	130	196441	215.9		177.0	254.8
+Female	Deaths involving COVID-19	2022	February	"First dose, less than 21 days ago"	0	4840	x		x	x
+Female	Deaths involving COVID-19	2022	February	"First dose, at least 21 days ago"	31	61984	330.7		217.3	479.1
+Female	Deaths involving COVID-19	2022	February	"Second dose, less than 21 days ago"	1	12881	x		x	x
+Female	Deaths involving COVID-19	2022	February	"Second dose, between 21 days and 6 months ago"	7	99502	x		x	x
+Female	Deaths involving COVID-19	2022	February	"Second dose, at least 6 months ago"	175	121325	277.5		234.9	320.1
+Female	Deaths involving COVID-19	2022	February	"Third dose or booster, less than 21 days ago"	6	17120	x		x	x
+Female	Deaths involving COVID-19	2022	February	"Third dose or booster, at least 21 days ago"	873	1039181	48.1		44.9	51.4
+Female	Deaths involving COVID-19	2022	February	Ever vaccinated	1093	1356833	57.7		54.2	61.1
+Female	Deaths involving COVID-19	2022	March	Unvaccinated	101	213620	157.3		125.4	189.3
+Female	Deaths involving COVID-19	2022	March	"First dose, less than 21 days ago"	0	2368	x		x	x
+Female	Deaths involving COVID-19	2022	March	"First dose, at least 21 days ago"	25	63108	251.9		157.7	379.1
+Female	Deaths involving COVID-19	2022	March	"Second dose, less than 21 days ago"	0	8246	x		x	x
+Female	Deaths involving COVID-19	2022	March	"Second dose, between 21 days and 6 months ago"	12	93351	174.0	u	83.3	314.0
+Female	Deaths involving COVID-19	2022	March	"Second dose, at least 6 months ago"	129	154419	194.6		159.8	229.5
+Female	Deaths involving COVID-19	2022	March	"Third dose or booster, less than 21 days ago"	2	10020	x		x	x
+Female	Deaths involving COVID-19	2022	March	"Third dose or booster, at least 21 days ago"	1059	1173039	52.7		49.5	55.9
+Female	Deaths involving COVID-19	2022	March	Ever vaccinated	1227	1504551	58.4		55.1	61.7
+Female	Deaths involving COVID-19	2022	April	Unvaccinated	107	204224	178.2		143.7	212.7
+Female	Deaths involving COVID-19	2022	April	"First dose, less than 21 days ago"	0	1594	x		x	x
+Female	Deaths involving COVID-19	2022	April	"First dose, at least 21 days ago"	22	55066	239.1		146.1	367.2
+Female	Deaths involving COVID-19	2022	April	"Second dose, less than 21 days ago"	0	5926	x		x	x
+Female	Deaths involving COVID-19	2022	April	"Second dose, between 21 days and 6 months ago"	4	82535	x		x	x
+Female	Deaths involving COVID-19	2022	April	"Second dose, at least 6 months ago"	139	157096	229.5		189.8	269.2
+Female	Deaths involving COVID-19	2022	April	"Third dose or booster, less than 21 days ago"	3	7432	x		x	x
+Female	Deaths involving COVID-19	2022	April	"Third dose or booster, at least 21 days ago"	1425	1147317	72.5		68.6	76.3
+Female	Deaths involving COVID-19	2022	April	Ever vaccinated	1593	1456966	77.7		73.9	81.5
+Female	Deaths involving COVID-19	2022	May	Unvaccinated	40	209179	63.3		44.8	86.8
+Female	Deaths involving COVID-19	2022	May	"First dose, less than 21 days ago"	0	1142	x		x	x
+Female	Deaths involving COVID-19	2022	May	"First dose, at least 21 days ago"	10	52703	110.1	u	51.4	204.7
+Female	Deaths involving COVID-19	2022	May	"Second dose, less than 21 days ago"	0	4240	x		x	x
+Female	Deaths involving COVID-19	2022	May	"Second dose, between 21 days and 6 months ago"	4	79753	x		x	x
+Female	Deaths involving COVID-19	2022	May	"Second dose, at least 6 months ago"	53	165998	91.7		68.2	120.7
+Female	Deaths involving COVID-19	2022	May	"Third dose or booster, less than 21 days ago"	0	6886	x		x	x
+Female	Deaths involving COVID-19	2022	May	"Third dose or booster, at least 21 days ago"	550	1195170	27.0		24.7	29.3
+Female	Deaths involving COVID-19	2022	May	Ever vaccinated	617	1505891	29.3		26.9	31.6
+Female	Non-COVID-19 deaths	2021	January	Unvaccinated	14222	1555765	1160.7		1141.2	1180.2
+Female	Non-COVID-19 deaths	2021	January	"First dose, less than 21 days ago"	2964	140849	499.3		471.2	527.4
+Female	Non-COVID-19 deaths	2021	January	"First dose, at least 21 days ago"	683	23287	728.6		605.9	851.2
+Female	Non-COVID-19 deaths	2021	January	"Second dose, less than 21 days ago"	160	13547	184.5		112.1	256.9
+Female	Non-COVID-19 deaths	2021	January	"Second dose, between 21 days and 6 months ago"	34	2351	127.1		87.6	178.2
+Female	Non-COVID-19 deaths	2021	January	"Second dose, at least 6 months ago"	0	0	x		x	x
+Female	Non-COVID-19 deaths	2021	January	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Female	Non-COVID-19 deaths	2021	January	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	Non-COVID-19 deaths	2021	January	Ever vaccinated	3841	180035	480.1		455	505.2
+Female	Non-COVID-19 deaths	2021	February	Unvaccinated	6066	1060900	2755.5		2673.6	2837.3
+Female	Non-COVID-19 deaths	2021	February	"First dose, less than 21 days ago"	3004	252576	679.0		650.2	707.9
+Female	Non-COVID-19 deaths	2021	February	"First dose, at least 21 days ago"	5902	233342	666.5		641.7	691.4
+Female	Non-COVID-19 deaths	2021	February	"Second dose, less than 21 days ago"	21	2269	640.1		344.7	1049.9
+Female	Non-COVID-19 deaths	2021	February	"Second dose, between 21 days and 6 months ago"	370	18298	321.5		189.9	453.2
+Female	Non-COVID-19 deaths	2021	February	"Second dose, at least 6 months ago"	0	0	x		x	x
+Female	Non-COVID-19 deaths	2021	February	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Female	Non-COVID-19 deaths	2021	February	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	Non-COVID-19 deaths	2021	February	Ever vaccinated	9297	506485	611.5		595.7	627.4
+Female	Non-COVID-19 deaths	2021	March	Unvaccinated	3135	848503	2478.3		2378.4	2578.2
+Female	Non-COVID-19 deaths	2021	March	"First dose, less than 21 days ago"	791	228449	1724.5		1320.8	2128.2
+Female	Non-COVID-19 deaths	2021	March	"First dose, at least 21 days ago"	11190	585571	803.1		785.9	820.3
+Female	Non-COVID-19 deaths	2021	March	"Second dose, less than 21 days ago"	726	45583	443.8		394.0	493.5
+Female	Non-COVID-19 deaths	2021	March	"Second dose, between 21 days and 6 months ago"	591	27268	413.6		318.7	508.5
+Female	Non-COVID-19 deaths	2021	March	"Second dose, at least 6 months ago"	0	0	x		x	x
+Female	Non-COVID-19 deaths	2021	March	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Female	Non-COVID-19 deaths	2021	March	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	Non-COVID-19 deaths	2021	March	Ever vaccinated	13298	886871	764.1		642.4	885.8
+Female	Non-COVID-19 deaths	2021	April	Unvaccinated	1776	641652	1963.0		1863.2	2062.9
+Female	Non-COVID-19 deaths	2021	April	"First dose, less than 21 days ago"	194	94768	1850.5		1522.7	2178.2
+Female	Non-COVID-19 deaths	2021	April	"First dose, at least 21 days ago"	7939	599836	1449.7		1415.1	1484.3
+Female	Non-COVID-19 deaths	2021	April	"Second dose, less than 21 days ago"	2846	217916	420.6		401.1	440.2
+Female	Non-COVID-19 deaths	2021	April	"Second dose, between 21 days and 6 months ago"	3028	125114	619.5		583.7	655.4
+Female	Non-COVID-19 deaths	2021	April	"Second dose, at least 6 months ago"	0	0	x		x	x
+Female	Non-COVID-19 deaths	2021	April	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Female	Non-COVID-19 deaths	2021	April	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	Non-COVID-19 deaths	2021	April	Ever vaccinated	14007	1037635	744.9		731.7	758
+Female	Non-COVID-19 deaths	2021	May	Unvaccinated	1338	569645	1558.9		1467.9	1650.0
+Female	Non-COVID-19 deaths	2021	May	"First dose, less than 21 days ago"	60	70040	1614.9		1159.8	2166.5
+Female	Non-COVID-19 deaths	2021	May	"First dose, at least 21 days ago"	3800	370188	4338.3		4176.5	4500.1
+Female	Non-COVID-19 deaths	2021	May	"Second dose, less than 21 days ago"	1445	251194	643.8		606.2	681.3
+Female	Non-COVID-19 deaths	2021	May	"Second dose, between 21 days and 6 months ago"	9644	472810	654.4		636.8	672.1
+Female	Non-COVID-19 deaths	2021	May	"Second dose, at least 6 months ago"	0	0	x		x	x
+Female	Non-COVID-19 deaths	2021	May	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Female	Non-COVID-19 deaths	2021	May	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	Non-COVID-19 deaths	2021	May	Ever vaccinated	14949	1164232	752.1		739.7	764.6
+Female	Non-COVID-19 deaths	2021	June	Unvaccinated	1054	435920	1352.7		1265.1	1440.3
+Female	Non-COVID-19 deaths	2021	June	"First dose, less than 21 days ago"	39	79890	1300.8		768.6	1977.0
+Female	Non-COVID-19 deaths	2021	June	"First dose, at least 21 days ago"	1732	182110	5551.1		5254.4	5847.7
+Female	Non-COVID-19 deaths	2021	June	"Second dose, less than 21 days ago"	400	175974	1271.1		1112.3	1430.0
+Female	Non-COVID-19 deaths	2021	June	"Second dose, between 21 days and 6 months ago"	12275	802721	684.6		671.5	697.7
+Female	Non-COVID-19 deaths	2021	June	"Second dose, at least 6 months ago"	0	16	x		x	x
+Female	Non-COVID-19 deaths	2021	June	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Female	Non-COVID-19 deaths	2021	June	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	Non-COVID-19 deaths	2021	June	Ever vaccinated	14446	1240711	771.7		712.8	830.7
+Female	Non-COVID-19 deaths	2021	July	Unvaccinated	994	363785	1282.6		1197.6	1367.7
+Female	Non-COVID-19 deaths	2021	July	"First dose, less than 21 days ago"	12	49885	573.8	u	209.1	1137.5
+Female	Non-COVID-19 deaths	2021	July	"First dose, at least 21 days ago"	1084	175997	5199.7		4859.1	5540.2
+Female	Non-COVID-19 deaths	2021	July	"Second dose, less than 21 days ago"	139	81686	1696.9		1358.2	2035.5
+Female	Non-COVID-19 deaths	2021	July	"Second dose, between 21 days and 6 months ago"	14547	1044720	786.4		773.0	799.9
+Female	Non-COVID-19 deaths	2021	July	"Second dose, at least 6 months ago"	486	15045	373.5		263.0	484.0
+Female	Non-COVID-19 deaths	2021	July	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Female	Non-COVID-19 deaths	2021	July	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	Non-COVID-19 deaths	2021	July	Ever vaccinated	16268	1367333	806.3		793.8	818.9
+Female	Non-COVID-19 deaths	2021	August	Unvaccinated	928	335973	1263.2		1177.2	1349.2
+Female	Non-COVID-19 deaths	2021	August	"First dose, less than 21 days ago"	17	17847	1679.5	u	831.9	2899.9
+Female	Non-COVID-19 deaths	2021	August	"First dose, at least 21 days ago"	679	123237	3945.7		3622.8	4268.6
+Female	Non-COVID-19 deaths	2021	August	"Second dose, less than 21 days ago"	46	75779	1170.2		779.5	1657.1
+Female	Non-COVID-19 deaths	2021	August	"Second dose, between 21 days and 6 months ago"	14342	1153981	813.7		737.6	889.9
+Female	Non-COVID-19 deaths	2021	August	"Second dose, at least 6 months ago"	689	22789	582.6		451.5	713.7
+Female	Non-COVID-19 deaths	2021	August	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Female	Non-COVID-19 deaths	2021	August	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	Non-COVID-19 deaths	2021	August	Ever vaccinated	15773	1393633	791.1		761.2	821
+Female	Non-COVID-19 deaths	2021	September	Unvaccinated	847	300176	1203.1		1117.5	1288.7
+Female	Non-COVID-19 deaths	2021	September	"First dose, less than 21 days ago"	3	15541	x		x	x
+Female	Non-COVID-19 deaths	2021	September	"First dose, at least 21 days ago"	565	69964	3837.4		3496.5	4178.3
+Female	Non-COVID-19 deaths	2021	September	"Second dose, less than 21 days ago"	15	45409	585.6	u	246.8	1085.2
+Female	Non-COVID-19 deaths	2021	September	"Second dose, between 21 days and 6 months ago"	12909	1164738	811.1		797.0	825.2
+Female	Non-COVID-19 deaths	2021	September	"Second dose, at least 6 months ago"	2352	70439	828.4		753.5	903.3
+Female	Non-COVID-19 deaths	2021	September	"Third dose or booster, less than 21 days ago"	37	6079	174.5		104.7	263.7
+Female	Non-COVID-19 deaths	2021	September	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Female	Non-COVID-19 deaths	2021	September	Ever vaccinated	15881	1372169	806.5		793.8	819.1
+Female	Non-COVID-19 deaths	2021	October	Unvaccinated	867	286489	1174.3		1091.6	1257.0
+Female	Non-COVID-19 deaths	2021	October	"First dose, less than 21 days ago"	11	17728	1638.0	u	741.5	3050.9
+Female	Non-COVID-19 deaths	2021	October	"First dose, at least 21 days ago"	497	67772	3579.6		3241.3	3918.0
+Female	Non-COVID-19 deaths	2021	October	"Second dose, less than 21 days ago"	27	15121	2109.1		1340.0	3135.3
+Female	Non-COVID-19 deaths	2021	October	"Second dose, between 21 days and 6 months ago"	5913	966768	965.8		938.3	993.3
+Female	Non-COVID-19 deaths	2021	October	"Second dose, at least 6 months ago"	8511	200581	1358.8		1320.9	1396.8
+Female	Non-COVID-19 deaths	2021	October	"Third dose or booster, less than 21 days ago"	1905	139937	343.6		322.2	364.9
+Female	Non-COVID-19 deaths	2021	October	"Third dose or booster, at least 21 days ago"	543	32137	387.1		338.5	435.6
+Female	Non-COVID-19 deaths	2021	October	Ever vaccinated	17407	1440043	850.7		837.9	863.5
+Female	Non-COVID-19 deaths	2021	November	Unvaccinated	805	249484	1192.0		1105.8	1278.2
+Female	Non-COVID-19 deaths	2021	November	"First dose, less than 21 days ago"	14	18432	2468.3	u	1247.7	4293.5
+Female	Non-COVID-19 deaths	2021	November	"First dose, at least 21 days ago"	392	76959	3164.1		2827.6	3500.6
+Female	Non-COVID-19 deaths	2021	November	"Second dose, less than 21 days ago"	16	9924	1177.6	u	619.5	1990.4
+Female	Non-COVID-19 deaths	2021	November	"Second dose, between 21 days and 6 months ago"	1394	599559	1583.0		1461.6	1704.3
+Female	Non-COVID-19 deaths	2021	November	"Second dose, at least 6 months ago"	8141	247176	2163.0		2114.3	2211.6
+Female	Non-COVID-19 deaths	2021	November	"Third dose or booster, less than 21 days ago"	2274	216497	502.5		479.2	525.9
+Female	Non-COVID-19 deaths	2021	November	"Third dose or booster, at least 21 days ago"	5452	251183	603.1		581.5	624.8
+Female	Non-COVID-19 deaths	2021	November	Ever vaccinated	17683	1419730	891.2		877.9	904.5
+Female	Non-COVID-19 deaths	2021	December	Unvaccinated	892	240463	1273.0		1185.3	1360.8
+Female	Non-COVID-19 deaths	2021	December	"First dose, less than 21 days ago"	10	10899	1817.2	u	800.4	3456.3
+Female	Non-COVID-19 deaths	2021	December	"First dose, at least 21 days ago"	355	84775	3110.6		2765.5	3455.7
+Female	Non-COVID-19 deaths	2021	December	"Second dose, less than 21 days ago"	17	14841	1126.3	u	609.1	1871.1
+Female	Non-COVID-19 deaths	2021	December	"Second dose, between 21 days and 6 months ago"	450	296734	1818.9		1612.9	2024.9
+Female	Non-COVID-19 deaths	2021	December	"Second dose, at least 6 months ago"	5520	188096	3752.7		3648.1	3857.2
+Female	Non-COVID-19 deaths	2021	December	"Third dose or booster, less than 21 days ago"	1590	294251	1004.2		720.2	1288.2
+Female	Non-COVID-19 deaths	2021	December	"Third dose or booster, at least 21 days ago"	11547	593053	714.0		699.1	728.9
+Female	Non-COVID-19 deaths	2021	December	Ever vaccinated	19489	1482648	946.6		933.1	960
+Female	Non-COVID-19 deaths	2022	January	Unvaccinated	770	226355	1135.2		1051.3	1219.1
+Female	Non-COVID-19 deaths	2022	January	"First dose, less than 21 days ago"	7	9191	x		x	x
+Female	Non-COVID-19 deaths	2022	January	"First dose, at least 21 days ago"	282	77139	2691.2		2359.8	3022.6
+Female	Non-COVID-19 deaths	2022	January	"Second dose, less than 21 days ago"	16	15862	1745.4	u	928.7	2934.9
+Female	Non-COVID-19 deaths	2022	January	"Second dose, between 21 days and 6 months ago"	215	135814	1939.4		1635.8	2243.0
+Female	Non-COVID-19 deaths	2022	January	"Second dose, at least 6 months ago"	2835	122921	3669.3		3283.8	4054.7
+Female	Non-COVID-19 deaths	2022	January	"Third dose or booster, less than 21 days ago"	455	122383	1307.3		1177.6	1437.0
+Female	Non-COVID-19 deaths	2022	January	"Third dose or booster, at least 21 days ago"	13857	1011650	725.8		713.2	738.3
+Female	Non-COVID-19 deaths	2022	January	Ever vaccinated	17667	1494960	857.6		844.9	870.4
+Female	Non-COVID-19 deaths	2022	February	Unvaccinated	654	196441	1074.5		988.8	1160.3
+Female	Non-COVID-19 deaths	2022	February	"First dose, less than 21 days ago"	5	4840	x		x	x
+Female	Non-COVID-19 deaths	2022	February	"First dose, at least 21 days ago"	202	61984	2188.9		1868.1	2509.7
+Female	Non-COVID-19 deaths	2022	February	"Second dose, less than 21 days ago"	7	12881	x		x	x
+Female	Non-COVID-19 deaths	2022	February	"Second dose, between 21 days and 6 months ago"	118	99502	1583.0		1265.1	1900.9
+Female	Non-COVID-19 deaths	2022	February	"Second dose, at least 6 months ago"	1667	121325	2534.1		2406.6	2661.7
+Female	Non-COVID-19 deaths	2022	February	"Third dose or booster, less than 21 days ago"	97	17120	1616.5		1286.9	1999.9
+Female	Non-COVID-19 deaths	2022	February	"Third dose or booster, at least 21 days ago"	13523	1039181	761.6		748.6	774.7
+Female	Non-COVID-19 deaths	2022	February	Ever vaccinated	15619	1356833	837.1		823.8	850.3
+Female	Non-COVID-19 deaths	2022	March	Unvaccinated	645	213620	978.9		900.2	1057.7
+Female	Non-COVID-19 deaths	2022	March	"First dose, less than 21 days ago"	2	2368	x		x	x
+Female	Non-COVID-19 deaths	2022	March	"First dose, at least 21 days ago"	190	63108	1679.4		1419.5	1939.4
+Female	Non-COVID-19 deaths	2022	March	"Second dose, less than 21 days ago"	2	8246	x		x	x
+Female	Non-COVID-19 deaths	2022	March	"Second dose, between 21 days and 6 months ago"	112	93351	1714.3		1365.1	2063.5
+Female	Non-COVID-19 deaths	2022	March	"Second dose, at least 6 months ago"	1477	154419	2136.3		2022.0	2250.5
+Female	Non-COVID-19 deaths	2022	March	"Third dose or booster, less than 21 days ago"	41	10020	1401.0		981.6	1930.6
+Female	Non-COVID-19 deaths	2022	March	"Third dose or booster, at least 21 days ago"	14911	1173039	808.2		733.9	882.5
+Female	Non-COVID-19 deaths	2022	March	Ever vaccinated	16735	1504551	810.7		798.3	823.1
+Female	Non-COVID-19 deaths	2022	April	Unvaccinated	591	204224	926.9		849.3	1004.6
+Female	Non-COVID-19 deaths	2022	April	"First dose, less than 21 days ago"	5	1594	x		x	x
+Female	Non-COVID-19 deaths	2022	April	"First dose, at least 21 days ago"	173	55066	1813.8		1525.3	2102.4
+Female	Non-COVID-19 deaths	2022	April	"Second dose, less than 21 days ago"	8	5926	x		x	x
+Female	Non-COVID-19 deaths	2022	April	"Second dose, between 21 days and 6 months ago"	107	82535	1954.9		1541.1	2368.8
+Female	Non-COVID-19 deaths	2022	April	"Second dose, at least 6 months ago"	1218	157096	1881.6		1770.2	1992.9
+Female	Non-COVID-19 deaths	2022	April	"Third dose or booster, less than 21 days ago"	49	7432	1426.5		1000.8	1953.5
+Female	Non-COVID-19 deaths	2022	April	"Third dose or booster, at least 21 days ago"	14798	1147317	770.5		757.9	783.1
+Female	Non-COVID-19 deaths	2022	April	Ever vaccinated	16358	1456966	815.7		803.1	828.3
+Female	Non-COVID-19 deaths	2022	May	Unvaccinated	512	209179	766.7		697.5	835.8
+Female	Non-COVID-19 deaths	2022	May	"First dose, less than 21 days ago"	1	1142	x		x	x
+Female	Non-COVID-19 deaths	2022	May	"First dose, at least 21 days ago"	161	52703	1623.1		1354.7	1891.5
+Female	Non-COVID-19 deaths	2022	May	"Second dose, less than 21 days ago"	5	4240	x		x	x
+Female	Non-COVID-19 deaths	2022	May	"Second dose, between 21 days and 6 months ago"	71	79753	1592.1		1196.5	2064.3
+Female	Non-COVID-19 deaths	2022	May	"Second dose, at least 6 months ago"	889	165998	1405.1		1307.6	1502.6
+Female	Non-COVID-19 deaths	2022	May	"Third dose or booster, less than 21 days ago"	57	6886	1782.9		1241.0	2443.3
+Female	Non-COVID-19 deaths	2022	May	"Third dose or booster, at least 21 days ago"	13349	1195170	671.7		660.1	683.3
+Female	Non-COVID-19 deaths	2022	May	Ever vaccinated	14533	1505891	702		690.5	713.6
+Male	All causes	2021	January	Unvaccinated	26605	1494480	3049.9		3009.7	3090.1
+Male	All causes	2021	January	"First dose, less than 21 days ago"	3338	80924	2690.7		-397.4	5778.7
+Male	All causes	2021	January	"First dose, at least 21 days ago"	1201	12642	2458.5		1984.1	2932.9
+Male	All causes	2021	January	"Second dose, less than 21 days ago"	247	9757	356.2		180.8	531.7
+Male	All causes	2021	January	"Second dose, between 21 days and 6 months ago"	44	1699	193.6		138.9	262.2
+Male	All causes	2021	January	"Second dose, at least 6 months ago"	0	0	x		x	x
+Male	All causes	2021	January	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Male	All causes	2021	January	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	All causes	2021	January	Ever vaccinated	4830	105021	2424.1		-78	4926.3
+Male	All causes	2021	February	Unvaccinated	10301	1091880	6495.6		6335.7	6655.5
+Male	All causes	2021	February	"First dose, less than 21 days ago"	3592	198481	1243.7		1192.4	1295.0
+Male	All causes	2021	February	"First dose, at least 21 days ago"	6656	139837	1358.0		1301.4	1414.7
+Male	All causes	2021	February	"Second dose, less than 21 days ago"	19	1065	684.1	u	364.8	1134.7
+Male	All causes	2021	February	"Second dose, between 21 days and 6 months ago"	512	13112	618.5		394.1	842.8
+Male	All causes	2021	February	"Second dose, at least 6 months ago"	0	0	x		x	x
+Male	All causes	2021	February	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Male	All causes	2021	February	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	All causes	2021	February	Ever vaccinated	10779	352495	1115.1		1085.1	1145.2
+Male	All causes	2021	March	Unvaccinated	3931	912058	3802.2		3653.1	3951.2
+Male	All causes	2021	March	"First dose, less than 21 days ago"	1006	212444	2379.4		2161.3	2597.5
+Male	All causes	2021	March	"First dose, at least 21 days ago"	11141	432918	1218.7		1187.5	1249.8
+Male	All causes	2021	March	"Second dose, less than 21 days ago"	596	23914	655.3		571.6	739.0
+Male	All causes	2021	March	"Second dose, between 21 days and 6 months ago"	739	17944	848.5		666.1	1030.8
+Male	All causes	2021	March	"Second dose, at least 6 months ago"	0	0	x		x	x
+Male	All causes	2021	March	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Male	All causes	2021	March	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	All causes	2021	March	Ever vaccinated	13482	687220	1029.7		1009.1	1050.2
+Male	All causes	2021	April	Unvaccinated	1956	700613	2538.1		2403.1	2673.2
+Male	All causes	2021	April	"First dose, less than 21 days ago"	233	97976	2249.8		1815.1	2684.4
+Male	All causes	2021	April	"First dose, at least 21 days ago"	8228	529501	2071.7		2018.2	2125.2
+Male	All causes	2021	April	"Second dose, less than 21 days ago"	2527	147837	621.2		582.9	659.6
+Male	All causes	2021	April	"Second dose, between 21 days and 6 months ago"	2772	71771	956.9		875.4	1038.4
+Male	All causes	2021	April	"Second dose, at least 6 months ago"	0	0	x		x	x
+Male	All causes	2021	April	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Male	All causes	2021	April	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	All causes	2021	April	Ever vaccinated	13760	847084	1012.8		994.3	1031.3
+Male	All causes	2021	May	Unvaccinated	1439	622402	1881.3		1763.3	1999.3
+Male	All causes	2021	May	"First dose, less than 21 days ago"	83	75951	1919.1		1331.7	2610.7
+Male	All causes	2021	May	"First dose, at least 21 days ago"	4018	361221	6354.3		6109.9	6598.7
+Male	All causes	2021	May	"Second dose, less than 21 days ago"	1764	218129	1042.6		979.7	1105.5
+Male	All causes	2021	May	"Second dose, between 21 days and 6 months ago"	9170	320208	1204.4		793.6	1615.2
+Male	All causes	2021	May	"Second dose, at least 6 months ago"	0	0	x		x	x
+Male	All causes	2021	May	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Male	All causes	2021	May	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	All causes	2021	May	Ever vaccinated	15035	975510	1084		999.4	1168.6
+Male	All causes	2021	June	Unvaccinated	1239	476445	1801.8		1681.8	1921.9
+Male	All causes	2021	June	"First dose, less than 21 days ago"	47	87861	1314.8		784.0	1974.7
+Male	All causes	2021	June	"First dose, at least 21 days ago"	1749	189762	7622.8		7200.3	8045.2
+Male	All causes	2021	June	"Second dose, less than 21 days ago"	505	174984	1803.2		1571.8	2034.7
+Male	All causes	2021	June	"Second dose, between 21 days and 6 months ago"	12092	615993	967.9		946.7	989.1
+Male	All causes	2021	June	"Second dose, at least 6 months ago"	0	9	x		x	x
+Male	All causes	2021	June	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Male	All causes	2021	June	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	All causes	2021	June	Ever vaccinated	14393	1068610	1008.4		991.4	1025.4
+Male	All causes	2021	July	Unvaccinated	1212	392605	1807.1		1686.3	1927.9
+Male	All causes	2021	July	"First dose, less than 21 days ago"	38	58068	1342.2		597.4	2291.4
+Male	All causes	2021	July	"First dose, at least 21 days ago"	1085	191175	7230.9		6742.3	7719.5
+Male	All causes	2021	July	"Second dose, less than 21 days ago"	145	85713	1844.8		1434.9	2254.7
+Male	All causes	2021	July	"Second dose, between 21 days and 6 months ago"	14366	856864	1086.2		1066.6	1105.9
+Male	All causes	2021	July	"Second dose, at least 6 months ago"	640	10733	796.8		546.8	1046.8
+Male	All causes	2021	July	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Male	All causes	2021	July	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	All causes	2021	July	Ever vaccinated	16274	1202553	1096.1		1078.9	1113.2
+Male	All causes	2021	August	Unvaccinated	1174	362776	1883.5		1757.8	2009.3
+Male	All causes	2021	August	"First dose, less than 21 days ago"	18	18286	2480.9	u	1217.6	4280.9
+Male	All causes	2021	August	"First dose, at least 21 days ago"	758	139627	6090.3		5598.1	6582.5
+Male	All causes	2021	August	"Second dose, less than 21 days ago"	68	81956	1902.6		1316.4	2604.8
+Male	All causes	2021	August	"Second dose, between 21 days and 6 months ago"	14571	975552	1084.5		1066.0	1103.0
+Male	All causes	2021	August	"Second dose, at least 6 months ago"	903	15474	886.8		698.2	1075.4
+Male	All causes	2021	August	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Male	All causes	2021	August	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	All causes	2021	August	Ever vaccinated	16318	1230895	1093.8		1076.8	1110.8
+Male	All causes	2021	September	Unvaccinated	1095	327133	1857.7		1731.0	1984.3
+Male	All causes	2021	September	"First dose, less than 21 days ago"	11	14771	993.9	u	122.8	2366.7
+Male	All causes	2021	September	"First dose, at least 21 days ago"	569	76042	5588.3		5073.9	6102.7
+Male	All causes	2021	September	"Second dose, less than 21 days ago"	23	52156	939.4		419.4	1650.1
+Male	All causes	2021	September	"Second dose, between 21 days and 6 months ago"	13671	1027112	1191.1		1123.7	1258.4
+Male	All causes	2021	September	"Second dose, at least 6 months ago"	2404	39562	1418.2		1306.0	1530.3
+Male	All causes	2021	September	"Third dose or booster, less than 21 days ago"	39	4025	289.5		166.9	445.4
+Male	All causes	2021	September	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	All causes	2021	September	Ever vaccinated	16717	1213667	1158.8		1137.5	1180
+Male	All causes	2021	October	Unvaccinated	1082	314763	1809.9		1685.6	1934.1
+Male	All causes	2021	October	"First dose, less than 21 days ago"	8	17587	x		x	x
+Male	All causes	2021	October	"First dose, at least 21 days ago"	553	70429	5890.1		5341.9	6438.2
+Male	All causes	2021	October	"Second dose, less than 21 days ago"	17	15926	1536.4	u	783.6	2620.5
+Male	All causes	2021	October	"Second dose, between 21 days and 6 months ago"	7054	931195	1459.0		1391.0	1527.0
+Male	All causes	2021	October	"Second dose, at least 6 months ago"	8623	125869	2250.1		2181.0	2319.3
+Male	All causes	2021	October	"Third dose or booster, less than 21 days ago"	1672	93883	504.7		457.2	552.3
+Male	All causes	2021	October	"Third dose or booster, at least 21 days ago"	547	20948	699.9		577.3	822.5
+Male	All causes	2021	October	Ever vaccinated	18474	1275836	1231.1		1213.1	1249.2
+Male	All causes	2021	November	Unvaccinated	1113	276891	1934.0		1802.9	2065.0
+Male	All causes	2021	November	"First dose, less than 21 days ago"	13	18329	4039.7	u	1983.6	7162.0
+Male	All causes	2021	November	"First dose, at least 21 days ago"	389	80533	4744.6		4220.0	5269.3
+Male	All causes	2021	November	"Second dose, less than 21 days ago"	27	9032	3623.0		2305.0	5381.5
+Male	All causes	2021	November	"Second dose, between 21 days and 6 months ago"	1838	619316	2185.8		2029.8	2341.9
+Male	All causes	2021	November	"Second dose, at least 6 months ago"	8699	185320	3554.5		3476.0	3633.1
+Male	All causes	2021	November	"Third dose or booster, less than 21 days ago"	2076	175760	687.0		646.3	727.6
+Male	All causes	2021	November	"Third dose or booster, at least 21 days ago"	5054	172504	876.5		828.2	924.8
+Male	All causes	2021	November	Ever vaccinated	18096	1260794	1243.8		1225.4	1262.2
+Male	All causes	2021	December	Unvaccinated	1174	269211	2088.6		1952.0	2225.2
+Male	All causes	2021	December	"First dose, less than 21 days ago"	9	10604	x		x	x
+Male	All causes	2021	December	"First dose, at least 21 days ago"	390	88528	5219.7		4644.3	5795.1
+Male	All causes	2021	December	"Second dose, less than 21 days ago"	25	14927	2566.5		1517.0	3982.8
+Male	All causes	2021	December	"Second dose, between 21 days and 6 months ago"	615	319809	2957.5		2636.4	3278.7
+Male	All causes	2021	December	"Second dose, at least 6 months ago"	5668	151131	5877.2		5715.5	6038.8
+Male	All causes	2021	December	"Third dose or booster, less than 21 days ago"	1600	277204	1254.7		1185.0	1324.3
+Male	All causes	2021	December	"Third dose or booster, at least 21 days ago"	11197	455834	1013.5		981.8	1045.3
+Male	All causes	2021	December	Ever vaccinated	19504	1318038	1299.4		1280.9	1317.9
+Male	All causes	2022	January	Unvaccinated	1092	255681	2082.9		1944.4	2221.5
+Male	All causes	2022	January	"First dose, less than 21 days ago"	17	8671	5639.8	u	3040.1	9383.3
+Male	All causes	2022	January	"First dose, at least 21 days ago"	335	80013	4822.8		4251.2	5394.3
+Male	All causes	2022	January	"Second dose, less than 21 days ago"	18	16053	2343.5	u	1234.0	3924.3
+Male	All causes	2022	January	"Second dose, between 21 days and 6 months ago"	257	150660	3258.8		2762.5	3755.1
+Male	All causes	2022	January	"Second dose, at least 6 months ago"	3045	99252	5821.3		5604.2	6038.5
+Male	All causes	2022	January	"Third dose or booster, less than 21 days ago"	553	119856	2334.3		2120.2	2548.4
+Male	All causes	2022	January	"Third dose or booster, at least 21 days ago"	14771	855324	1124.3		1002.5	1246.2
+Male	All causes	2022	January	Ever vaccinated	18996	1329829	1263.5		1245.3	1281.8
+Male	All causes	2022	February	Unvaccinated	709	223643	1492.9		1369.3	1616.5
+Male	All causes	2022	February	"First dose, less than 21 days ago"	5	4454	x		x	x
+Male	All causes	2022	February	"First dose, at least 21 days ago"	198	64001	3118.5		2625.5	3611.6
+Male	All causes	2022	February	"Second dose, less than 21 days ago"	4	12764	x		x	x
+Male	All causes	2022	February	"Second dose, between 21 days and 6 months ago"	143	108535	2487.1		1978.8	2995.4
+Male	All causes	2022	February	"Second dose, at least 6 months ago"	1639	107500	3841.4		3643.5	4039.3
+Male	All causes	2022	February	"Third dose or booster, less than 21 days ago"	84	15391	2336.3		1846.9	2912.1
+Male	All causes	2022	February	"Third dose or booster, at least 21 days ago"	13828	894374	1072.1		1053.8	1090.4
+Male	All causes	2022	February	Ever vaccinated	15901	1207020	1171.8		1153.3	1190.3
+Male	All causes	2022	March	Unvaccinated	691	243735	1348.0		1235.6	1460.4
+Male	All causes	2022	March	"First dose, less than 21 days ago"	5	2381	x		x	x
+Male	All causes	2022	March	"First dose, at least 21 days ago"	197	65122	3055.4		2580.4	3530.5
+Male	All causes	2022	March	"Second dose, less than 21 days ago"	3	8077	x		x	x
+Male	All causes	2022	March	"Second dose, between 21 days and 6 months ago"	127	95959	2773.7		2215.3	3332.0
+Male	All causes	2022	March	"Second dose, at least 6 months ago"	1451	147672	3170.2		2994.5	3345.8
+Male	All causes	2022	March	"Third dose or booster, less than 21 days ago"	52	9123	2732.8		2020.7	3608.7
+Male	All causes	2022	March	"Third dose or booster, at least 21 days ago"	15551	1010418	1135.9		1057.1	1214.7
+Male	All causes	2022	March	Ever vaccinated	17386	1338752	1153.9		1136.5	1171.3
+Male	All causes	2022	April	Unvaccinated	651	233339	1333.0		1218.5	1447.4
+Male	All causes	2022	April	"First dose, less than 21 days ago"	5	1611	x		x	x
+Male	All causes	2022	April	"First dose, at least 21 days ago"	196	57244	3141.2		2648.3	3634.2
+Male	All causes	2022	April	"Second dose, less than 21 days ago"	4	5812	x		x	x
+Male	All causes	2022	April	"Second dose, between 21 days and 6 months ago"	91	82472	2688.0		2099.8	3375.6
+Male	All causes	2022	April	"Second dose, at least 6 months ago"	1161	153828	2732.5		2561.0	2903.9
+Male	All causes	2022	April	"Third dose or booster, less than 21 days ago"	34	6850	1569.1		1072.6	2210.7
+Male	All causes	2022	April	"Third dose or booster, at least 21 days ago"	15443	988798	1119.9		1073.9	1165.9
+Male	All causes	2022	April	Ever vaccinated	16934	1296615	1155.9		1138.2	1173.6
+Male	All causes	2022	May	Unvaccinated	465	239255	933.1		839.2	1027.0
+Male	All causes	2022	May	"First dose, less than 21 days ago"	0	1149	x		x	x
+Male	All causes	2022	May	"First dose, at least 21 days ago"	130	55061	2152.3		1737.6	2567.1
+Male	All causes	2022	May	"Second dose, less than 21 days ago"	4	4184	x		x	x
+Male	All causes	2022	May	"Second dose, between 21 days and 6 months ago"	58	80187	2062.8		1496.8	2751.2
+Male	All causes	2022	May	"Second dose, at least 6 months ago"	844	162733	2021.6		1871.7	2171.6
+Male	All causes	2022	May	"Third dose or booster, less than 21 days ago"	39	6406	2375.4		1628.2	3324.8
+Male	All causes	2022	May	"Third dose or booster, at least 21 days ago"	13243	1030562	921.7		887.7	955.7
+Male	All causes	2022	May	Ever vaccinated	14318	1340283	941.6		925.9	957.2
+Male	Deaths involving COVID-19	2021	January	Unvaccinated	12732	1494480	1504.9		1476.4	1533.4
+Male	Deaths involving COVID-19	2021	January	"First dose, less than 21 days ago"	1111	80924	1938.0		-1149.5	5025.5
+Male	Deaths involving COVID-19	2021	January	"First dose, at least 21 days ago"	544	12642	1089.1		685.9	1492.3
+Male	Deaths involving COVID-19	2021	January	"Second dose, less than 21 days ago"	39	9757	29.6		20.7	40.8
+Male	Deaths involving COVID-19	2021	January	"Second dose, between 21 days and 6 months ago"	7	1699	x		x	x
+Male	Deaths involving COVID-19	2021	January	"Second dose, at least 6 months ago"	0	0	x		x	x
+Male	Deaths involving COVID-19	2021	January	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Male	Deaths involving COVID-19	2021	January	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	Deaths involving COVID-19	2021	January	Ever vaccinated	1701	105021	1675		-826.6	4176.6
+Male	Deaths involving COVID-19	2021	February	Unvaccinated	4227	1091880	2919.3		2811.1	3027.5
+Male	Deaths involving COVID-19	2021	February	"First dose, less than 21 days ago"	699	198481	250.2		228.8	271.5
+Male	Deaths involving COVID-19	2021	February	"First dose, at least 21 days ago"	1625	139837	299.1		274.9	323.2
+Male	Deaths involving COVID-19	2021	February	"Second dose, less than 21 days ago"	1	1065	x		x	x
+Male	Deaths involving COVID-19	2021	February	"Second dose, between 21 days and 6 months ago"	44	13112	25.6		18.3	34.6
+Male	Deaths involving COVID-19	2021	February	"Second dose, at least 6 months ago"	0	0	x		x	x
+Male	Deaths involving COVID-19	2021	February	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Male	Deaths involving COVID-19	2021	February	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	Deaths involving COVID-19	2021	February	Ever vaccinated	2369	352495	223.2		211.8	234.6
+Male	Deaths involving COVID-19	2021	March	Unvaccinated	755	912058	772.1		704.9	839.4
+Male	Deaths involving COVID-19	2021	March	"First dose, less than 21 days ago"	60	212444	189.9		129.8	262.7
+Male	Deaths involving COVID-19	2021	March	"First dose, at least 21 days ago"	832	432918	86.9		80.2	93.6
+Male	Deaths involving COVID-19	2021	March	"Second dose, less than 21 days ago"	15	23914	19.7	u	6.7	38.8
+Male	Deaths involving COVID-19	2021	March	"Second dose, between 21 days and 6 months ago"	26	17944	32.0		-3.1	79.1
+Male	Deaths involving COVID-19	2021	March	"Second dose, at least 6 months ago"	0	0	x		x	x
+Male	Deaths involving COVID-19	2021	March	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Male	Deaths involving COVID-19	2021	March	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	Deaths involving COVID-19	2021	March	Ever vaccinated	933	687220	67.9		63.3	72.4
+Male	Deaths involving COVID-19	2021	April	Unvaccinated	120	700613	169.4		134.6	204.1
+Male	Deaths involving COVID-19	2021	April	"First dose, less than 21 days ago"	11	97976	178.7	u	70.1	349.9
+Male	Deaths involving COVID-19	2021	April	"First dose, at least 21 days ago"	217	529501	63.0		53.4	72.6
+Male	Deaths involving COVID-19	2021	April	"Second dose, less than 21 days ago"	22	147837	4.3		2.6	6.6
+Male	Deaths involving COVID-19	2021	April	"Second dose, between 21 days and 6 months ago"	35	71771	15.1		7.0	25.6
+Male	Deaths involving COVID-19	2021	April	"Second dose, at least 6 months ago"	0	0	x		x	x
+Male	Deaths involving COVID-19	2021	April	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Male	Deaths involving COVID-19	2021	April	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	Deaths involving COVID-19	2021	April	Ever vaccinated	285	847084	20.6		18.1	23.1
+Male	Deaths involving COVID-19	2021	May	Unvaccinated	44	622402	63.6		44.0	88.1
+Male	Deaths involving COVID-19	2021	May	"First dose, less than 21 days ago"	4	75951	x		x	x
+Male	Deaths involving COVID-19	2021	May	"First dose, at least 21 days ago"	59	361221	98.7		69.7	134.0
+Male	Deaths involving COVID-19	2021	May	"Second dose, less than 21 days ago"	14	218129	10.0	u	4.5	18.2
+Male	Deaths involving COVID-19	2021	May	"Second dose, between 21 days and 6 months ago"	32	320208	2.9		1.8	4.3
+Male	Deaths involving COVID-19	2021	May	"Second dose, at least 6 months ago"	0	0	x		x	x
+Male	Deaths involving COVID-19	2021	May	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Male	Deaths involving COVID-19	2021	May	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	Deaths involving COVID-19	2021	May	Ever vaccinated	109	975510	7.4		6	8.9
+Male	Deaths involving COVID-19	2021	June	Unvaccinated	51	476445	57.1		38.9	79.5
+Male	Deaths involving COVID-19	2021	June	"First dose, less than 21 days ago"	1	87861	x		x	x
+Male	Deaths involving COVID-19	2021	June	"First dose, at least 21 days ago"	30	189762	116.1		69.0	178.2
+Male	Deaths involving COVID-19	2021	June	"Second dose, less than 21 days ago"	4	174984	x		x	x
+Male	Deaths involving COVID-19	2021	June	"Second dose, between 21 days and 6 months ago"	105	615993	8.2		6.5	10.0
+Male	Deaths involving COVID-19	2021	June	"Second dose, at least 6 months ago"	0	9	x		x	x
+Male	Deaths involving COVID-19	2021	June	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Male	Deaths involving COVID-19	2021	June	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	Deaths involving COVID-19	2021	June	Ever vaccinated	140	1068610	9.7		8.1	11.4
+Male	Deaths involving COVID-19	2021	July	Unvaccinated	196	392605	271.2		225.7	316.7
+Male	Deaths involving COVID-19	2021	July	"First dose, less than 21 days ago"	2	58068	x		x	x
+Male	Deaths involving COVID-19	2021	July	"First dose, at least 21 days ago"	28	191175	169.8		103.1	258.2
+Male	Deaths involving COVID-19	2021	July	"Second dose, less than 21 days ago"	0	85713	x		x	x
+Male	Deaths involving COVID-19	2021	July	"Second dose, between 21 days and 6 months ago"	415	856864	32.2		28.8	35.7
+Male	Deaths involving COVID-19	2021	July	"Second dose, at least 6 months ago"	39	10733	24.2		17.1	33.2
+Male	Deaths involving COVID-19	2021	July	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Male	Deaths involving COVID-19	2021	July	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	Deaths involving COVID-19	2021	July	Ever vaccinated	484	1202553	32.6		29.7	35.6
+Male	Deaths involving COVID-19	2021	August	Unvaccinated	338	362776	523.5		458.8	588.1
+Male	Deaths involving COVID-19	2021	August	"First dose, less than 21 days ago"	5	18286	x		x	x
+Male	Deaths involving COVID-19	2021	August	"First dose, at least 21 days ago"	50	139627	425.5		303.5	576.2
+Male	Deaths involving COVID-19	2021	August	"Second dose, less than 21 days ago"	3	81956	x		x	x
+Male	Deaths involving COVID-19	2021	August	"Second dose, between 21 days and 6 months ago"	845	975552	62.4		58.1	66.8
+Male	Deaths involving COVID-19	2021	August	"Second dose, at least 6 months ago"	76	15474	89.6		17.9	174.7
+Male	Deaths involving COVID-19	2021	August	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Male	Deaths involving COVID-19	2021	August	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	Deaths involving COVID-19	2021	August	Ever vaccinated	979	1230895	65.2		61	69.3
+Male	Deaths involving COVID-19	2021	September	Unvaccinated	266	327133	463.2		400.1	526.2
+Male	Deaths involving COVID-19	2021	September	"First dose, less than 21 days ago"	1	14771	x		x	x
+Male	Deaths involving COVID-19	2021	September	"First dose, at least 21 days ago"	47	76042	459.7		324.2	628.2
+Male	Deaths involving COVID-19	2021	September	"Second dose, less than 21 days ago"	0	52156	x		x	x
+Male	Deaths involving COVID-19	2021	September	"Second dose, between 21 days and 6 months ago"	1001	1027112	82.3		77.0	87.6
+Male	Deaths involving COVID-19	2021	September	"Second dose, at least 6 months ago"	208	39562	133.9		96.9	170.8
+Male	Deaths involving COVID-19	2021	September	"Third dose or booster, less than 21 days ago"	0	4025	x		x	x
+Male	Deaths involving COVID-19	2021	September	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	Deaths involving COVID-19	2021	September	Ever vaccinated	1257	1213667	89		79.4	98.6
+Male	Deaths involving COVID-19	2021	October	Unvaccinated	225	314763	359.3		305.1	413.5
+Male	Deaths involving COVID-19	2021	October	"First dose, less than 21 days ago"	0	17587	x		x	x
+Male	Deaths involving COVID-19	2021	October	"First dose, at least 21 days ago"	36	70429	454.5		312.5	636.8
+Male	Deaths involving COVID-19	2021	October	"Second dose, less than 21 days ago"	1	15926	x		x	x
+Male	Deaths involving COVID-19	2021	October	"Second dose, between 21 days and 6 months ago"	438	931195	86.4		75.9	96.9
+Male	Deaths involving COVID-19	2021	October	"Second dose, at least 6 months ago"	771	125869	203.8		184.4	223.2
+Male	Deaths involving COVID-19	2021	October	"Third dose or booster, less than 21 days ago"	88	93883	22.2		16.4	28.9
+Male	Deaths involving COVID-19	2021	October	"Third dose or booster, at least 21 days ago"	22	20948	36.6		14.6	66.8
+Male	Deaths involving COVID-19	2021	October	Ever vaccinated	1356	1275836	90.2		85.3	95
+Male	Deaths involving COVID-19	2021	November	Unvaccinated	327	276891	541.7		474.4	609.0
+Male	Deaths involving COVID-19	2021	November	"First dose, less than 21 days ago"	1	18329	x		x	x
+Male	Deaths involving COVID-19	2021	November	"First dose, at least 21 days ago"	34	80533	458.4		305.7	655.8
+Male	Deaths involving COVID-19	2021	November	"Second dose, less than 21 days ago"	1	9032	x		x	x
+Male	Deaths involving COVID-19	2021	November	"Second dose, between 21 days and 6 months ago"	121	619316	131.8		94.3	169.2
+Male	Deaths involving COVID-19	2021	November	"Second dose, at least 6 months ago"	1005	185320	401.7		375.9	427.6
+Male	Deaths involving COVID-19	2021	November	"Third dose or booster, less than 21 days ago"	80	175760	26.1		19.4	34.0
+Male	Deaths involving COVID-19	2021	November	"Third dose or booster, at least 21 days ago"	199	172504	50.1		31.7	68.5
+Male	Deaths involving COVID-19	2021	November	Ever vaccinated	1441	1260794	97.4		92.3	102.5
+Male	Deaths involving COVID-19	2021	December	Unvaccinated	373	269211	639.8		565.2	714.4
+Male	Deaths involving COVID-19	2021	December	"First dose, less than 21 days ago"	2	10604	x		x	x
+Male	Deaths involving COVID-19	2021	December	"First dose, at least 21 days ago"	44	88528	665.4		472.1	907.6
+Male	Deaths involving COVID-19	2021	December	"Second dose, less than 21 days ago"	1	14927	x		x	x
+Male	Deaths involving COVID-19	2021	December	"Second dose, between 21 days and 6 months ago"	33	319809	202.8		122.9	306.4
+Male	Deaths involving COVID-19	2021	December	"Second dose, at least 6 months ago"	579	151131	588.5		537.6	639.3
+Male	Deaths involving COVID-19	2021	December	"Third dose or booster, less than 21 days ago"	52	277204	44.3		32.0	59.4
+Male	Deaths involving COVID-19	2021	December	"Third dose or booster, at least 21 days ago"	398	455834	35.4		31.3	39.4
+Male	Deaths involving COVID-19	2021	December	Ever vaccinated	1109	1318038	73.4		69	77.8
+Male	Deaths involving COVID-19	2022	January	Unvaccinated	389	255681	754.0		670.7	837.2
+Male	Deaths involving COVID-19	2022	January	"First dose, less than 21 days ago"	5	8671	x		x	x
+Male	Deaths involving COVID-19	2022	January	"First dose, at least 21 days ago"	65	80013	1037.2		784.7	1341.0
+Male	Deaths involving COVID-19	2022	January	"Second dose, less than 21 days ago"	3	16053	x		x	x
+Male	Deaths involving COVID-19	2022	January	"Second dose, between 21 days and 6 months ago"	37	150660	616.7		414.0	875.8
+Male	Deaths involving COVID-19	2022	January	"Second dose, at least 6 months ago"	578	99252	1167.0		1068.7	1265.3
+Male	Deaths involving COVID-19	2022	January	"Third dose or booster, less than 21 days ago"	52	119856	231.0		168.4	308.1
+Male	Deaths involving COVID-19	2022	January	"Third dose or booster, at least 21 days ago"	1380	855324	161.5		40.8	282.2
+Male	Deaths involving COVID-19	2022	January	Ever vaccinated	2120	1329829	143.3		137.1	149.5
+Male	Deaths involving COVID-19	2022	February	Unvaccinated	134	223643	324.3		264.7	383.9
+Male	Deaths involving COVID-19	2022	February	"First dose, less than 21 days ago"	1	4454	x		x	x
+Male	Deaths involving COVID-19	2022	February	"First dose, at least 21 days ago"	29	64001	514.8		326.8	760.6
+Male	Deaths involving COVID-19	2022	February	"Second dose, less than 21 days ago"	0	12764	x		x	x
+Male	Deaths involving COVID-19	2022	February	"Second dose, between 21 days and 6 months ago"	10	108535	220.8	u	87.7	435.3
+Male	Deaths involving COVID-19	2022	February	"Second dose, at least 6 months ago"	190	107500	505.5		431.5	579.5
+Male	Deaths involving COVID-19	2022	February	"Third dose or booster, less than 21 days ago"	7	15391	x		x	x
+Male	Deaths involving COVID-19	2022	February	"Third dose or booster, at least 21 days ago"	1117	894374	88.1		82.9	93.4
+Male	Deaths involving COVID-19	2022	February	Ever vaccinated	1354	1207020	102.4		96.9	108
+Male	Deaths involving COVID-19	2022	March	Unvaccinated	101	243735	225.7		178.0	273.4
+Male	Deaths involving COVID-19	2022	March	"First dose, less than 21 days ago"	1	2381	x		x	x
+Male	Deaths involving COVID-19	2022	March	"First dose, at least 21 days ago"	18	65122	335.1	u	189.5	542.6
+Male	Deaths involving COVID-19	2022	March	"Second dose, less than 21 days ago"	2	8077	x		x	x
+Male	Deaths involving COVID-19	2022	March	"Second dose, between 21 days and 6 months ago"	5	95959	x		x	x
+Male	Deaths involving COVID-19	2022	March	"Second dose, at least 6 months ago"	133	147672	330.1		272.0	388.3
+Male	Deaths involving COVID-19	2022	March	"Third dose or booster, less than 21 days ago"	1	9123	x		x	x
+Male	Deaths involving COVID-19	2022	March	"Third dose or booster, at least 21 days ago"	1271	1010418	90.3		85.3	95.4
+Male	Deaths involving COVID-19	2022	March	Ever vaccinated	1431	1338752	97.4		92.2	102.5
+Male	Deaths involving COVID-19	2022	April	Unvaccinated	99	233339	252.0		202.1	310.1
+Male	Deaths involving COVID-19	2022	April	"First dose, less than 21 days ago"	1	1611	x		x	x
+Male	Deaths involving COVID-19	2022	April	"First dose, at least 21 days ago"	23	57244	404.0		242.4	625.0
+Male	Deaths involving COVID-19	2022	April	"Second dose, less than 21 days ago"	0	5812	x		x	x
+Male	Deaths involving COVID-19	2022	April	"Second dose, between 21 days and 6 months ago"	9	82472	x		x	x
+Male	Deaths involving COVID-19	2022	April	"Second dose, at least 6 months ago"	107	153828	271.6		216.5	326.6
+Male	Deaths involving COVID-19	2022	April	"Third dose or booster, less than 21 days ago"	0	6850	x		x	x
+Male	Deaths involving COVID-19	2022	April	"Third dose or booster, at least 21 days ago"	1632	988798	118.1		112.2	123.9
+Male	Deaths involving COVID-19	2022	April	Ever vaccinated	1772	1296615	123.9		118	129.8
+Male	Deaths involving COVID-19	2022	May	Unvaccinated	42	239255	100.8		70.8	138.5
+Male	Deaths involving COVID-19	2022	May	"First dose, less than 21 days ago"	0	1149	x		x	x
+Male	Deaths involving COVID-19	2022	May	"First dose, at least 21 days ago"	8	55061	x		x	x
+Male	Deaths involving COVID-19	2022	May	"Second dose, less than 21 days ago"	0	4184	x		x	x
+Male	Deaths involving COVID-19	2022	May	"Second dose, between 21 days and 6 months ago"	2	80187	x		x	x
+Male	Deaths involving COVID-19	2022	May	"Second dose, at least 6 months ago"	50	162733	126.9		91.4	170.7
+Male	Deaths involving COVID-19	2022	May	"Third dose or booster, less than 21 days ago"	0	6406	x		x	x
+Male	Deaths involving COVID-19	2022	May	"Third dose or booster, at least 21 days ago"	605	1030562	42.1		38.7	45.6
+Male	Deaths involving COVID-19	2022	May	Ever vaccinated	665	1340283	44.8		41.3	48.2
+Male	Non-COVID-19 deaths	2021	January	Unvaccinated	13873	1494480	1545.0		1516.7	1573.3
+Male	Non-COVID-19 deaths	2021	January	"First dose, less than 21 days ago"	2227	80924	752.7		693.8	811.5
+Male	Non-COVID-19 deaths	2021	January	"First dose, at least 21 days ago"	657	12642	1369.4		1119.5	1619.3
+Male	Non-COVID-19 deaths	2021	January	"Second dose, less than 21 days ago"	208	9757	326.7		151.5	501.8
+Male	Non-COVID-19 deaths	2021	January	"Second dose, between 21 days and 6 months ago"	37	1699	160.5		111.4	223.2
+Male	Non-COVID-19 deaths	2021	January	"Second dose, at least 6 months ago"	0	0	x		x	x
+Male	Non-COVID-19 deaths	2021	January	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Male	Non-COVID-19 deaths	2021	January	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	Non-COVID-19 deaths	2021	January	Ever vaccinated	3129	105021	749.1		696.4	801.9
+Male	Non-COVID-19 deaths	2021	February	Unvaccinated	6074	1091880	3576.3		3458.5	3694.1
+Male	Non-COVID-19 deaths	2021	February	"First dose, less than 21 days ago"	2893	198481	993.5		946.9	1040.2
+Male	Non-COVID-19 deaths	2021	February	"First dose, at least 21 days ago"	5031	139837	1059.0		1007.7	1110.2
+Male	Non-COVID-19 deaths	2021	February	"Second dose, less than 21 days ago"	18	1065	645.3	u	334.4	1088.5
+Male	Non-COVID-19 deaths	2021	February	"Second dose, between 21 days and 6 months ago"	468	13112	592.9		368.7	817.1
+Male	Non-COVID-19 deaths	2021	February	"Second dose, at least 6 months ago"	0	0	x		x	x
+Male	Non-COVID-19 deaths	2021	February	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Male	Non-COVID-19 deaths	2021	February	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	Non-COVID-19 deaths	2021	February	Ever vaccinated	8410	352495	891.9		864.1	919.7
+Male	Non-COVID-19 deaths	2021	March	Unvaccinated	3176	912058	3030.0		2897.0	3163.1
+Male	Non-COVID-19 deaths	2021	March	"First dose, less than 21 days ago"	946	212444	2189.5		1981.1	2397.9
+Male	Non-COVID-19 deaths	2021	March	"First dose, at least 21 days ago"	10309	432918	1131.8		1101.4	1162.1
+Male	Non-COVID-19 deaths	2021	March	"Second dose, less than 21 days ago"	581	23914	635.6		553.3	718.0
+Male	Non-COVID-19 deaths	2021	March	"Second dose, between 21 days and 6 months ago"	713	17944	816.4		638.3	994.6
+Male	Non-COVID-19 deaths	2021	March	"Second dose, at least 6 months ago"	0	0	x		x	x
+Male	Non-COVID-19 deaths	2021	March	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Male	Non-COVID-19 deaths	2021	March	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	Non-COVID-19 deaths	2021	March	Ever vaccinated	12549	687220	961.8		941.8	981.8
+Male	Non-COVID-19 deaths	2021	April	Unvaccinated	1836	700613	2368.8		2238.3	2499.3
+Male	Non-COVID-19 deaths	2021	April	"First dose, less than 21 days ago"	222	97976	2071.1		1655.8	2486.4
+Male	Non-COVID-19 deaths	2021	April	"First dose, at least 21 days ago"	8011	529501	2008.7		1956.1	2061.3
+Male	Non-COVID-19 deaths	2021	April	"Second dose, less than 21 days ago"	2505	147837	617.0		578.7	655.2
+Male	Non-COVID-19 deaths	2021	April	"Second dose, between 21 days and 6 months ago"	2737	71771	941.8		860.8	1022.9
+Male	Non-COVID-19 deaths	2021	April	"Second dose, at least 6 months ago"	0	0	x		x	x
+Male	Non-COVID-19 deaths	2021	April	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Male	Non-COVID-19 deaths	2021	April	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	Non-COVID-19 deaths	2021	April	Ever vaccinated	13475	847084	992.1		973.8	1010.5
+Male	Non-COVID-19 deaths	2021	May	Unvaccinated	1395	622402	1817.7		1701.7	1933.8
+Male	Non-COVID-19 deaths	2021	May	"First dose, less than 21 days ago"	79	75951	1751.0		1193.1	2410.7
+Male	Non-COVID-19 deaths	2021	May	"First dose, at least 21 days ago"	3959	361221	6255.6		6013.2	6498.1
+Male	Non-COVID-19 deaths	2021	May	"Second dose, less than 21 days ago"	1750	218129	1032.6		970.1	1095.2
+Male	Non-COVID-19 deaths	2021	May	"Second dose, between 21 days and 6 months ago"	9138	320208	1201.5		790.7	1612.3
+Male	Non-COVID-19 deaths	2021	May	"Second dose, at least 6 months ago"	0	0	x		x	x
+Male	Non-COVID-19 deaths	2021	May	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Male	Non-COVID-19 deaths	2021	May	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	Non-COVID-19 deaths	2021	May	Ever vaccinated	14926	975510	1076.6		991.9	1161.2
+Male	Non-COVID-19 deaths	2021	June	Unvaccinated	1188	476445	1744.7		1626.3	1863.2
+Male	Non-COVID-19 deaths	2021	June	"First dose, less than 21 days ago"	46	87861	1232.4		723.7	1866.5
+Male	Non-COVID-19 deaths	2021	June	"First dose, at least 21 days ago"	1719	189762	7506.6		7087.4	7925.8
+Male	Non-COVID-19 deaths	2021	June	"Second dose, less than 21 days ago"	501	174984	1779.6		1549.8	2009.4
+Male	Non-COVID-19 deaths	2021	June	"Second dose, between 21 days and 6 months ago"	11987	615993	959.6		938.5	980.8
+Male	Non-COVID-19 deaths	2021	June	"Second dose, at least 6 months ago"	0	9	x		x	x
+Male	Non-COVID-19 deaths	2021	June	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Male	Non-COVID-19 deaths	2021	June	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	Non-COVID-19 deaths	2021	June	Ever vaccinated	14253	1068610	998.7		981.7	1015.6
+Male	Non-COVID-19 deaths	2021	July	Unvaccinated	1016	392605	1535.9		1424.1	1647.8
+Male	Non-COVID-19 deaths	2021	July	"First dose, less than 21 days ago"	36	58068	1216.8		507.3	2127.2
+Male	Non-COVID-19 deaths	2021	July	"First dose, at least 21 days ago"	1057	191175	7061.1		6578.1	7544.2
+Male	Non-COVID-19 deaths	2021	July	"Second dose, less than 21 days ago"	145	85713	1844.8		1434.9	2254.7
+Male	Non-COVID-19 deaths	2021	July	"Second dose, between 21 days and 6 months ago"	13951	856864	1054.0		1034.7	1073.3
+Male	Non-COVID-19 deaths	2021	July	"Second dose, at least 6 months ago"	601	10733	772.6		522.8	1022.5
+Male	Non-COVID-19 deaths	2021	July	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Male	Non-COVID-19 deaths	2021	July	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	Non-COVID-19 deaths	2021	July	Ever vaccinated	15790	1202553	1063.5		1046.6	1080.3
+Male	Non-COVID-19 deaths	2021	August	Unvaccinated	836	362776	1360.1		1252.2	1467.9
+Male	Non-COVID-19 deaths	2021	August	"First dose, less than 21 days ago"	13	18286	1634.0	u	655.2	3120.3
+Male	Non-COVID-19 deaths	2021	August	"First dose, at least 21 days ago"	708	139627	5664.8		5190.4	6139.2
+Male	Non-COVID-19 deaths	2021	August	"Second dose, less than 21 days ago"	65	81956	1773.9		1205.7	2457.4
+Male	Non-COVID-19 deaths	2021	August	"Second dose, between 21 days and 6 months ago"	13726	975552	1022.1		1004.1	1040.1
+Male	Non-COVID-19 deaths	2021	August	"Second dose, at least 6 months ago"	827	15474	797.2		624.6	969.8
+Male	Non-COVID-19 deaths	2021	August	"Third dose or booster, less than 21 days ago"	0	0	x		x	x
+Male	Non-COVID-19 deaths	2021	August	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	Non-COVID-19 deaths	2021	August	Ever vaccinated	15339	1230895	1028.6		1012.1	1045.2
+Male	Non-COVID-19 deaths	2021	September	Unvaccinated	829	327133	1394.5		1284.6	1504.3
+Male	Non-COVID-19 deaths	2021	September	"First dose, less than 21 days ago"	10	14771	986.2	u	123.2	2377.6
+Male	Non-COVID-19 deaths	2021	September	"First dose, at least 21 days ago"	522	76042	5128.6		4635.4	5621.8
+Male	Non-COVID-19 deaths	2021	September	"Second dose, less than 21 days ago"	23	52156	939.4		419.4	1650.1
+Male	Non-COVID-19 deaths	2021	September	"Second dose, between 21 days and 6 months ago"	12670	1027112	1108.8		1041.6	1175.9
+Male	Non-COVID-19 deaths	2021	September	"Second dose, at least 6 months ago"	2196	39562	1284.3		1178.4	1390.2
+Male	Non-COVID-19 deaths	2021	September	"Third dose or booster, less than 21 days ago"	39	4025	289.5		166.9	445.4
+Male	Non-COVID-19 deaths	2021	September	"Third dose or booster, at least 21 days ago"	0	0	x		x	x
+Male	Non-COVID-19 deaths	2021	September	Ever vaccinated	15460	1213667	1069.7		1050.7	1088.7
+Male	Non-COVID-19 deaths	2021	October	Unvaccinated	857	314763	1450.6		1338.8	1562.4
+Male	Non-COVID-19 deaths	2021	October	"First dose, less than 21 days ago"	8	17587	x		x	x
+Male	Non-COVID-19 deaths	2021	October	"First dose, at least 21 days ago"	517	70429	5435.5		4909.7	5961.3
+Male	Non-COVID-19 deaths	2021	October	"Second dose, less than 21 days ago"	16	15926	1420.5	u	697.8	2473.2
+Male	Non-COVID-19 deaths	2021	October	"Second dose, between 21 days and 6 months ago"	6616	931195	1372.6		1305.4	1439.8
+Male	Non-COVID-19 deaths	2021	October	"Second dose, at least 6 months ago"	7852	125869	2046.3		1979.9	2112.7
+Male	Non-COVID-19 deaths	2021	October	"Third dose or booster, less than 21 days ago"	1584	93883	482.6		435.4	529.8
+Male	Non-COVID-19 deaths	2021	October	"Third dose or booster, at least 21 days ago"	525	20948	663.3		543.2	783.4
+Male	Non-COVID-19 deaths	2021	October	Ever vaccinated	17118	1275836	1141		1123.6	1158.4
+Male	Non-COVID-19 deaths	2021	November	Unvaccinated	786	276891	1392.2		1279.8	1504.7
+Male	Non-COVID-19 deaths	2021	November	"First dose, less than 21 days ago"	12	18329	3634.4	u	1708.5	6610.3
+Male	Non-COVID-19 deaths	2021	November	"First dose, at least 21 days ago"	355	80533	4286.2		3788.8	4783.6
+Male	Non-COVID-19 deaths	2021	November	"Second dose, less than 21 days ago"	26	9032	3611.5		2296.3	5375.9
+Male	Non-COVID-19 deaths	2021	November	"Second dose, between 21 days and 6 months ago"	1717	619316	2054.1		1902.5	2205.6
+Male	Non-COVID-19 deaths	2021	November	"Second dose, at least 6 months ago"	7694	185320	3152.8		3078.6	3227.0
+Male	Non-COVID-19 deaths	2021	November	"Third dose or booster, less than 21 days ago"	1996	175760	660.9		620.9	700.9
+Male	Non-COVID-19 deaths	2021	November	"Third dose or booster, at least 21 days ago"	4855	172504	826.4		781.8	871.0
+Male	Non-COVID-19 deaths	2021	November	Ever vaccinated	16655	1260794	1146.4		1128.7	1164
+Male	Non-COVID-19 deaths	2021	December	Unvaccinated	801	269211	1448.8		1334.3	1563.3
+Male	Non-COVID-19 deaths	2021	December	"First dose, less than 21 days ago"	7	10604	x		x	x
+Male	Non-COVID-19 deaths	2021	December	"First dose, at least 21 days ago"	346	88528	4554.3		4018.2	5090.4
+Male	Non-COVID-19 deaths	2021	December	"Second dose, less than 21 days ago"	24	14927	2409.7		1399.7	3781.4
+Male	Non-COVID-19 deaths	2021	December	"Second dose, between 21 days and 6 months ago"	582	319809	2754.8		2445.8	3063.8
+Male	Non-COVID-19 deaths	2021	December	"Second dose, at least 6 months ago"	5089	151131	5288.7		5135.2	5442.2
+Male	Non-COVID-19 deaths	2021	December	"Third dose or booster, less than 21 days ago"	1548	277204	1210.4		1142.0	1278.8
+Male	Non-COVID-19 deaths	2021	December	"Third dose or booster, at least 21 days ago"	10799	455834	978.1		946.6	1009.6
+Male	Non-COVID-19 deaths	2021	December	Ever vaccinated	18395	1318038	1226		1208.1	1244
+Male	Non-COVID-19 deaths	2022	January	Unvaccinated	703	255681	1329.0		1218.2	1439.8
+Male	Non-COVID-19 deaths	2022	January	"First dose, less than 21 days ago"	12	8671	4337.5	u	2093.0	7805.7
+Male	Non-COVID-19 deaths	2022	January	"First dose, at least 21 days ago"	270	80013	3785.6		3281.3	4289.9
+Male	Non-COVID-19 deaths	2022	January	"Second dose, less than 21 days ago"	15	16053	1936.0	u	959.4	3376.2
+Male	Non-COVID-19 deaths	2022	January	"Second dose, between 21 days and 6 months ago"	220	150660	2642.1		2197.5	3086.7
+Male	Non-COVID-19 deaths	2022	January	"Second dose, at least 6 months ago"	2467	99252	4654.3		4460.7	4848.0
+Male	Non-COVID-19 deaths	2022	January	"Third dose or booster, less than 21 days ago"	501	119856	2103.3		1900.0	2306.6
+Male	Non-COVID-19 deaths	2022	January	"Third dose or booster, at least 21 days ago"	13391	855324	962.8		946.0	979.6
+Male	Non-COVID-19 deaths	2022	January	Ever vaccinated	16876	1329829	1120.2		1103.1	1137.4
+Male	Non-COVID-19 deaths	2022	February	Unvaccinated	575	223643	1168.6		1060.4	1276.9
+Male	Non-COVID-19 deaths	2022	February	"First dose, less than 21 days ago"	4	4454	x		x	x
+Male	Non-COVID-19 deaths	2022	February	"First dose, at least 21 days ago"	169	64001	2603.7		2156.3	3051.1
+Male	Non-COVID-19 deaths	2022	February	"Second dose, less than 21 days ago"	4	12764	x		x	x
+Male	Non-COVID-19 deaths	2022	February	"Second dose, between 21 days and 6 months ago"	133	108535	2266.3		1783.4	2749.2
+Male	Non-COVID-19 deaths	2022	February	"Second dose, at least 6 months ago"	1449	107500	3335.9		3152.3	3519.5
+Male	Non-COVID-19 deaths	2022	February	"Third dose or booster, less than 21 days ago"	77	15391	2124.1		1659.3	2675.0
+Male	Non-COVID-19 deaths	2022	February	"Third dose or booster, at least 21 days ago"	12711	894374	984.0		966.5	1001.5
+Male	Non-COVID-19 deaths	2022	February	Ever vaccinated	14547	1207020	1069.4		1051.8	1087.1
+Male	Non-COVID-19 deaths	2022	March	Unvaccinated	590	243735	1122.3		1020.5	1224.1
+Male	Non-COVID-19 deaths	2022	March	"First dose, less than 21 days ago"	4	2381	x		x	x
+Male	Non-COVID-19 deaths	2022	March	"First dose, at least 21 days ago"	179	65122	2720.3		2274.9	3165.7
+Male	Non-COVID-19 deaths	2022	March	"Second dose, less than 21 days ago"	1	8077	x		x	x
+Male	Non-COVID-19 deaths	2022	March	"Second dose, between 21 days and 6 months ago"	122	95959	2634.4		2091.0	3177.8
+Male	Non-COVID-19 deaths	2022	March	"Second dose, at least 6 months ago"	1318	147672	2840.1		2674.3	3005.8
+Male	Non-COVID-19 deaths	2022	March	"Third dose or booster, less than 21 days ago"	51	9123	2679.5		1974.6	3548.3
+Male	Non-COVID-19 deaths	2022	March	"Third dose or booster, at least 21 days ago"	14280	1010418	1045.6		967.0	1124.2
+Male	Non-COVID-19 deaths	2022	March	Ever vaccinated	15955	1338752	1056.5		1039.9	1073.2
+Male	Non-COVID-19 deaths	2022	April	Unvaccinated	552	233339	1081.0		979.3	1182.6
+Male	Non-COVID-19 deaths	2022	April	"First dose, less than 21 days ago"	4	1611	x		x	x
+Male	Non-COVID-19 deaths	2022	April	"First dose, at least 21 days ago"	173	57244	2737.2		2278.4	3196.0
+Male	Non-COVID-19 deaths	2022	April	"Second dose, less than 21 days ago"	4	5812	x		x	x
+Male	Non-COVID-19 deaths	2022	April	"Second dose, between 21 days and 6 months ago"	82	82472	2376.4		1823.9	3027.7
+Male	Non-COVID-19 deaths	2022	April	"Second dose, at least 6 months ago"	1054	153828	2460.9		2298.5	2623.3
+Male	Non-COVID-19 deaths	2022	April	"Third dose or booster, less than 21 days ago"	34	6850	1569.1		1072.6	2210.7
+Male	Non-COVID-19 deaths	2022	April	"Third dose or booster, at least 21 days ago"	13811	988798	1001.8		956.2	1047.5
+Male	Non-COVID-19 deaths	2022	April	Ever vaccinated	15162	1296615	1032		1015.3	1048.7
+Male	Non-COVID-19 deaths	2022	May	Unvaccinated	423	239255	832.3		744.2	920.4
+Male	Non-COVID-19 deaths	2022	May	"First dose, less than 21 days ago"	0	1149	x		x	x
+Male	Non-COVID-19 deaths	2022	May	"First dose, at least 21 days ago"	122	55061	1997.0		1599.0	2395.0
+Male	Non-COVID-19 deaths	2022	May	"Second dose, less than 21 days ago"	4	4184	x		x	x
+Male	Non-COVID-19 deaths	2022	May	"Second dose, between 21 days and 6 months ago"	56	80187	1960.1		1410.8	2630.6
+Male	Non-COVID-19 deaths	2022	May	"Second dose, at least 6 months ago"	794	162733	1894.7		1749.7	2039.7
+Male	Non-COVID-19 deaths	2022	May	"Third dose or booster, less than 21 days ago"	39	6406	2375.4		1628.2	3324.8
+Male	Non-COVID-19 deaths	2022	May	"Third dose or booster, at least 21 days ago"	12638	1030562	879.5		845.7	913.3
+Male	Non-COVID-19 deaths	2022	May	Ever vaccinated	13653	1340283	896.8		881.5	912
