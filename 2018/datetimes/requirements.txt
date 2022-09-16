@@ -1,5 +1,5 @@
 arrow==0.10.0
-Babel==2.4.0
+Babel==2.9.1
 maya==0.3.2
 pendulum==1.2.4
 pytz==2017.2
