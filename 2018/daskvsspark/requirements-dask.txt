@@ -1,4 +1,4 @@
-dask==0.17.2
+dask==2021.10.0
 distributed==1.21.6
 bokeh==0.12.15 # for UI
 fastparquet==0.1.5 # for parquet
